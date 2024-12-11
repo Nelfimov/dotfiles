@@ -1,0 +1,109 @@
+{
+  "auto_install_extensions": {
+    "html": true,
+    "docker": true,
+    "docker-compose": true
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "version": "2"
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "always",
+    "use_multiline_find": true,
+    "toggle_relative_line_numbers": true
+  },
+  "vertical_scroll_margin": 3,
+  "autosave": "on_focus_change",
+  "cursor_blink": false,
+  "relative_line_numbers": true,
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "scrollbar": {
+    "show": "system",
+    "git_diff": true
+  },
+  "command_aliases": {
+    "W": "w",
+    "Wq": "wq",
+    "Q": "q"
+  },
+  "features": {
+    "copilot": false
+  },
+  "tab_size": 2,
+  "theme": "Dracula",
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": false,
+    "show_parameter_hints": true,
+    "show_other_hints": true
+  },
+  "base_keymap": "JetBrains",
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": true
+  },
+  "project_panel": {
+    "git_status": true,
+    "dock": "left",
+    "button": true
+  },
+  "ui_font_size": 13,
+  "buffer_font_size": 13,
+  "preview_tabs": {
+    "enabled": false,
+    "enable_preview_from_code_navigation": false,
+    "enable_preview_from_file_finder": false
+  },
+  "format_on_save": "off",
+  "formatter": "auto",
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    // above is default from Zed
+    "**/out",
+    "**/idea",
+    "**/.idea",
+    "**/dist",
+    "**/.husky",
+    "**/.turbo",
+    "**/.vscode-test",
+    "**/.vscode",
+    "**/.next",
+    "**/.yarn",
+    "**/.storybook",
+    "**/.tap",
+    "**/.nyc_output",
+    "**/node_modules"
+  ],
+  "lsp": {
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "includeInlayParameterNameHints": "all",
+          "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+          "includeInlayFunctionParameterTypeHints": true,
+          "includeInlayVariableTypeHints": true,
+          "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
+          "includeInlayPropertyDeclarationTypeHints": true,
+          "includeInlayFunctionLikeReturnTypeHints": true,
+          "includeInlayEnumMemberValueHints": true
+        }
+      }
+    }
+  }
+}
