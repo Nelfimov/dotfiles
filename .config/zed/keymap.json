@@ -1,0 +1,77 @@
+[
+  {
+    "context": "Editor && vim_mode == normal && menu",
+    "bindings": {
+      "j": "editor::ContextMenuNext",
+      "k": "editor::ContextMenuPrev"
+    }
+  },
+  {
+    "bindings": {
+      "f12": "workspace::OpenInTerminal",
+      "cmd--": "zed::DecreaseBufferFontSize",
+      "alt-f12": "workspace::NewTerminal"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && vim_mode == normal && !menu",
+    "bindings": {
+      "g i": "editor::GoToImplementation",
+      "ctrl o": "pane::GoBack",
+      "ctrl i": "pane::GoForward",
+      "shift-h": "pane::ActivatePrevItem",
+      "shift-l": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "ctrl-/": "workspace::ToggleBottomDock",
+      "space p": "editor::Format",
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePrevItem",
+      "space v": "pane::SplitRight",
+      "space w": "pane::CloseActiveItem",
+      "shift-k": "editor::Hover",
+      "space t t": ["task::Spawn", { "task_name": "Node test runner" }]
+    }
+  },
+  {
+    "context": "(Editor && vim_mode == normal) || (ProjectPanel && not_editing)",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "d": "project_panel::Delete",
+      "y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "l": "project_panel::OpenPermanent",
+      "a": "project_panel::NewFile",
+      "r": "project_panel::Rename",
+      "ctrl-d": ["workspace::SendKeystrokes", "j j j j j j j j j j j j j j j"],
+      "ctrl-u": ["workspace::SendKeystrokes", "k k k k k k k k k k k k k k k"]
+    }
+  }
+]
