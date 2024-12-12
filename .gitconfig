@@ -1,0 +1,51 @@
+[user]
+	name = Nikita Elfimov
+	email = nelfimov@mail.ru
+	signingKey = F079E9B365C4BF29
+[commit]
+	gpgsign = true
+[push]
+	autoSetupRemote = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[alias]
+  # git switch master && git pull && git branch -d PREVIOUS_BRANCH
+  bda = "!f() { current_branch=$(git symbolic-ref --short HEAD); git switch master && git pull && git branch -d \"$current_branch\"; }; f"
+
+  s = status -s
+
+  l = pull
+
+  a = add
+
+  aa = add --all
+
+  cm = commit -m
+
+  cma = commit -ma
+
+  cb = checkout -b 
+
+  p = push
+
+  pf = push --force-with-lease
+
+  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+  aliases = config --get-regexp alias
+  
+  # Remove branches that have already been merged with main.
+	# a.k.a. ‘delete merged’
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+[color]
+	ui = auto
+
+[help]
+	# Automatically correct and execute mistyped commands.
+	autocorrect = 1
+[init]
+	defaultBranch = master
