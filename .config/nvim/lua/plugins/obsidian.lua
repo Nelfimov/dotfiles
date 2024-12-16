@@ -11,14 +11,20 @@ return {
       {
         name = "work",
         path = "~/Documents/Dev/Obsidian/work",
+        strict = true,
       },
     },
     follow_url_func = function(url)
       vim.fn.jobstart({ "open", url })
     end,
     completion = {
-      nvim_cmp = true,
-      min_chars = 2,
+      nvim_cmp = false,
+    },
+    picker = {
+      name = "fzf-lua",
+    },
+    ui = {
+      enable = false,
     },
     mappings = {
       -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
