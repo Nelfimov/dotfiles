@@ -2,7 +2,7 @@ return {
   "ibhagwan/fzf-lua",
   opts = function(_, opts)
     local fd_additions = " --hidden --exclude .git --exclude .yarn --exclude dist"
-    local rg_additions = " --hidden --glob '!**/.yarn/**' --glob '!**/dist/**'"
+    local rg_additions = " --hidden --glob '!**/.yarn/**' --glob '!**/dist/**' --glob '!**/.pnp*js' --glob '!**/*.lock'"
 
     if opts.grep.rg_opts then
       opts.grep.rg_opts = opts.grep.rg_opts .. rg_additions
