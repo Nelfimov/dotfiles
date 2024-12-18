@@ -1,0 +1,66 @@
+source ~/.vimrc
+
+set scrolloff=10
+set sidescrolloff=5
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set autoindent
+set smartindent
+set surround
+set keep-english-in-normal
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
+
+nmap gd <Action>(GotoDeclaration)
+nmap gD <Action>(GotoTypeDeclaration)
+nmap K <Action>(ShowHoverInfo)
+nmap gi <Action>(QuickImplementations)
+nmap <Leader>d <Action>(Debug)
+nmap <Leader>r <Action>(Run)
+nmap <Leader>t <Action>(Refactorings.QuickListPopupAction)
+nmap <Leader>h <Action>(PreviousTab)
+nmap <Leader>l <Action>(NextTab)
+nmap [e <Action>(GotoPreviousError)
+nmap ]e <Action>(GotoNextError)
+
+" Карты для работы с окнами
+map <Leader>s :action SplitHorizontally<CR>
+map <Leader>v :action SplitVertically<CR>
+map <C-w>c :action CloseActiveTab<CR>
+
+" Улучшение работы с yank и paste
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>y "+y
+vnoremap <leader>p "+p
+
+" Комментирование/раскомментирование строк
+map <Leader>ci :action CommentByLineComment<CR>
+map <Leader>cu :action Uncomment<CR>
+
+" Переход назад и вперед по местам редактирования
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+
+" vim-surround
+nmap gds :action DeleteSurrounding<CR>
+nmap gcs :action ChangeSurrounding<CR>
+nmap ys :action SurroundWith<CR>
+vmap S :action SurroundWith<CR>
+
+nmap <leader><leader> <Action>(SearchEverywhere)
