@@ -56,6 +56,10 @@ if.app-name-regex-substring = "webstorm"
 run = ["move-node-to-workspace 2"]
 
 [[on-window-detected]]
+if.app-name-regex-substring = "warp"
+run = ["move-node-to-workspace 2"]
+
+[[on-window-detected]]
 if.app-id = "com.apple.ActivityMonitor"
 run = "layout floating"
 
