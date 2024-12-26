@@ -79,6 +79,10 @@ run = "layout floating"
 if.app-id = "ru.keepcoder.Telegram"
 run = ["move-node-to-workspace 3"]
 
+[[on-window-detected]]
+if.app-id = "com.amnezia.AmneziaVPN"
+run = "layout floating"
+
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]
