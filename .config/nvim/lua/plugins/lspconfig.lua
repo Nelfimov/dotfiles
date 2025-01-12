@@ -1,14 +1,17 @@
 return {
   "neovim/nvim-lspconfig",
   opts = function(_, opts)
-    local tsdk_path = "./.yarn/sdks/typescript/lib"
+    local nvim_lsp = require("lspconfig.util")
 
-    local function path_exists(path)
-      return vim.loop.fs_stat(path) ~= nil
+    local function path_exists(project_root, path)
+      return vim.loop.fs_stat(project_root .. path) ~= nil
     end
 
-    if path_exists(tsdk_path) then
-      opts.servers.vtsls.settings.typescript.tsdk = tsdk_path
+    local project_root = nvim_lsp.root_pattern(".git")(vim.fn.getcwd())
+    local tsdk_path = "/.yarn/sdks/typescript/lib"
+
+    if path_exists(project_root, tsdk_path) then
+      opts.servers.vtsls.settings.typescript.tsdk = project_root .. tsdk_path
       opts.servers.vtsls.init_options = { hostInfo = "neovim" }
     end
 

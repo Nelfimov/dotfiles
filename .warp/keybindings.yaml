@@ -1,2 +1,6 @@
 ---
-'workspace:toggle_ai_assistant': none
+"pane_group:navigate_right": alt-cmd-l
+"pane_group:navigate_down": alt-cmd-j
+"pane_group:navigate_left": alt-cmd-h
+"workspace:toggle_ai_assistant": none
+"pane_group:navigate_up": alt-cmd-k
