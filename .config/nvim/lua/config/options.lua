@@ -14,3 +14,5 @@ vim.g.snacks_animate = false
 vim.g.lazyvim_picker = "fzf"
 
 vim.opt.spelllang = { "en", "ru" }
+
+vim.lsp.set_log_level("OFF")
