@@ -6,7 +6,11 @@ return {
         visible = true,
         show_hidden_count = true,
         hide_dotfiles = false,
-        hide_gitignore = true,
+        hide_gitignored = true,
+        never_show = {
+          ".git",
+          ".DS_Store",
+        },
       },
     },
   },

@@ -1,7 +1,28 @@
-source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-zstyle -e ':autocomplete:*:*' list-lines 'reply=( $(( LINES / 2 )) )'
-bindkey -M menuselect  '^[[D' .backward-char  '^[OD' .backward-char
-bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
+if [[ "$TERM_PROGRAM" != *Warp* ]]; then
+  source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+  zstyle -e ':autocomplete:*:*' list-lines 'reply=( $(( LINES / 2 )) )'
+  bindkey -M menuselect  '^[[D' .backward-char  '^[OD' .backward-char
+  bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
+
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  
+  ## Git highlighting
+  function parse_git_branch() {
+    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
+  }
+
+  COLOR_DEF=$'%f'
+  COLOR_USR=$'%F{243}'
+  COLOR_DIR=$'%F{197}'
+  COLOR_GIT=$'%F{39}'
+  setopt PROMPT_SUBST
+  export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
+  # /Git highlighting
+
+  if [ -f $(brew --prefix)/etc/zsh_completion ]; then
+  . $(brew --prefix)/etc/zsh_completion
+  fi
+fi
 
 plugins=(git)
 
@@ -21,41 +42,23 @@ if [[ $#h -gt 0 ]]; then
   zstyle ':completion:*:ssh:*' hosts $h
   zstyle ':completion:*:slogin:*' hosts $h
 fi
-
 # /SSH
 
 ## GPG
 export GPG_TTY=$(tty)
-
 # /GPG
 
-if [ -f $(brew --prefix)/etc/zsh_completion ]; then
-. $(brew --prefix)/etc/zsh_completion
-fi
-
+# Jetbrains hack
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+# /Jetbrains hack
 
+# Node Version Manager
 export NVM_DIR="$HOME/.nvm"
   [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
   [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
- 
-## Git highlighting
+# /Node Version Manager
 
-function parse_git_branch() {
-  git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
-}
-
-COLOR_DEF=$'%f'
-COLOR_USR=$'%F{243}'
-COLOR_DIR=$'%F{197}'
-COLOR_GIT=$'%F{39}'
-setopt PROMPT_SUBST
-export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
-
-# /Git highlighting
-
-## Aliases
-
+# Aliases
 alias g='git'
 
 alias obsidian='cd ~/Documents/Dev/Obsidian/work && nvim'
@@ -73,6 +76,5 @@ alias dcd='docker compose down'
 alias dcu='docker compose up'
 
 alias k='kubectl'
-
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# /Aliases
 
