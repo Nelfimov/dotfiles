@@ -22,5 +22,18 @@ return {
 
     opts.servers.terraformls = opts.servers.terraformls or {}
     opts.servers.terraformls.root_dir = find_terraform_root
+
+    opts.servers.yamlls.settings = {
+      yaml = {
+        schemas = {
+          kubernetes = "{specs,spec}/**/*.{yaml,yml}",
+          ["https://json.schemastore.org/github-workflow.json"] = ".github/workflows/*{yaml,yml}",
+          ["https://json.schemastore.org/github-action.json"] = ".github/actions/*.{yaml,yml}",
+          ["https://json.schemastore.org/github-issue-forms.json"] = ".github/ISSUE_TEMPLATE/.{yaml,yml}",
+          ["https://json.schemastore.org/github-issue-config.json"] = ".github/ISSUE_TEMPLATE/config.{yaml,yml}",
+          ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose*.{yaml,yml}",
+        },
+      },
+    }
   end,
 }
