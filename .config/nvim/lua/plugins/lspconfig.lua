@@ -2,7 +2,7 @@ return {
   "neovim/nvim-lspconfig",
   opts = function(_, opts)
     local function path_exists(project_root, path)
-      return vim.loop.fs_stat(project_root or "" .. path) ~= nil
+      return vim.loop.fs_stat((project_root or "") .. path) ~= nil
     end
 
     local project_root = require("lspconfig.util").root_pattern(".git")(vim.fn.getcwd())
