@@ -22,7 +22,7 @@ return {
           local has_cwd = check_cwd(self, ctx) ~= nil
 
           if not has_cwd then
-            return { "--stdin-filepath", "$FILENAME", "--config", "/Users/nikoroach/.config/nvim/config/.prettier.yaml" }
+            return { "--stdin-filepath", "$FILENAME", "--config", "~/.config/nvim/config/.prettier.yaml" }
           end
 
           return { "--stdin-filepath", "$FILENAME" }
