@@ -26,7 +26,8 @@ return {
     opts.servers.yamlls.settings = {
       yaml = {
         schemas = {
-          kubernetes = "{specs,spec}/**/*.{yaml,yml}",
+          ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/all.json"] = "{specs,spec}/**/*.{deployment,ingress,service,job,namespace,role,role*binding,*configmap,pv,persistentvolume,pvc,persistentvolumeclaim}.{yml,yaml}",
+          ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/all.json"] = "{specs,spec}/**/*.{kustomization,image-*}.{yml,yaml}",
           ["https://json.schemastore.org/github-workflow.json"] = ".github/workflows/*{yaml,yml}",
           ["https://json.schemastore.org/github-action.json"] = ".github/actions/*.{yaml,yml}",
           ["https://json.schemastore.org/github-issue-forms.json"] = ".github/ISSUE_TEMPLATE/.{yaml,yml}",
