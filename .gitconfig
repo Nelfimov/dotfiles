@@ -13,7 +13,15 @@
 	process = git-lfs filter-process
 [alias]
   # git switch master && git pull && git branch -d PREVIOUS_BRANCH
-  bda = "!f() { current_branch=$(git symbolic-ref --short HEAD); git switch master && git pull && git branch -d \"$current_branch\"; }; f"
+  ; bda = "!f() { current_branch=$(git symbolic-ref --short HEAD); git switch master && git pull && git branch -d \"$current_branch\"; }; f"
+  bda = "!f() { \
+    current_branch=$(git symbolic-ref --short HEAD); \
+    default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's|^refs/remotes/origin/||'); \
+    git switch \"$default_branch\" && git pull; \
+    if [ \"$current_branch\" != \"$default_branch\" ]; then \
+      git branch -d \"$current_branch\"; \
+    fi; \
+  }; f"
 
   s = status -s
 
