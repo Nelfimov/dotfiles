@@ -12,8 +12,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [alias]
-  # git switch master && git pull && git branch -d PREVIOUS_BRANCH
-  ; bda = "!f() { current_branch=$(git symbolic-ref --short HEAD); git switch master && git pull && git branch -d \"$current_branch\"; }; f"
+  # git switch default && git pull && git branch -d PREVIOUS_BRANCH
   bda = "!f() { \
     current_branch=$(git symbolic-ref --short HEAD); \
     default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's|^refs/remotes/origin/||'); \
@@ -22,6 +21,8 @@
       git branch -d \"$current_branch\"; \
     fi; \
   }; f"
+
+  b = "!f() { git remote prune origin >/dev/null 2>&1; git for-each-ref --sort=committerdate 'refs/heads/' 'refs/remotes/' --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))' --color=always | grep --color=always -vE 'origin/HEAD|origin/master'; }; f"
 
   s = status -s
 
