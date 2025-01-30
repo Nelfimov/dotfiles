@@ -34,14 +34,9 @@ if type brew &>/dev/null; then
 fi
 
 ## SSH Config File Completion
-h=()
-if [[ -r ~/.ssh/config ]]; then
-  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
-fi
-if [[ $#h -gt 0 ]]; then
-  zstyle ':completion:*:ssh:*' hosts $h
-  zstyle ':completion:*:slogin:*' hosts $h
-fi
+
+zstyle ':completion:*:*:ssh:*' hosts $(awk '/^Host / {print $2}' ~/.ssh/config ~/.ssh/known_hosts ~/.ssh/orgs/* 2>/dev/null | tr ' ' '\n' | sort -u)
+
 # /SSH
 
 ## GPG
@@ -76,5 +71,8 @@ alias dcd='docker compose down'
 alias dcu='docker compose up'
 
 alias k='kubectl'
+alias kx='kubectl exec -it'
+alias kg='kubectl get'
+alias kl='kubectl logs'
 # /Aliases
 
