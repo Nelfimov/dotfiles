@@ -4,7 +4,7 @@ return {
     local fd_additions = " --hidden --exclude .git --exclude .yarn --exclude dist"
     local rg_additions =
       " --hidden --glob '!**/{.yarn,.git,dist,node_modules}/**' --glob '!**/.pnp*js' --glob '!**/*.lock'"
-    local cwd = require("lspconfig.util").find_git_ancestor(vim.fn.getcwd()) or vim.fn.getcwd()
+    local cwd = vim.fs.dirname(vim.fs.find(".git", { path = vim.fn.getcwd(), upward = true })[1])
 
     if opts.grep.rg_opts then
       opts.grep.rg_opts = opts.grep.rg_opts .. rg_additions
