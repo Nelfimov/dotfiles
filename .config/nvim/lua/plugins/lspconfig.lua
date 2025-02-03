@@ -5,7 +5,7 @@ return {
       return vim.loop.fs_stat((project_root or "") .. path) ~= nil
     end
 
-    local project_root = require("lspconfig.util").root_pattern(".git")(vim.fn.getcwd())
+    local project_root = require("lspconfig.util").root_pattern(".git")(vim.uv.cwd())
     local tsdk_path = "/.yarn/sdks/typescript/lib"
 
     if path_exists(project_root, tsdk_path) then

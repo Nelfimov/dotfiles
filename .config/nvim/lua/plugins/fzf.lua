@@ -4,7 +4,6 @@ return {
     local fd_additions = " --hidden --exclude .git --exclude .yarn --exclude dist"
     local rg_additions =
       " --hidden --glob '!**/{.yarn,.git,dist,node_modules}/**' --glob '!**/.pnp*js' --glob '!**/*.lock'"
-    local cwd = vim.fs.dirname(vim.fs.find(".git", { path = vim.fn.getcwd(), upward = true })[1])
 
     if opts.grep.rg_opts then
       opts.grep.rg_opts = opts.grep.rg_opts .. rg_additions
@@ -19,9 +18,10 @@ return {
       opts.files.fd_opts = "--type f --follow" .. fd_additions
     end
 
-    opts.grep.cwd = cwd
-    opts.files.cwd = cwd
-
     return opts
   end,
+  keys = {
+    { "<leader>fR", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
+    { "<leader>fr", LazyVim.pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
+  },
 }
