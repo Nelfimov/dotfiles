@@ -22,6 +22,8 @@ if [[ "$TERM_PROGRAM" != *Warp* ]]; then
   if [ -f $(brew --prefix)/etc/zsh_completion ]; then
   . $(brew --prefix)/etc/zsh_completion
   fi
+
+  source <(fzf --zsh)
 fi
 
 plugins=(git)
