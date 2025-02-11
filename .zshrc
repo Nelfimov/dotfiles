@@ -4,7 +4,7 @@ if [[ "$TERM_PROGRAM" != *Warp* ]]; then
   bindkey -M menuselect  '^[[D' .backward-char  '^[OD' .backward-char
   bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
 
-  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   
   ## Git highlighting
   function parse_git_branch() {
@@ -19,14 +19,8 @@ if [[ "$TERM_PROGRAM" != *Warp* ]]; then
   export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
   # /Git highlighting
 
-  if [ -f $(brew --prefix)/etc/zsh_completion ]; then
-  . $(brew --prefix)/etc/zsh_completion
-  fi
-
   source <(fzf --zsh)
 fi
-
-plugins=(git)
 
 if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
@@ -35,8 +29,27 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-## SSH Config File Completion
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+eval "$(zoxide init --cmd cd zsh)"
+
+plugins=(git)
+
+## SSH Config File Completion
 zstyle ':completion:*:*:ssh:*' hosts $(awk '/^Host / {print $2}' ~/.ssh/config ~/.ssh/known_hosts ~/.ssh/orgs/* 2>/dev/null | tr ' ' '\n' | sort -u)
 
 # /SSH
@@ -56,6 +69,8 @@ export NVM_DIR="$HOME/.nvm"
 # /Node Version Manager
 
 # Aliases
+alias ls='ls --color'
+
 alias g='git'
 
 alias obsidian='cd ~/Documents/Dev/Obsidian/work && nvim'
