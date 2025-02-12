@@ -21,7 +21,7 @@ return {
       nvim_cmp = false,
     },
     picker = {
-      name = "fzf-lua",
+      name = "snacks",
     },
     ui = {
       enable = false,
