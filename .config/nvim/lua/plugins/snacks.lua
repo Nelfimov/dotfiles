@@ -1,4 +1,4 @@
-local exclude_list = { ".yarn", "node_modules", ".pnp.cjs", "dist", ".ansible" }
+local exclude_list = { ".yarn", "node_modules", ".pnp.cjs", "dist", ".ansible", ".DS_Store", ".localized" }
 
 return {
   "folke/snacks.nvim",
@@ -18,7 +18,8 @@ return {
         explorer = {
           hidden = true,
           ignored = true,
-          exclude = { ".git" },
+          exclude = { ".git", ".DS_Store", ".localized" },
+          layout = {},
         },
       },
     },
