@@ -2,6 +2,7 @@ local exclude_list = { ".yarn", "node_modules", ".pnp.cjs", "dist", ".ansible", 
 
 return {
   "folke/snacks.nvim",
+  ---@type snacks.picker.Config
   opts = {
     picker = {
       sources = {
@@ -19,7 +20,6 @@ return {
           hidden = true,
           ignored = true,
           exclude = { ".git", ".DS_Store", ".localized" },
-          layout = {},
         },
       },
     },

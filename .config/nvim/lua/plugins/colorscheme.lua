@@ -1,11 +1,17 @@
 return {
   {
     "Mofiqul/dracula.nvim",
+    ---@module 'dracula'
+    ---@type DraculaConfig
     opts = {
-      overrides = {
-        SnacksPickerDir = { fg = "#F8F8F2" },
-        SnacksPickerPathHidden = { fg = "#F8F8F2" },
-      },
+      italic_comment = true,
+      overrides = function(colors)
+        return {
+          SnacksPickerDir = { fg = colors.comment },
+          SnacksPickerPathHidden = { fg = colors.comment },
+          SnacksPickerPathIgnored = { fg = colors.comment },
+        }
+      end,
     },
   },
   {
