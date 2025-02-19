@@ -79,6 +79,9 @@ run = ["move-node-to-workspace 3"]
 if.app-id = "com.amnezia.AmneziaVPN"
 run = "layout floating"
 
+[[on-window-detected]]
+if.app-id = "com.mitchellh.ghostty"
+run = "layout floating"
 # [[on-window-detected]]
 # if.app-id = "com.mitchellh.ghostty"
 # run = ["layout floating"]
