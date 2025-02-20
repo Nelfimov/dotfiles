@@ -53,3 +53,4 @@ desktop-notifications = true
 
 theme = dracula
 mouse-hide-while-typing = true
+window-inherit-working-directory = true
