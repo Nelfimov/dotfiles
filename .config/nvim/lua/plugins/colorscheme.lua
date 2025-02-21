@@ -2,7 +2,7 @@ return {
   {
     "Mofiqul/dracula.nvim",
     opts = {
-      italic_comments = true,
+      italic_comment = true,
       overrides = function(colors)
         return {
           NonText = { fg = colors.comment },
