@@ -3,6 +3,10 @@ local exclude_list = { ".yarn", "node_modules", ".pnp.cjs", "dist", ".ansible", 
 return {
   "folke/snacks.nvim",
   opts = {
+    zen = {
+      toggles = { dim = false },
+      win = { backdrop = { transparent = false } },
+    },
     explorer = {},
     ---@type snacks.picker.Config
     picker = {
