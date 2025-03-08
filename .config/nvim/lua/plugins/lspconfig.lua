@@ -37,6 +37,7 @@ return {
           ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/rolebinding.json"] = "{specs,spec}/**/*.{role*binding}.{yml,yaml}",
           ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/role.json"] = "{specs,spec}/**/*.{role}.{yml,yaml}",
           ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/configmap.json"] = "{specs,spec}/**/*.{configmap}.{yml,yaml}",
+          ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/secret.json"] = "{specs,spec}/**/*.{secret}.{yml,yaml}",
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/all.json"] = "{specs,spec}/**/*.{kustomization,image-*}.{yml,yaml}",
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/kustomization-kustomize-v1.json"] = "{specs,spec}/**/*.{kustomization,image-*}.{yml,yaml}",
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/imagerepository-image-v1beta2.json"] = "{specs,spec}/**/*.{image*repo*}.{yml,yaml}",
