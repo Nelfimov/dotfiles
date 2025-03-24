@@ -43,7 +43,7 @@ return {
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/kustomization-kustomize-v1.json"] = "{specs,spec}/**/*.{kustomization,image-*}.{yml,yaml}",
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/imagerepository-image-v1beta2.json"] = "{specs,spec}/**/*.{image*repo*}.{yml,yaml}",
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/imagepolicy-image-v1beta2.json"] = "{specs,spec}/**/*.{image*policy*}.{yml,yaml}",
-          ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/imageupdateautomation-image-v1beta2.json"] = "{specs,spec}/**/*.{image*auto*}.{yml,yaml}",
+          ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/imageupdateautomation-image-v1beta2.json"] = "{specs,spec}/**/*{image*auto*}.{yml,yaml}",
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/helmrelease-helm-v2.json"] = "{specs,spec}/**/*.{helm*release*}.{yml,yaml}",
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/helmrepository-source-v1.json"] = "{specs,spec}/**/*.{helm*repo*}.{yml,yaml}",
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/gitrepository-source-v1.json"] = "{specs,spec}/**/*.{git*repo*}.{yml,yaml}",
