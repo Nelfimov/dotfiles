@@ -55,6 +55,7 @@ return {
           ["https://json.schemastore.org/github-issue-forms.json"] = ".github/ISSUE_TEMPLATE/.{yaml,yml}",
           ["https://json.schemastore.org/github-issue-config.json"] = ".github/ISSUE_TEMPLATE/config.{yaml,yml}",
           ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.{yaml,yml}",
+          ["https://raw.githubusercontent.com/devcontainers/spec/master/schemas/devContainer.base.schema.json"] = "devcontainer.json",
         },
       },
     }
