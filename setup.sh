@@ -1,3 +1,4 @@
 #!/bin/sh
 
-stow .
+stow . --adopt
+git restore .
