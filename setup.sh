@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 stow . --adopt
-git restore .
+git reset --hard
