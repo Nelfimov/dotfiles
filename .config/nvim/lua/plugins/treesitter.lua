@@ -15,6 +15,8 @@ return {
       "typescript",
       "vim",
       "yaml",
+      "jinja",
+      "jinja_inline",
     },
   },
 }

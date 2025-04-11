@@ -16,3 +16,11 @@ vim.g.lazyvim_picker = "snacks"
 vim.opt.spelllang = { "en", "ru" }
 
 vim.lsp.set_log_level("OFF")
+
+vim.filetype.add({
+  extension = {
+    jinja = "jinja",
+    jinja2 = "jinja",
+    j2 = "jinja",
+  },
+})
