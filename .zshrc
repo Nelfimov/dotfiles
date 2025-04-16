@@ -58,7 +58,7 @@ zstyle ':completion:*:*:ssh:*' hosts $(awk '/^Host / {print $2}' ~/.ssh/config ~
 export GPG_TTY=$(tty)
 # /GPG
 
-export XDG_CONFIG_HOME=~/.config
+export K9S_CONFIG_DIR=~/.config/k9s/
 
 # Jetbrains hack
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi

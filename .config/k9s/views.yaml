@@ -1,17 +1,12 @@
 views:
   v1/pods:
-    # Overrides default sort column
     sortColumn: AGE:asc
     columns:
       - AGE
       - NAMESPACE|WR                                     # => 🌚 Specifies the NAMESPACE column to be right aligned and only visible while in wide mode
-      - ZORG:.metadata.labels.fred\.io\.kubernetes\.blee # => 🌚 extract fred.io.kubernetes.blee label into it's own column
-      - BLEE:.metadata.annotations.blee|R                # => 🌚 extract annotation blee into it's own column and right align it
       - NAME
-      - BLEE:.metadata.annotations.blee|R                # => 🌚 extract annotation blee into it's own column and right align it
       - IP
       - NODE
       - STATUS
       - READY
       - MEM/RL|S                                         # => 🌚 Overrides std resource default wide attribute via `S` for `Show`
-      - '%MEM/R|'                                        # => NOTE! column names with non alpha names need to be quoted as columns must be strings!

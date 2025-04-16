@@ -3,7 +3,7 @@ return {
   opts = {
     formatters = {
       prettier = {
-        args = function(self, ctx)
+        preprend_args = function(self, ctx)
           local check_cwd = require("conform.util").root_file({
             ".prettierrc",
             ".prettierrc.json",
@@ -21,11 +21,10 @@ return {
 
           local has_cwd = check_cwd(self, ctx) ~= nil
 
+          vim.notify(vim.inspect(self))
           if not has_cwd then
-            return { "--stdin-filepath", "$FILENAME", "--config", "~/.config/nvim/config/.prettier.yaml" }
+            return { "--config", "~/.config/nvim/config/.prettier.yaml" }
           end
-
-          return { "--stdin-filepath", "$FILENAME" }
         end,
       },
     },
