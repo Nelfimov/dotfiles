@@ -57,7 +57,6 @@
 [init]
 	defaultBranch = master
 [gpg]
-	program = /opt/homebrew/bin/gpg
   format = ssh
 [diff]
   tool = vimdiff
