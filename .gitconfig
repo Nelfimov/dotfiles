@@ -2,6 +2,8 @@
 	name = Nikita Elfimov
 	email = nelfimov@mail.ru
   signingkey = ~/.ssh/github.pub
+[commit]
+  gpgsign = true
 [push]
 	autoSetupRemote = true
 [filter "lfs"]
