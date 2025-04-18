@@ -1,9 +1,7 @@
 [user]
 	name = Nikita Elfimov
 	email = nelfimov@mail.ru
-	signingkey = 4FA7C101D610677A
-[commit]
-	gpgsign = true
+  signingkey = ~/.ssh/github.pub
 [push]
 	autoSetupRemote = true
 [filter "lfs"]
@@ -60,7 +58,7 @@
 	defaultBranch = master
 [gpg]
 	program = /opt/homebrew/bin/gpg
-
+  format = ssh
 [diff]
   tool = vimdiff
 [merge]
