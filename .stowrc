@@ -6,3 +6,4 @@
 --ignore=LICENSE
 --ignore=setup.sh
 --ignore=.macos
+--ignore=.gitconfig

@@ -50,7 +50,7 @@ eval "$(zoxide init zsh --cmd cd)"
 plugins=(git)
 
 ## SSH Config File Completion
-zstyle ':completion:*:*:ssh:*' hosts $(awk '/^Host / {print $2}' ~/.ssh/config ~/.ssh/known_hosts ~/.ssh/orgs/* 2>/dev/null | tr ' ' '\n' | sort -u)
+zstyle ':completion:*:*:ssh:*' hosts $(awk '/^Host / {print $2}' ~/.ssh/config ~/.ssh/known_hosts 2>/dev/null | tr ' ' '\n' | sort -u)
 
 # /SSH
 
