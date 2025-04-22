@@ -7,7 +7,7 @@ if [[ "$TERM_PROGRAM" != *Warp* ]]; then
   bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
 
   source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  
+
   ## Git highlighting
   function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
@@ -52,5 +52,5 @@ plugins=(git)
 zstyle ':completion:*:*:ssh:*' hosts $(awk '/^Host / {print $2}' ~/.ssh/config ~/.ssh/known_hosts 2>/dev/null | tr ' ' '\n' | sort -u)
 
 export NVM_DIR="$HOME/.nvm"
-  [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+  [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
   [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion

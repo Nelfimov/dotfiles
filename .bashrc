@@ -6,4 +6,6 @@ fi
 
 source /usr/share/bash-autocomplete/bash-autocomplete.sh
 
-eval "$(zoxide init bash)"
+source <(fzf --bash)
+
+eval "$(zoxide init bash --cmd cd)"
