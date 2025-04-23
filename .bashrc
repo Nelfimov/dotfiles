@@ -4,7 +4,9 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
   source /usr/share/bash-completion/bash_completion
 fi
 
-source /usr/share/bash-autocomplete/bash-autocomplete.sh
+if [ -f /etc/bash_completion ]; then
+  source /etc/bash_completion
+fi
 
 source <(fzf --bash)
 
