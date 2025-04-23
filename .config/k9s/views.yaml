@@ -9,8 +9,8 @@ views:
       - READY
       - MEM/RL|S
       - NODE
-      - CPU|H
-      - MEM|H
+      - CPU
+      - MEM
       - IP|H
       - PF|H
       - "%CPU/R|H"
