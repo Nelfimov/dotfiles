@@ -1,12 +1,19 @@
 views:
   v1/pods:
-    sortColumn: AGE:asc
+    sortColumn: NAMESPACE:asc
     columns:
       - AGE
-      - NAMESPACE|WR                                     # => 🌚 Specifies the NAMESPACE column to be right aligned and only visible while in wide mode
+      - NAMESPACE
       - NAME
-      - IP
-      - NODE
       - STATUS
       - READY
-      - MEM/RL|S                                         # => 🌚 Overrides std resource default wide attribute via `S` for `Show`
+      - MEM/RL|S
+      - NODE
+      - CPU|H
+      - MEM|H
+      - IP|H
+      - PF|H
+      - "%CPU/R|H"
+      - "%CPU/L|H"
+      - "%MEM/L|H"
+      - "%MEM/R|H"
