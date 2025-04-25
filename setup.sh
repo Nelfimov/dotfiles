@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo stow . --adopt
+stow . --adopt
 git reset --hard
