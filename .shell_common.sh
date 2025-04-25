@@ -41,3 +41,6 @@ alias kx='kubectl exec -it'
 alias kg='kubectl get'
 alias kge='kubectl get events --sort-by=".lastTimestamp"'
 alias kl='kubectl logs'
+
+alias ghpc='gh pr create -a @me'
+alias ghpm='gh pr merge -s --admin -d'
