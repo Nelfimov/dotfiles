@@ -30,6 +30,7 @@ return {
           ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/ingress.json"] = "{specs,spec}/**/*.{ingress}.{yml,yaml}",
           ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/service.json"] = "{specs,spec}/**/*.{service}.{yml,yaml}",
           ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/job.json"] = "{specs,spec}/**/*.{job}.{yml,yaml}",
+          ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/cronjob.json"] = "{specs,spec}/**/*.{cronjob}.{yml,yaml}",
           ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/persistentvolume.json"] = "{specs,spec}/**/*.{pv}.{yml,yaml}",
           ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/persistentvolumeclaim.json"] = "{specs,spec}/**/*.{pvc}.{yml,yaml}",
           ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/master/daemonset.json"] = "{specs,spec}/**/*.{daemonset}.{yml,yaml}",
