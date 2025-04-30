@@ -13,3 +13,7 @@ desktop-notifications = true
 theme = dracula
 mouse-hide-while-typing = true
 window-inherit-working-directory = true
+bold-is-bright = true
+app-notifications = no-clipboard-copy
+clipboard-read = allow
+clipboard-write = allow
