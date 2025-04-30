@@ -8,6 +8,6 @@ if [ -f /etc/bash_completion ]; then
   source /etc/bash_completion
 fi
 
-source <(fzf --bash)
+eval "$(fzf --bash)"
 
 eval "$(zoxide init bash --cmd cd)"
