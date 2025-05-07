@@ -42,5 +42,14 @@ alias kg='kubectl get'
 alias kge='kubectl get events --sort-by=".lastTimestamp"'
 alias kl='kubectl logs'
 
-alias ghpc='gh pr create -a @me -f'
+dist_master=$(git rev-list --count "$(git merge-base HEAD master)"..HEAD)
+dist_stage=$(git rev-list --count "$(git merge-base HEAD stage)"..HEAD)
+
+if [ "$dist_master" -lt "$dist_stage" ]; then
+  base="master"
+else
+  base="stage"
+fi
+
+alias ghpc="echo 'PR will be based on **$base**\n' && gh pr create -a @me -f -B $base"
 alias ghpm='gh pr merge -s --admin -d'
