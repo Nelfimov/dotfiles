@@ -1,7 +1,6 @@
 --target=~
 --ignore=.stowrc
 --ignore=DS_Store
---ignore=.stow-global-ignore
 --ignore=README.md 
 --ignore=LICENSE
 --ignore=setup.sh
