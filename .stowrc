@@ -6,3 +6,5 @@
 --ignore=setup.sh
 --ignore=.macos
 --ignore=.gitconfig
+--ignore=flake.nix
+--ignore=flake.lock
