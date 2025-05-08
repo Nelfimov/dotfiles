@@ -62,6 +62,7 @@
         finder.FXPreferredViewStyle = "clmv";
         finder.NewWindowTarget = "Documents";
         finder.ShowPathbar = true;
+        finder.AppleShowAllExtensions = true;
         hitoolbox.AppleFnUsageType = "Change Input Source";
         loginwindow.GuestEnabled = false;
         NSGlobalDomain.AppleICUForce24HourTime = true;
