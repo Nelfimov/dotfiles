@@ -5,16 +5,27 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    mac-app-util.url = "github:hraban/mac-app-util";
+
+    mac-app-util.url = "github:hraban/mac-app-util"; # Add indexing to Spotlight
+
+    # Homebrew
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, mac-app-util }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, mac-app-util, nix-homebrew, homebrew-core, homebrew-cask }:
   let
     configuration = { pkgs, ... }: {
       # nixpkgs.config.allowBroken = true;
       nixpkgs.config.allowUnfree = true;
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
+
       environment.systemPackages =
         [
           pkgs.neovim
@@ -34,14 +45,32 @@
           pkgs.zsh-autosuggestions
           pkgs.zsh-autocomplete
           pkgs.buildpack
-          pkgs.transmission
           pkgs.bitwarden
           pkgs.devpod
+          pkgs.warp-terminal
+          pkgs.gnupg
+          pkgs.pinentry_mac
+          pkgs.nodejs
+          pkgs.cargo
         ];
 
       fonts.packages = [
         pkgs.nerd-fonts.jetbrains-mono
       ];
+
+      homebrew = {
+        enable = true;
+        casks = [
+          "figma"
+          "libreoffice"
+          "orbstack"
+          "telegram"
+        ];
+        onActivation.cleanup = "zap";
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
+      };
+
       system.defaults = {
         dock.autohide = true;
         dock.persistent-apps = [
@@ -50,7 +79,7 @@
           "/System/Applications/FaceTime.app"
           "/Applications/Telegram.app"
           "/System/Applications/Mail.app"
-          "/Applications/Warp.app"
+          "${pkgs.warp-terminal}/Applications/Warp.app"
           "/System/Applications/Calendar.app"
           "/System/Applications/Reminders.app"
           "/System/Applications/Notes.app"
@@ -96,8 +125,10 @@
 
       security.pam.services.sudo_local.touchIdAuth = true;
 
-      # Enable alternative shell support in nix-darwin.
-      # programs.fish.enable = true;
+      programs.zsh = {
+        enable = true;
+        enableSyntaxHighlighting = true;
+      };
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -117,6 +148,15 @@
       modules = [ 
         configuration
         mac-app-util.darwinModules.default
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = true;
+            user = "nelfimov";
+            autoMigrate = true;
+          };
+        }
       ];
     };
   };

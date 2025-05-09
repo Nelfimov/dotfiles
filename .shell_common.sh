@@ -11,8 +11,6 @@ export GPG_TTY="$(tty)"
 
 export K9S_CONFIG_DIR="$HOME/.config/k9s/"
 
-export NVM_DIR="$HOME/.nvm"
-
 # Jetbrains hack
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"
 if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi

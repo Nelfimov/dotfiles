@@ -1,8 +1,0 @@
-brew "gnupg"
-brew "nvm"
-brew "pinentry-mac"
-cask "figma"
-cask "libreoffice"
-cask "orbstack"
-cask "telegram"
-cask "warp"
