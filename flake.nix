@@ -23,8 +23,13 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, mac-app-util, nix-homebrew, homebrew-core, homebrew-cask }:
   let
     configuration = { pkgs, ... }: {
-      # nixpkgs.config.allowBroken = true;
-      nixpkgs.config.allowUnfree = true;
+      nixpkgs = {
+        config = {
+          allowBroken = true;
+          allowUnfree = true;
+        };
+        hostPlatform = "aarch64-darwin";
+      };
 
       environment.systemPackages =
         [
@@ -66,59 +71,71 @@
           "orbstack"
           "telegram"
         ];
-        onActivation.cleanup = "zap";
-        onActivation.autoUpdate = true;
-        onActivation.upgrade = true;
+        onActivation = {
+          cleanup = "zap";
+          autoUpdate = true;
+          upgrade = true;
+        };
       };
 
       system.defaults = {
-        dock.autohide = true;
-        dock.persistent-apps = [
-          "/Applications/Safari.app"
-          "/System/Applications/Messages.app"
-          "/System/Applications/FaceTime.app"
-          "/Applications/Telegram.app"
-          "/System/Applications/Mail.app"
-          "${pkgs.warp-terminal}/Applications/Warp.app"
-          "/System/Applications/Calendar.app"
-          "/System/Applications/Reminders.app"
-          "/System/Applications/Notes.app"
-          "/System/Applications/Music.app"
-        ];
-        dock.persistent-others = [
-          "/Users/nelfimov/Downloads"
-        ];
-        finder.FXPreferredViewStyle = "clmv";
-        finder.NewWindowTarget = "Documents";
-        finder.ShowPathbar = true;
-        finder.AppleShowAllExtensions = true;
+        dock = {
+          autohide = true;
+          persistent-apps = [
+            "/Applications/Safari.app"
+            "/System/Applications/Messages.app"
+            "/System/Applications/FaceTime.app"
+            "/Applications/Telegram.app"
+            "/System/Applications/Mail.app"
+            "${pkgs.warp-terminal}/Applications/Warp.app"
+            "/System/Applications/Calendar.app"
+            "/System/Applications/Reminders.app"
+            "/System/Applications/Notes.app"
+            "/System/Applications/Music.app"
+          ];
+          persistent-others = [
+            "/Users/nelfimov/Downloads"
+          ];
+          minimize-to-application = true;
+          orientation = "bottom";
+          show-process-indicators = true;
+          show-recents = false;
+          wvous-tr-corner = 12;
+        };
+        finder = {
+          FXPreferredViewStyle = "clmv";
+          NewWindowTarget = "Documents";
+          ShowPathbar = true;
+          AppleShowAllExtensions = true;
+        };
         hitoolbox.AppleFnUsageType = "Change Input Source";
         loginwindow.GuestEnabled = false;
-        NSGlobalDomain.AppleICUForce24HourTime = true;
-        NSGlobalDomain.AppleInterfaceStyle = "Dark";
-        NSGlobalDomain.KeyRepeat = 2;
-        NSGlobalDomain.AppleKeyboardUIMode = 3;
-        NSGlobalDomain.ApplePressAndHoldEnabled = false;
-        NSGlobalDomain.AppleShowScrollBars = "Automatic";
-        NSGlobalDomain.InitialKeyRepeat = 1;
-        NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
-        NSGlobalDomain.NSAutomaticDashSubstitutionEnabled = false;
-        NSGlobalDomain.NSAutomaticInlinePredictionEnabled = false;
-        NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
-        NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled = false;
-        NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
+        NSGlobalDomain = {
+          AppleICUForce24HourTime = true;
+          AppleInterfaceStyle = "Dark";
+          KeyRepeat = 2;
+          AppleKeyboardUIMode = 3;
+          ApplePressAndHoldEnabled = false;
+          AppleShowScrollBars = "Automatic";
+          InitialKeyRepeat = 1;
+          NSAutomaticCapitalizationEnabled = false;
+          NSAutomaticDashSubstitutionEnabled = false;
+          NSAutomaticInlinePredictionEnabled = false;
+          NSAutomaticPeriodSubstitutionEnabled = false;
+          NSAutomaticSpellingCorrectionEnabled = false;
+          "com.apple.mouse.tapBehavior" = 1;
+        };
         SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
-        dock.minimize-to-application = true;
-        dock.orientation = "bottom";
-        dock.show-process-indicators = true;
-        dock.show-recents = false;
-        dock.wvous-tr-corner = 12;
         screencapture.disable-shadow = false;
       };
 
       system = {
-        keyboard.remapCapsLockToControl = false;
-        keyboard.remapCapsLockToEscape = false;
+        keyboard = {
+          remapCapsLockToControl = false;
+          remapCapsLockToEscape = false;
+        };
+        configurationRevision = self.rev or self.dirtyRev or null;
+        stateVersion = 6;
       };
 
       nix.settings.experimental-features = "nix-command flakes";
@@ -129,16 +146,6 @@
         enable = true;
         enableSyntaxHighlighting = true;
       };
-
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
-
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 6;
-
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
     };
   in
   {
