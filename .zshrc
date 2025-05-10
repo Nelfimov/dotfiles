@@ -31,8 +31,6 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 HISTDUP=erase
 setopt appendhistory
 setopt sharehistory
