@@ -25,46 +25,47 @@
     configuration = { pkgs, ... }: {
       nixpkgs = {
         config = {
-          allowBroken = true;
+          # allowBroken = true;
           allowUnfree = true;
         };
         hostPlatform = "aarch64-darwin";
       };
 
-      environment.systemPackages =
+      environment.systemPackages = with pkgs;
         [
-          pkgs.neovim
-          pkgs.zellij
-          pkgs.aerospace
-          pkgs.lazygit
-          pkgs.ripgrep
-          pkgs.stow
-          pkgs.fd
-          pkgs.fzf
-          pkgs.zoxide
-          pkgs.ripgrep
-          pkgs.k9s
-          pkgs.gh
-          pkgs.graphviz
-          pkgs.zsh-syntax-highlighting
-          pkgs.zsh-autosuggestions
-          pkgs.zsh-autocomplete
-          pkgs.buildpack
-          pkgs.bitwarden
-          pkgs.devpod
-          pkgs.warp-terminal
-          pkgs.gnupg
-          pkgs.pinentry_mac
-          pkgs.nodejs
-          pkgs.cargo
+          neovim
+          zellij
+          aerospace
+          lazygit
+          ripgrep
+          stow
+          fd
+          fzf
+          zoxide
+          ripgrep
+          k9s
+          gh
+          graphviz
+          zsh-syntax-highlighting
+          zsh-autosuggestions
+          zsh-autocomplete
+          devpod
+          warp-terminal
+          gnupg
+          pinentry_mac
+          nodejs
+          cargo
         ];
 
-      fonts.packages = [
-        pkgs.nerd-fonts.jetbrains-mono
+      fonts.packages = with pkgs; [
+        nerd-fonts.jetbrains-mono
       ];
 
       homebrew = {
         enable = true;
+        brews = [
+          "mas"
+        ];
         casks = [
           "figma"
           "libreoffice"
@@ -75,6 +76,10 @@
           cleanup = "zap";
           autoUpdate = true;
           upgrade = true;
+        };
+        masApps = {
+          Bitwarden = 1352778147;
+          AdGuard = 1440147259;
         };
       };
 
@@ -127,6 +132,40 @@
         };
         SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
         screencapture.disable-shadow = false;
+        CustomSystemPreferences = {
+          NSGlobalDomain = {
+            # Add a context menu item for showing the Web Inspector in web views
+            WebKitDeveloperExtras = true;
+          };
+          # Prevent Photos from opening automatically when devices are plugged in
+          "com.apple.ImageCapture".disableHotPlug = true;
+          "com.apple.AdLib" = {
+            allowApplePersonalizedAdvertising = false;
+          };
+          "com.apple.Safari" = {
+            # Press Tab to highlight each item on a web page
+            WebKitTabToLinksPreferenceKey = true;
+            ShowFullURLInSmartSearchField = false;
+            IncludeInternalDebugMenu = true;
+            IncludeDevelopMenu = true;
+            WebKitDeveloperExtrasEnabledPreferenceKey = true;
+            WebContinuousSpellCheckingEnabled = true;
+            WebAutomaticSpellingCorrectionEnabled = false;
+            AutoFillFromAddressBook = false;
+            AutoFillCreditCardData = false;
+            AutoFillMiscellaneousForms = false;
+            WarnAboutFraudulentWebsites = true;
+            WebKitJavaEnabled = false;
+            WebKitJavaScriptCanOpenWindowsAutomatically = false;
+            "com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks" = true;
+            "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" = true;
+            "com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled" = false;
+            "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled" = false;
+            "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabledForLocalFiles" = false;
+            "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically" = false;
+            "com.apple.Safari.IncludeInternalDebugMenu" = true;
+          };
+        };
       };
 
       system = {
