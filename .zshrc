@@ -1,5 +1,22 @@
 source ~/.shell_common.sh
 
+if [[ -n "$ZELLIJ" ]]; then
+  ## Git highlighting
+  function parse_git_branch() {
+    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
+  }
+
+  COLOR_DEF=$'%f'
+  COLOR_USR=$'%F{243}'
+  COLOR_DIR=$'%F{197}'
+  COLOR_GIT=$'%F{39}'
+  setopt PROMPT_SUBST
+  export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
+  # /Git highlighting
+
+  source <(fzf --zsh)
+fi
+
 if [[ "$TERM_PROGRAM" != *Warp* ]]; then
   AUTOCOMPLETE=$(nix eval --raw nixpkgs#zsh-autocomplete.outPath)
   source $AUTOCOMPLETE/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
@@ -23,13 +40,6 @@ if [[ "$TERM_PROGRAM" != *Warp* ]]; then
   source <(fzf --zsh)
 fi
 
-if type brew &>/dev/null; then
-  FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
-fi
-
 HISTDUP=erase
 setopt appendhistory
 setopt sharehistory
@@ -47,7 +57,3 @@ eval "$(zoxide init zsh --cmd cd)"
 plugins=(git)
 
 zstyle ':completion:*:*:ssh:*' hosts $(awk '/^Host / {print $2}' ~/.ssh/config ~/.ssh/known_hosts 2>/dev/null | tr ' ' '\n' | sort -u)
-
-export NVM_DIR="$HOME/.nvm"
-  [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
-  [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion

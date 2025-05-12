@@ -141,7 +141,7 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
-        bind "Alt z" {
+        bind "Ctrl x" {
             MessagePlugin "autolock" {payload "disable";};
             SwitchToMode "Locked";
         }
