@@ -1,12 +1,11 @@
 source ~/.shell_common.sh
 
 if [[ "$TERM_PROGRAM" != *Warp* ]]; then
-  source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+  AUTOCOMPLETE=$(nix eval --raw nixpkgs#zsh-autocomplete.outPath)
+  source $AUTOCOMPLETE/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
   zstyle -e ':autocomplete:*:*' list-lines 'reply=( $(( LINES / 2 )) )'
   bindkey -M menuselect  '^[[D' .backward-char  '^[OD' .backward-char
   bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
-
-  source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
   ## Git highlighting
   function parse_git_branch() {
