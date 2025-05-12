@@ -48,7 +48,6 @@
           graphviz
           zsh-syntax-highlighting
           zsh-autosuggestions
-          zsh-autocomplete
           devpod
           warp-terminal
           gnupg

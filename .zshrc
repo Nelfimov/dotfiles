@@ -1,28 +1,8 @@
 source ~/.shell_common.sh
 
-if [[ -n "$ZELLIJ" ]]; then
-  ## Git highlighting
-  function parse_git_branch() {
-    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
-  }
-
-  COLOR_DEF=$'%f'
-  COLOR_USR=$'%F{243}'
-  COLOR_DIR=$'%F{197}'
-  COLOR_GIT=$'%F{39}'
-  setopt PROMPT_SUBST
-  export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
-  # /Git highlighting
-
-  source <(fzf --zsh)
-fi
-
-if [[ "$TERM_PROGRAM" != *Warp* ]]; then
-  AUTOCOMPLETE=$(nix eval --raw nixpkgs#zsh-autocomplete.outPath)
-  source $AUTOCOMPLETE/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-  zstyle -e ':autocomplete:*:*' list-lines 'reply=( $(( LINES / 2 )) )'
-  bindkey -M menuselect  '^[[D' .backward-char  '^[OD' .backward-char
-  bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
+if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
+  AUTOSUGGEST=$(nix eval --raw nixpkgs#zsh-autosuggestions.outPath)
+  source $AUTOSUGGEST/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
   ## Git highlighting
   function parse_git_branch() {
@@ -35,6 +15,7 @@ if [[ "$TERM_PROGRAM" != *Warp* ]]; then
   COLOR_GIT=$'%F{39}'
   setopt PROMPT_SUBST
   export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
+  RPROMPT="%{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}]"
   # /Git highlighting
 
   source <(fzf --zsh)
