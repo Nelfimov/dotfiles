@@ -1,6 +1,6 @@
-install:
+first-time:
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
-	nix run nix-darwin/master#darwin-rebuild -- switch
+	nix run nix-darwin/master#darwin-rebuild -- switch --flake .#mac
 
 apply:
 	darwin-rebuild switch --flake .#mac
