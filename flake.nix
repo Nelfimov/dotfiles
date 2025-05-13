@@ -121,7 +121,7 @@
           AppleKeyboardUIMode = 3;
           ApplePressAndHoldEnabled = false;
           AppleShowScrollBars = "Automatic";
-          InitialKeyRepeat = 1;
+          InitialKeyRepeat = 15;
           NSAutomaticCapitalizationEnabled = false;
           NSAutomaticDashSubstitutionEnabled = false;
           NSAutomaticInlinePredictionEnabled = false;
