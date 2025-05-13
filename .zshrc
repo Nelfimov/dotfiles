@@ -14,8 +14,9 @@ if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
   COLOR_DIR=$'%F{197}'
   COLOR_GIT=$'%F{39}'
   setopt PROMPT_SUBST
-  export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
-  RPROMPT="%{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}]"
+  NEWLINE=$'\n'
+  export PROMPT="${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}\$(parse_git_branch)${COLOR_DEF}${NEWLINE}$ "
+  RPROMPT="%{$fg[yellow]%}%D{%f/%m/%y} %D{%L:%M:%S}"
   # /Git highlighting
 
   source <(fzf --zsh)
