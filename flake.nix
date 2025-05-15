@@ -52,8 +52,9 @@
           warp-terminal
           gnupg
           pinentry_mac
-          nodejs
+          nodejs_24
           cargo
+          yarn
         ];
 
       fonts.packages = with pkgs; [
