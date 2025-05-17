@@ -54,6 +54,7 @@
           pinentry_mac
           nodejs_24
           cargo
+          pack
           yarn
         ];
 
