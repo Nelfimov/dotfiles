@@ -176,9 +176,15 @@
         };
         configurationRevision = self.rev or self.dirtyRev or null;
         stateVersion = 6;
+        primaryUser = "nelfimov";
       };
 
-      nix.settings.experimental-features = "nix-command flakes";
+      nix = {
+        settings.experimental-features = "nix-command flakes";
+        extraOptions = ''
+          extra-platforms = x86_64-darwin aarch64-darwin
+        '';
+      };
 
       security.pam.services.sudo_local.touchIdAuth = true;
 
