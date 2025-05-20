@@ -7,6 +7,7 @@ views:
       - NAME
       - STATUS
       - READY
+      - CPU/RL|S
       - MEM/RL|S
       - NODE
       - CPU
