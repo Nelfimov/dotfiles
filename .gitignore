@@ -43,3 +43,4 @@ luac.out
 
 .config/yandex-cloud
 .config/gh/hosts.y*ml
+.config/k9s/clusters
