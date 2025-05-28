@@ -4,6 +4,7 @@ keybinds clear-defaults=true {
             WriteChars "\u{000D}";
             MessagePlugin "autolock" {};
         }
+        bind "Alt w" { CloseFocus; SwitchToMode "normal"; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
@@ -145,35 +146,16 @@ keybinds clear-defaults=true {
             MessagePlugin "autolock" {payload "toggle";};
             SwitchToMode "Locked";
         }
-        bind "Ctrl h" {
-            MoveFocusOrTab "Left";
-        }
-        bind "Ctrl l" {
-            MoveFocusOrTab "Right";
-        }
-        bind "Ctrl j" {
-            MoveFocus "Down";
-        }
-        bind "Ctrl k" {
-            MoveFocus "Up";
-        }
-        bind "Alt left" { MoveFocusOrTab "left"; }
-        bind "Alt down" { MoveFocus "down"; }
-        bind "Alt up" { MoveFocus "up"; }
-        bind "Alt right" { MoveFocusOrTab "right"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt =" { Resize "Increase"; }
-        bind "Alt [" { PreviousSwapLayout; }
-        bind "Alt ]" { NextSwapLayout; }
         bind "Alt f" { ToggleFloatingPanes; }
         bind "Ctrl h" { MoveFocusOrTab "left"; }
-        bind "Alt i" { MoveTab "left"; }
         bind "Ctrl j" { MoveFocus "down"; }
         bind "Ctrl k" { MoveFocus "up"; }
         bind "Ctrl g" { SwitchToMode "locked"; }
         bind "Ctrl l" { MoveFocusOrTab "right"; }
-        bind "Ctrl n" { NewPane; }
+        bind "Alt n" { NewPane; }
         bind "Alt o" { MoveTab "right"; }
         bind "Ctrl q" { Quit; }
     }
