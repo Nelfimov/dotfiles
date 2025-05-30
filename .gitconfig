@@ -1,6 +1,6 @@
 [user]
 	name = Nikita Elfimov
-	email = nelfimov@mail.ru
+	email = en@atls.team
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILB8ZkrksDq1vo7ZIv6RHL9XVhmZZf8xSaUBVrDJ4PRU
 [commit]
   gpgsign = true
