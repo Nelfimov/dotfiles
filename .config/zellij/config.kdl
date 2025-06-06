@@ -1,22 +1,21 @@
 keybinds clear-defaults=true {
     normal {
-        bind "Enter" {
-            WriteChars "\u{000D}";
-            MessagePlugin "autolock" {};
-        }
-        bind "Alt w" { CloseFocus; SwitchToMode "normal"; }
+        bind "Super w" { CloseFocus; }
+        bind "Super Shift d" { NewPane; }
+        bind "Super d" { NewPane "Down"; }
+        bind "Super t" { NewTab; }
+        bind "Super Alt h" { GoToPreviousTab; }
+        bind "Super Alt l" { GoToNextTab; }
+        bind "Super c" { Copy; }
+        bind "Super f" { SwitchToMode "entersearch"; }
+        bind "Super Alt h" { MoveFocusOrTab "left"; }
+        bind "Super Alt j" { MoveFocus "down"; }
+        bind "Super Alt k" { MoveFocus "up"; }
+        bind "Super Alt l" { MoveFocusOrTab "right"; }
+        bind "Ctrl x" { SwitchToMode "locked"; }
     }
     locked {
-        bind "Ctrl g" { SwitchToMode "normal"; }
-        bind "Ctrl x" {
-            MessagePlugin "autolock" {payload "toggle";};
-            SwitchToMode "Normal";
-        }
-    }
-    shared {
-        bind "Ctrl Shift x" {
-            MessagePlugin "autolock" {payload "enable";};
-        }
+        bind "Ctrl x" { SwitchToMode "normal"; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -91,10 +90,10 @@ keybinds clear-defaults=true {
         bind "up" { MovePane "up"; }
         bind "right" { MovePane "right"; }
         bind "h" { MovePane "left"; }
+        bind "Ctrl m" { SwitchToMode "normal"; }
         bind "j" { MovePane "down"; }
         bind "k" { MovePane "up"; }
         bind "l" { MovePane "right"; }
-        bind "Ctrl m" { SwitchToMode "normal"; }
         bind "n" { MovePane; }
         bind "p" { MovePaneBackwards; }
         bind "tab" { MovePane; }
@@ -142,19 +141,22 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
-        bind "Ctrl x" {
-            MessagePlugin "autolock" {payload "toggle";};
-            SwitchToMode "Locked";
-        }
+        bind "Alt left" { MoveFocusOrTab "left"; }
+        bind "Alt down" { MoveFocus "down"; }
+        bind "Alt up" { MoveFocus "up"; }
+        bind "Alt right" { MoveFocusOrTab "right"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt =" { Resize "Increase"; }
+        bind "Alt [" { PreviousSwapLayout; }
+        bind "Alt ]" { NextSwapLayout; }
         bind "Alt f" { ToggleFloatingPanes; }
-        bind "Ctrl h" { MoveFocusOrTab "left"; }
-        bind "Ctrl j" { MoveFocus "down"; }
-        bind "Ctrl k" { MoveFocus "up"; }
-        bind "Ctrl g" { SwitchToMode "locked"; }
-        bind "Ctrl l" { MoveFocusOrTab "right"; }
+        bind "Ctrl x" { SwitchToMode "locked"; }
+        bind "Alt h" { MoveFocusOrTab "left"; }
+        bind "Alt i" { MoveTab "left"; }
+        bind "Alt j" { MoveFocus "down"; }
+        bind "Alt k" { MoveFocus "up"; }
+        bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
         bind "Alt o" { MoveTab "right"; }
         bind "Ctrl q" { Quit; }
@@ -264,21 +266,12 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
-    autolock location="https://github.com/fresh2dev/zellij-autolock/releases/latest/download/zellij-autolock.wasm" {
-        is_enabled true
-        triggers "nvim|vim|git|fzf|zoxide|atuin"
-        reaction_seconds "0.3"
-        print_to_log true
-        watch_triggers "fzf|zoxide|atuin|atac"  // Lock when any of these open and monitor until closed.
-        watch_interval "1.0"  // When monitoring, check every X seconds.
-    }
 }
 
 // Plugins to load in the background when a new session starts
 // eg. "file:/path/to/my-plugin.wasm"
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
-    autolock
 }
  
 // Use a simplified UI without special fonts (arrow glyphs)

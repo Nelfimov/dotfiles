@@ -47,7 +47,6 @@
           graphviz
           zsh-syntax-highlighting
           zsh-autosuggestions
-          devpod
           warp-terminal
           gnupg
           pinentry_mac
@@ -71,7 +70,8 @@
           "libreoffice"
           "orbstack"
           "telegram"
-          "element"
+          "ghostty"
+          "discord"
         ];
         onActivation = {
           cleanup = "zap";
