@@ -93,6 +93,7 @@
             "/System/Applications/FaceTime.app"
             "/Applications/Telegram.app"
             "/System/Applications/Mail.app"
+            "/Applications/Ghostty.app"
             "${pkgs.warp-terminal}/Applications/Warp.app"
             "/System/Applications/Calendar.app"
             "/System/Applications/Reminders.app"

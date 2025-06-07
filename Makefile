@@ -3,11 +3,11 @@ first-time:
 	nix run nix-darwin/master#darwin-rebuild -- switch --flake .#mac
 
 apply:
-	darwin-rebuild switch --flake .#mac
+	sudo darwin-rebuild switch --flake .#mac
 
 update:
 	nix flake update
-	darwin-rebuild switch --flake .#mac
+	sudo darwin-rebuild switch --flake .#mac
 
 clear:
 	nix-collect-garbage -d
