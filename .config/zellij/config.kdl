@@ -1,8 +1,8 @@
 keybinds clear-defaults=true {
     normal {
         bind "Super w" { CloseFocus; }
-        bind "Super Shift d" { NewPane; }
-        bind "Super d" { NewPane "Down"; }
+        bind "Super Shift d" { NewPane "Down"; }
+        bind "Super d" { NewPane; }
         bind "Super t" { NewTab; }
         bind "Super Alt h" { GoToPreviousTab; }
         bind "Super Alt l" { GoToNextTab; }
