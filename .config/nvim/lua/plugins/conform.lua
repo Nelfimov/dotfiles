@@ -21,7 +21,6 @@ return {
 
           local has_cwd = check_cwd(self, ctx) ~= nil
 
-          vim.notify(vim.inspect(self))
           if not has_cwd then
             return { "--config", "~/.config/nvim/config/.prettier.yaml" }
           end
