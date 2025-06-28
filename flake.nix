@@ -72,6 +72,7 @@
           "telegram"
           "ghostty"
           "discord"
+          "amneziavpn"
         ];
         onActivation = {
           cleanup = "zap";
