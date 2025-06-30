@@ -1,5 +1,9 @@
 source ~/.shell_common.sh
 
+if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
+  source "${GHOSTTY_RESOURCES_DIR}/shell-integration/zsh/ghostty-integration"
+fi
+
 if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
   AUTOSUGGEST=$(nix eval --raw nixpkgs#zsh-autosuggestions.outPath)
   source $AUTOSUGGEST/share/zsh-autosuggestions/zsh-autosuggestions.zsh
