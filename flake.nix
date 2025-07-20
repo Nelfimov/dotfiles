@@ -74,6 +74,7 @@
           "discord"
           "amneziavpn"
           "transmission"
+          "chromium-gost"
         ];
         onActivation = {
           cleanup = "zap";
