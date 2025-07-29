@@ -1,11 +1,11 @@
 ---
-"pane_group:navigate_left": none
-"pane_group:navigate_down": none
-"pane_group:navigate_up": none
-"pane_group:navigate_right": none
-"workspace:toggle_ai_assistant": none
-"pane_group:add_right": none
-"pane_group:add_down": none
-"workspace:reopen_closed_tab": none
-"terminal:find": none
-"workspace:open_new_tab": shift-cmd-t
+'pane_group:navigate_left': none
+'pane_group:navigate_down': none
+'pane_group:navigate_up': none
+'pane_group:navigate_right': none
+'workspace:toggle_ai_assistant': none
+'pane_group:add_right': none
+'pane_group:add_down': none
+'workspace:reopen_closed_tab': none
+'terminal:find': none
+'workspace:open_new_tab': shift-cmd-t
