@@ -43,4 +43,8 @@ alias kl='kubectl logs'
 
 alias ghpc='gh pr create -a @me -f'
 alias ghpm='gh pr merge -s --admin -d'
-alias dev='nix develop -c zellij'
+
+dev() {
+  session_name="$(basename "$PWD")"
+  nix develop -c zellij --session "$session_name"
+}
