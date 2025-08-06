@@ -11,6 +11,7 @@ return {
     ---@type snacks.picker.Config
     picker = {
       layouts = {},
+      formatters = { file = { truncate = 80 } },
       sources = {
         files = {
           hidden = true,
