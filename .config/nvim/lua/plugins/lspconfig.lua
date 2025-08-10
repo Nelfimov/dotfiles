@@ -53,7 +53,7 @@ return {
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/helmrelease-helm-v2.json"] = "{specs,spec}/**/*.{helm*release*}.{yml,yaml}",
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/helmrepository-source-v1.json"] = "{specs,spec}/**/*.{helm*repo*}.{yml,yaml}",
           ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/refs/heads/main/gitrepository-source-v1.json"] = "{specs,spec}/**/*.{git*repo*}.{yml,yaml}",
-          ["https://json.schemastore.org/github-workflow.json"] = ".github/workflows/*{yaml,yml}",
+          ["https://json.schemastore.org/github-workflow.json"] = "**/workflows/*{yaml,yml}",
           ["https://json.schemastore.org/github-action.json"] = ".github/actions/*.{yaml,yml}",
           ["https://json.schemastore.org/github-issue-forms.json"] = ".github/ISSUE_TEMPLATE/.{yaml,yml}",
           ["https://json.schemastore.org/github-issue-config.json"] = ".github/ISSUE_TEMPLATE/config.{yaml,yml}",

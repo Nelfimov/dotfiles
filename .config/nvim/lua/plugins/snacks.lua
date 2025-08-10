@@ -24,7 +24,7 @@ return {
           exclude = exclude_list,
         },
         explorer = {
-          hidden = true,
+          hidden = false,
           ignored = true,
           exclude = { ".git", ".DS_Store", ".localized" },
           layout = {
