@@ -54,6 +54,7 @@
           cargo
           pack
           yarn
+          tree
         ];
 
       fonts.packages = with pkgs; [
