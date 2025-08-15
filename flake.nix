@@ -78,7 +78,6 @@
           "transmission"
           "chromium-gost"
           "chatgpt"
-          "zed"
         ];
         onActivation = {
           cleanup = "zap";
