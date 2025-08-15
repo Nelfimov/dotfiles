@@ -77,6 +77,7 @@
           "amneziavpn"
           "transmission"
           "chromium-gost"
+          "chatgpt"
         ];
         onActivation = {
           cleanup = "zap";
