@@ -23,6 +23,7 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, mac-app-util, nix-homebrew, homebrew-core, homebrew-cask }:
   let
     configuration = { pkgs, ... }: {
+      nix.enable = false;
       nixpkgs = {
         config = {
           allowUnfree = true;
