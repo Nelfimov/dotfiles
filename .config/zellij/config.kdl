@@ -1,13 +1,18 @@
 keybinds clear-defaults=true {
     normal {
         bind "Super w" { CloseFocus; }
+        bind "Alt w" { CloseFocus; }
         bind "Super Shift d" { NewPane "Down"; }
+        bind "Alt Shift d" { NewPane "Down"; }
         bind "Super d" { NewPane; }
+        bind "Alt d" { NewPane; }
         bind "Super t" { NewTab; }
+        bind "Alt t" { NewTab; }
         bind "Super Alt h" { GoToPreviousTab; }
         bind "Super Alt l" { GoToNextTab; }
         bind "Super c" { Copy; }
         bind "Super f" { SwitchToMode "entersearch"; }
+        bind "Super Alt f" { SwitchToMode "entersearch"; }
         bind "Super Alt h" { MoveFocusOrTab "left"; }
         bind "Super Alt j" { MoveFocus "down"; }
         bind "Super Alt k" { MoveFocus "up"; }
