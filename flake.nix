@@ -48,7 +48,6 @@
           graphviz
           zsh-syntax-highlighting
           zsh-autosuggestions
-          warp-terminal
           gnupg
           pinentry_mac
           nodejs_24
@@ -78,6 +77,7 @@
           "transmission"
           "chromium-gost"
           "chatgpt"
+          "warp"
         ];
         onActivation = {
           cleanup = "zap";
@@ -100,7 +100,7 @@
             "/Applications/Telegram.app"
             "/System/Applications/Mail.app"
             "/Applications/Ghostty.app"
-            "${pkgs.warp-terminal}/Applications/Warp.app"
+            "/Applications/Warp.app"
             "/System/Applications/Calendar.app"
             "/System/Applications/Reminders.app"
             "/System/Applications/Notes.app"
