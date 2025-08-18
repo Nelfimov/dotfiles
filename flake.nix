@@ -42,7 +42,6 @@
           fd
           fzf
           zoxide
-          ripgrep
           k9s
           gh
           graphviz
