@@ -1,0 +1,16 @@
+name: Oracul Web
+active_window_index: 0
+windows:
+  - tabs:
+      - title: Oracul Web
+        color: blue
+        layout:
+          split_direction: vertical
+          panes:
+            - cwd: /Users/nelfimov/Documents/Dev/JS/oracul-analytics-web
+              is_focused: true
+              commands:
+                - exec: nix develop -c zsh
+            - cwd: /Users/nelfimov/Documents/Dev/JS/oracul-analytics-web
+              commands:
+                - exec: nix develop -c zsh

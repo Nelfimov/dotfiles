@@ -1,0 +1,16 @@
+name: Oracul Infra
+active_window_index: 0
+windows:
+  - tabs:
+      - title: Oracul Infra
+        color: blue
+        layout:
+          split_direction: vertical
+          panes:
+            - cwd: /Users/nelfimov/Documents/Dev/Infrastructure/oracul-analytics-infrastructure
+              is_focused: true
+              commands:
+                - exec: nix develop -c zsh
+            - cwd: /Users/nelfimov/Documents/Dev/Infrastructure/oracul-analytics-infrastructure
+              commands:
+                - exec: nix develop -c zsh
