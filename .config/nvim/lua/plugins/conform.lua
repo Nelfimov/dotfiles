@@ -5,6 +5,9 @@ return {
       rust = { "rustfmt", lsp_format = "fallback", default_edition = "2024" },
     },
     formatters = {
+      rustfmt = {
+        prepend_args = { "--unstable-features" },
+      },
       prettier = {
         args = function(self, ctx)
           local check_cwd = require("conform.util").root_file({
