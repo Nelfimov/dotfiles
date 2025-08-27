@@ -77,6 +77,7 @@
           "chromium-gost"
           "chatgpt"
           "warp"
+          "gitify"
         ];
         onActivation = {
           cleanup = "zap";
