@@ -57,9 +57,9 @@
 	# Automatically correct and execute mistyped commands.
 	autocorrect = 1
 [init]
-	defaultBranch = master
+	defaultbranch = master
 [gpg]
-  format = ssh
+	format = ssh
 [diff]
   tool = vimdiff
 [merge]
