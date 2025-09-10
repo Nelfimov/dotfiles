@@ -78,6 +78,7 @@
           "chatgpt"
           "warp"
           "gitify"
+          "vlc"
         ];
         onActivation = {
           cleanup = "zap";
