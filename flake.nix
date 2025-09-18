@@ -64,6 +64,7 @@
         enable = true;
         brews = [
           "mas"
+          "tree-sitter-cli"
         ];
         casks = [
           "figma"
