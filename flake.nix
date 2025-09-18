@@ -88,6 +88,7 @@
               "chatgpt"
               "warp"
               "vlc"
+              "zoho-cliq"
             ];
             onActivation = {
               cleanup = "zap";
