@@ -3,6 +3,7 @@ return {
   opts = {
     formatters_by_ft = {
       rust = { "rustfmt", lsp_format = "fallback", default_edition = "2024" },
+      liquid = { "prettier" },
     },
     formatters = {
       rustfmt = {
@@ -13,7 +14,9 @@ return {
           local check_cwd = require("conform.util").root_file({
             ".prettierrc",
             ".prettierrc.json",
+            ".prettier.yml",
             ".prettierrc.yml",
+            ".prettier.yaml",
             ".prettierrc.yaml",
             ".prettierrc.json5",
             ".prettierrc.js",
