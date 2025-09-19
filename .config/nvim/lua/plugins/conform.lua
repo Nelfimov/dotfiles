@@ -10,6 +10,9 @@ return {
         prepend_args = { "--unstable-features" },
       },
       prettier = {
+        ext_parsers = {
+          liquid = "html",
+        },
         args = function(self, ctx)
           local check_cwd = require("conform.util").root_file({
             ".prettierrc",
