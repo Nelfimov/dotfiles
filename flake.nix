@@ -76,6 +76,7 @@
               "mas"
               "tree-sitter-cli" # neovim LSP
               "nixfmt" # nix
+              "evil-helix"
             ];
             casks = [
               "figma"

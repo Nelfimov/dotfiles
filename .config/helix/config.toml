@@ -37,7 +37,18 @@ cursor-line = "hint"
 other-lines = "warning"
 
 [keys.normal]
+"space" = { "," = "buffer_picker", "space" = "file_picker", "q" = { "q" = ":quit-all" }, "g" = { "g" = [
+  ":write-all",
+  ":new",
+  ":insert-output lazygit >/dev/tty",
+  ":set mouse false",
+  ":set mouse true",
+  ":buffer-close!",
+  ":redraw",
+  ":reload-all",
+] } }
+
 "K" = "hover"
 S-l = ":buffer-next"
 S-h = ":buffer-previous"
-"space" = { "," = "buffer_picker" }
+s = "goto_word"
