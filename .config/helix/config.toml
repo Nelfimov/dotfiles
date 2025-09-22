@@ -1,0 +1,43 @@
+theme = "dracula"
+
+[editor]
+line-number = "relative"
+bufferline = "multiple"
+default-yank-register = "+"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+rainbow-option = "normal"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control"]
+center = ["file-name"]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
+
+[editor.lsp]
+display-inlay-hints = true
+display-progress-messages = true
+display-messages = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+other-lines = "warning"
+
+[keys.normal]
+"K" = "hover"
+S-l = ":buffer-next"
+S-h = ":buffer-previous"
+"space" = { "," = "buffer_picker" }
