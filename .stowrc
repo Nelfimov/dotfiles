@@ -8,3 +8,4 @@
 --ignore=.gitconfig
 --ignore=flake.nix
 --ignore=flake.lock
+--ignore=Makefile
