@@ -64,6 +64,7 @@
             pack
             yarn
             tree
+            typescript-language-server # helix
           ];
 
           fonts.packages = with pkgs; [
@@ -76,7 +77,8 @@
               "mas"
               "tree-sitter-cli" # neovim LSP
               "nixfmt" # nix
-              "evil-helix"
+              # "evil-helix"
+              "helix"
             ];
             casks = [
               "figma"
