@@ -4,6 +4,8 @@ theme = "dracula"
 line-number = "relative"
 bufferline = "multiple"
 default-yank-register = "+"
+completion-timeout = 50
+scrolloff = 15
 
 [editor.file-picker]
 hidden = false
@@ -46,9 +48,12 @@ other-lines = "warning"
   ":buffer-close!",
   ":redraw",
   ":reload-all",
-] } }
+], "b" = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}" } }
 
 "K" = "hover"
 S-l = ":buffer-next"
 S-h = ":buffer-previous"
 # s = "goto_word"
+
+[keys.insert]
+"C-n" = "completion"
