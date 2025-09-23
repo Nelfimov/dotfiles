@@ -17,6 +17,7 @@ return {
       "yaml",
       "jinja",
       "jinja_inline",
+      "ruby",
     },
   },
 }

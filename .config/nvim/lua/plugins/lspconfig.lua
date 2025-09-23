@@ -23,6 +23,12 @@ return {
     opts.servers.terraformls = opts.servers.terraformls or {}
     opts.servers.terraformls.root_dir = find_terraform_root
 
+    opts.servers.solargraph = opts.servers.solargraph or {}
+    opts.servers.solargraph = {
+      enabled = true,
+      mason = false,
+    }
+
     opts.servers.yamlls.settings = {
       yaml = {
         schemas = {
