@@ -64,12 +64,6 @@
             pack
             yarn
             tree
-            typescript-language-server # helix
-            vscode-langservers-extracted # helix
-            yaml-language-server # helix
-            bash-language-server # helix
-            dockerfile-language-server-nodejs # helix
-            docker-compose-language-service # helix
           ];
 
           fonts.packages = with pkgs; [
@@ -82,8 +76,6 @@
               "mas"
               "tree-sitter-cli" # neovim LSP
               "nixfmt" # nix
-              # "evil-helix"
-              "helix"
             ];
             casks = [
               "figma"
