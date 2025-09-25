@@ -72,12 +72,10 @@ function Discoverer.is_test_file(file_path)
     is_test_file = true
   end
 
-  for _, x in ipairs({ "spec", "test" }) do
-    for _, ext in ipairs({ "js", "cjs", "mjs", "jsx", "coffee", "ts", "cts", "mts", "tsx" }) do
-      if string.match(file_path, "%." .. x .. "%." .. ext .. "$") then
-        is_test_file = true
-        goto matched_file_pattern
-      end
+  for _, ext in ipairs({ "js", "cjs", "mjs", "jsx", "coffee", "ts", "cts", "mts", "tsx" }) do
+    if string.match(file_path, "%." .. ext .. "$") then
+      is_test_file = true
+      goto matched_file_pattern
     end
   end
 
