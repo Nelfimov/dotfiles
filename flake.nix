@@ -64,6 +64,8 @@
             pack
             yarn
             tree
+            rubyPackages.solargraph # Ruby LSP
+            rust-analyzer # Rust LSP
           ];
 
           fonts.packages = with pkgs; [

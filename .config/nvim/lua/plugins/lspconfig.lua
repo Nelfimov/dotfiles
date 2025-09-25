@@ -13,6 +13,9 @@ return {
       opts.servers.vtsls.init_options = { hostInfo = "neovim" }
     end
 
+    opts.servers.vtsls.settings.typescript.preferences = opts.servers.vtsls.settings.typescript.preferences or {}
+    opts.servers.vtsls.settings.typescript.preferences.preferTypeOnlyAutoImports = true
+
     opts.autoformat = false
 
     local function find_terraform_root(fname)
