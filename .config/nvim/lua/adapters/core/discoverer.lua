@@ -76,12 +76,30 @@ function Discoverer.is_test_file(file_path)
     for _, ext in ipairs({ "js", "cjs", "mjs", "jsx", "coffee", "ts", "cts", "mts", "tsx" }) do
       if string.match(file_path, "%." .. x .. "%." .. ext .. "$") then
         is_test_file = true
-        goto matched_pattern
+        goto matched_file_pattern
       end
     end
   end
-  ::matched_pattern::
-  return is_test_file
+
+  ::matched_file_pattern::
+  if is_test_file == false then
+    return false
+  end
+
+  local has_node_test_import = false
+
+  local file = io.open(file_path)
+  local lines = file:lines()
+  for line in lines do
+    local result = string.find(line, "node:test")
+    if result then
+      has_node_test_import = true
+      goto matched_import_pattern
+    end
+  end
+
+  ::matched_import_pattern::
+  return has_node_test_import
 end
 
 ---Get the project root dir
