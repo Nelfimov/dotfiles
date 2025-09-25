@@ -27,9 +27,10 @@ function Result.results(spec, result_output, _)
   local errors = {}
   local is_error = false
   local error = {}
+  local is_error_message = false
 
   for _, line in ipairs(file_content) do
-    if is_error == false then
+    if not is_error then
       if line:match("# Subtest:") then
         local padding, subtest_name = line:match("^(%s*)# Subtest: (.+)$")
         local padding_length = padding and #padding or 0
@@ -47,11 +48,16 @@ function Result.results(spec, result_output, _)
         if #context_stack > test_level then
           context_stack[#context_stack] = nil
         end
-      elseif line:match("ok %d+") then
+      elseif line:match("ok %d+ %-") then
         local test_indent, test_status, test_name = line:match("^(%s*)(%w*%s*ok) %d+ %- (.+)$")
 
         if test_status and test_name then
           local status = test_status == "ok" and "passed" or "failed"
+
+          if status == "failed" then
+            is_error = true
+          end
+
           local test_result_level = #test_indent / 4 + 1
 
           local full_context = table.concat(context_stack, "::", 1, test_result_level)
@@ -63,26 +69,29 @@ function Result.results(spec, result_output, _)
           }
           last_test_key = test_key
         end
-      elseif line:match("error: |-") then
-        is_error = true
       end
     end
 
-    if is_error == true then
-      if line:match("TestContext") and is_error then
-        local line_number = line:match("TestContext.*:(%d+):%d+%)")
-        error.line = line_number
-      elseif line:match("code: ") or line:match("%.%.%.") then
+    if is_error then
+      if line:match("%.%.%.") then
         is_error = false
+        if error.message then
+          error.message = error.message:gsub("\n", "")
+        end
         table.insert(errors, error)
         error = {}
-      elseif not line:match("error: |-") then
-        local initial_message = ""
-        if error.message then
-          initial_message = error.message
-        end
+      elseif line:match("error: |%-") then
+        is_error_message = true
+      elseif line:match("code:") then
+        is_error_message = false
+      elseif is_error_message then
         local new_message = line:match("^%s+(.+)")
-        error.message = initial_message .. "\n" .. new_message
+        if new_message then
+          error.message = (error.message or "") .. "\n" .. new_message
+        end
+      elseif line:match("TestContext") then
+        local line_number = line:match("TestContext.+:(%d+):%d+%)")
+        error.line = tonumber(line_number) - 1
       end
     end
   end
