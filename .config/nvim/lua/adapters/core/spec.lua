@@ -44,7 +44,7 @@ function Spec.build_spec(args)
     }
   end
 
-  vim.notify(vim.inspect(env))
+  vim.notify("ENV: " .. vim.inspect(env))
 
   return {
     command = command,
