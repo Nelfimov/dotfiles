@@ -5,6 +5,7 @@ return {
       "jinja",
       "jinja_inline",
       "ruby",
+      "liquid",
     },
   },
 }
