@@ -18,14 +18,6 @@ return {
 
     opts.autoformat = false
 
-    local function find_terraform_root(fname)
-      local root = require("lspconfig.util").root_pattern(".terraform", ".terraform.lock.hcl")(fname)
-      return root or vim.fs.dirname(vim.fs.find(".git", { path = fname, upward = true })[1])
-    end
-
-    opts.servers.terraformls = opts.servers.terraformls or {}
-    opts.servers.terraformls.root_dir = find_terraform_root
-
     opts.servers.solargraph = opts.servers.solargraph or {}
     opts.servers.solargraph = {
       enabled = true,
