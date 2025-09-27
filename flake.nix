@@ -99,7 +99,7 @@
             };
             masApps = {
               Bitwarden = 1352778147;
-              AdGuard = 1440147259;
+              Ublock-origin-lite = 6745342698;
             };
           };
 
