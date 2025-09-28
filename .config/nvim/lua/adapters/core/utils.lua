@@ -9,11 +9,13 @@ function Utils.get_yarn_version()
   end
 end
 
-function Utils.is_yarn_atls(version)
+function Utils.is_yarn_atls()
+  local version = Utils.get_yarn_version()
   return version and version:match("atls")
 end
 
-function Utils.is_yarn_raijin(version)
+function Utils.is_yarn_raijin()
+  local version = Utils.get_yarn_version()
   local handle = io.popen("git remote get-url origin")
   if handle then
     local output = handle:read("*l")
