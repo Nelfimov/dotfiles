@@ -30,6 +30,10 @@ return {
           exclude = { ".git", ".DS_Store", ".localized" },
           layout = {
             preview = { main = true, enabled = false },
+            layout = {
+              width = 0.2,
+              min_width = 100,
+            },
           },
         },
       },
