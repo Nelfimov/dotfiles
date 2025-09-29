@@ -24,3 +24,6 @@ vim.filetype.add({
     j2 = "jinja",
   },
 })
+
+vim.g.lazyvim_ruby_lsp = "solargraph"
+vim.g.lazyvim_ruby_formatter = "rubocop"

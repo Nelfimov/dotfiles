@@ -23,6 +23,11 @@ return {
       enabled = true,
       mason = false,
     }
+    opts.servers.rubocop = opts.servers.rubocop or {}
+    opts.servers.rubocop = {
+      enabled = true,
+      mason = false,
+    }
 
     opts.servers.yamlls.settings = {
       yaml = {
