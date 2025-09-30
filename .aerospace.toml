@@ -69,6 +69,10 @@ run = ["move-node-to-workspace 3"]
 if.app-id = "com.zoho.cliq"
 run = ["move-node-to-workspace 3"]
 
+[[on-window-detected]]
+if.app-id = "com.jetbrains.intellij"
+run = ["move-node-to-workspace 2"]
+
 [key-mapping]
 preset = 'qwerty'
 
