@@ -35,6 +35,7 @@ let maplocalleader="\\"
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
 
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
