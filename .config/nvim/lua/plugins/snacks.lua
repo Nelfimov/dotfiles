@@ -1,5 +1,5 @@
 local exclude_list =
-  { ".yarn", "node_modules", ".pnp.cjs", "dist", ".ansible", ".DS_Store", ".localized", "yarn.lock", "target" }
+  { ".yarn", "node_modules", ".pnp.cjs", "dist", ".ansible", ".DS_Store", ".localized", "yarn.lock", "target", "tmp" }
 
 return {
   "folke/snacks.nvim",
