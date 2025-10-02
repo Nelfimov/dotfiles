@@ -1,0 +1,21 @@
+name: REES46
+windows:
+  - tabs:
+      - title: REES46 Dashboard
+        color: green
+        layout:
+          cwd: /Users/nelfimov/Documents/Dev/Ruby/rees46-dashboard
+          commands:
+            - exec: nix develop -c zsh
+      - title: REES46 api-rails
+        color: green
+        layout:
+          cwd: /Users/nelfimov/Documents/Dev/Ruby/rees46-api-rails
+          commands:
+            - exec: nix develop -c zsh
+      - title: REES46 Infrastructure
+        color: green
+        layout:
+          cwd: /Users/nelfimov/Documents/Dev/Infrastructure/rees46-infrastructure
+          commands:
+            - exec: nix develop -c zsh
