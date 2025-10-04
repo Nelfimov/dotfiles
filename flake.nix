@@ -92,6 +92,7 @@
               "warp"
               "vlc"
               "zoho-cliq"
+              "ghostty"
             ];
             onActivation = {
               cleanup = "zap";
