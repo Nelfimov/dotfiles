@@ -23,6 +23,8 @@ if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
   # /Git highlighting
 
   source <(fzf --zsh)
+
+  set -o vi
 fi
 
 HISTDUP=erase
