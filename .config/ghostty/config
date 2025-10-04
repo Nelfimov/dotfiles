@@ -17,11 +17,11 @@ clipboard-read = allow
 clipboard-write = allow
 
 keybind = cmd+t=unbind
-keybind = cmd+shift+n=new_tab
+keybind = cmd+n=new_window
+keybind = cmd+shift+n=new_window
 keybind = cmd+shift+t=new_tab
 keybind = cmd+shift+d=unbind
 keybind = cmd+n=unbind
-keybind = cmd+c=unbind
 keybind = cmd+w=unbind
 keybind = cmd+shift+w=close_tab
 keybind = cmd+d=unbind
