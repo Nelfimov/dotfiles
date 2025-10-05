@@ -12,6 +12,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [alias]
+  # Resign commits which have been merged via rebase. $1 is commit BEFORE (not including) which you want to resign
+  resign = "!f() { git rebase --exec 'git commit --amend --no-edit -n -S' -i \"$1\"; }; f"
+
   # git switch default && git pull && git branch -d PREVIOUS_BRANCH
   bda = "!f() { \
     current_branch=$(git symbolic-ref --short HEAD); \
@@ -69,3 +72,5 @@
   cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED \
           -c '$wincmd w' -c 'wincmd J'
 
+[core]
+	editor = nvim
