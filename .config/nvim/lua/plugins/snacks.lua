@@ -10,6 +10,7 @@ local exclude_list = {
   "target",
   "tmp",
   "public/assets",
+  "log",
 }
 
 return {
