@@ -78,6 +78,7 @@
               "tree-sitter-cli" # neovim LSP
               "nixfmt" # nix
               "helix"
+              "solargraph" # Ruby LSP
             ];
             casks = [
               "figma"
