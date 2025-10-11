@@ -55,8 +55,6 @@
             k9s
             gh
             graphviz
-            zsh-syntax-highlighting
-            zsh-autosuggestions
             gnupg
             pinentry_mac
             nodejs_24
@@ -212,6 +210,7 @@
           programs.zsh = {
             enable = true;
             enableSyntaxHighlighting = true;
+            enableAutosuggestions = true;
           };
         };
     in

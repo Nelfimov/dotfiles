@@ -5,9 +5,6 @@ if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
 fi
 
 if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
-  AUTOSUGGEST=$(nix eval --raw nixpkgs#zsh-autosuggestions.outPath)
-  source $AUTOSUGGEST/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
   ## Git highlighting
   function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
