@@ -87,6 +87,11 @@ function Discoverer.is_test_file(file_path)
   local has_node_test_import = false
 
   local file = io.open(file_path)
+
+  if file == nil then
+    return false
+  end
+
   local lines = file:lines()
   for line in lines do
     local result = string.find(line, "node:test")
@@ -113,7 +118,15 @@ end
 ---@param _root any
 ---@return boolean
 function Discoverer.filter_dir(name, _relpath, _root)
-  return name ~= "node_modules"
+  local blacklist = {
+    node_modules = true,
+    [".git"] = true,
+    dist = true,
+    build = true,
+    public = true,
+  }
+
+  return not blacklist[name]
 end
 
 return Discoverer

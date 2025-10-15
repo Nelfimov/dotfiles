@@ -17,6 +17,8 @@ ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"
 if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 # /Jetbrains hack
 
+ulimit -n 4096
+
 # Aliases
 alias ls='ls --color'
 alias g='git'
