@@ -91,6 +91,7 @@
               "vlc"
               "zoho-cliq"
               "ghostty"
+              "adguard-vpn"
             ];
             onActivation = {
               cleanup = "zap";
