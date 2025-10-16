@@ -1,0 +1,9 @@
+{
+  "devices": [
+    {
+      "name": "K:03",
+      "productId": "0x0070"
+    }
+  ],
+  "layouts": ["ABC", "Russian"]
+}
