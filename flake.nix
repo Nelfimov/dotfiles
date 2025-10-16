@@ -212,6 +212,7 @@
             enable = true;
             enableSyntaxHighlighting = true;
             enableAutosuggestions = true;
+            enableCompletion = true;
           };
         };
     in
