@@ -92,6 +92,7 @@
               "zoho-cliq"
               "ghostty"
               "adguard-vpn"
+              "vial"
             ];
             onActivation = {
               cleanup = "zap";
