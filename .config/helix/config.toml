@@ -18,7 +18,7 @@ rainbow-option = "normal"
 insert = "bar"
 
 [editor.statusline]
-left = ["mode", "spinner", "version-control"]
+left = ["mode", "version-control"]
 center = ["file-name"]
 right = [
   "diagnostics",
