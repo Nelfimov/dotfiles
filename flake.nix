@@ -77,6 +77,7 @@
               "nixfmt" # nix
               "helix"
               "solargraph" # Ruby LSP
+              "gitui"
             ];
             casks = [
               "figma"
