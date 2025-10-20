@@ -25,7 +25,7 @@ vim.filetype.add({
   },
 })
 
-vim.g.lazyvim_ruby_lsp = "solargraph"
+vim.g.lazyvim_ruby_lsp = "rubocop"
 vim.g.lazyvim_ruby_formatter = "rubocop"
 
 vim.opt.swapfile = false

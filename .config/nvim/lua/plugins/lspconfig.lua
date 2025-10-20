@@ -18,13 +18,8 @@ return {
 
     opts.autoformat = false
 
-    opts.servers.solargraph = opts.servers.solargraph or {}
-    opts.servers.solargraph = {
-      enabled = true,
-      mason = false,
-    }
-    opts.servers.rubocop = opts.servers.rubocop or {}
-    opts.servers.rubocop = {
+    opts.servers.ruby_lsp = opts.servers.ruby_lsp or {}
+    opts.servers.ruby_lsp = {
       enabled = true,
       mason = false,
     }
