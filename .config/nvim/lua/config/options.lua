@@ -11,10 +11,6 @@ vim.g.lazyvim_prettier_needs_config = false
 
 vim.g.snacks_animate = false
 
-vim.g.lazyvim_picker = "snacks"
-
-vim.opt.spelllang = { "en", "ru" }
-
 vim.lsp.set_log_level("OFF")
 
 vim.filetype.add({
@@ -27,5 +23,8 @@ vim.filetype.add({
 
 vim.g.lazyvim_ruby_lsp = "rubocop"
 vim.g.lazyvim_ruby_formatter = "rubocop"
+vim.g.lazyvim_picker = "snacks"
 
+vim.opt.spelllang = { "en", "ru" }
 vim.opt.swapfile = false
+vim.opt.wrap = true
