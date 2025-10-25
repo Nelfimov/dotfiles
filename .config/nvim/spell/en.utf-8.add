@@ -312,3 +312,5 @@ sid
 enum
 macOS
 productId
+Neotest
+LazyVim
