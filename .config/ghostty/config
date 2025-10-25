@@ -1,5 +1,6 @@
 font-family = JetBrains Mono
 font-size = 15
+theme = Dracula
 
 confirm-close-surface = false
 bell-features = no-audio, no-title
