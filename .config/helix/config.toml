@@ -53,6 +53,10 @@ other-lines = "warning"
 "K" = "hover"
 S-l = ":buffer-next"
 S-h = ":buffer-previous"
+"C-h" = "jump_view_left"
+"C-l" = "jump_view_right"
+"C-k" = "jump_view_up"
+"C-j" = "jump_view_down"
 # s = "goto_word"
 
 [keys.insert]
