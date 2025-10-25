@@ -2,13 +2,17 @@ local async = require("neotest.async")
 
 local Result = {}
 
+local function strip_ansi(s)
+  return (s:gsub("\27%[[0-9;]*m", ""))
+end
+
 ---Process result file
 ---@param spec neotest.RunSpec
 ---@param result_output neotest.StrategyResult
 ---@param _ neotest.Tree
 ---@return neotest.Result
 function Result.results(spec, result_output, _)
-  if not type(result_output) == "table" or not result_output.output then
+  if type(result_output) ~= "table" or not result_output.output then
     vim.notify("Unknown result_output structure: " .. vim.inspect(result_output), vim.log.levels.ERROR)
     return {}
   end
@@ -40,7 +44,7 @@ function Result.results(spec, result_output, _)
           context_stack[test_level] = subtest_name
         end
 
-        if last_test_key and results[last_test_key] and #errors > 0 then
+        if last_test_key and #errors > 0 then
           results[last_test_key].errors = errors
           errors = {}
         end
@@ -52,7 +56,7 @@ function Result.results(spec, result_output, _)
         local test_indent, test_status, test_name = line:match("^(%s*)(%w*%s*ok) %d+ %- (.+)$")
 
         if test_status and test_name then
-          local status = test_status == "ok" and "passed" or "failed"
+          local status = (test_status == "ok") and "passed" or "failed"
 
           if status == "failed" then
             is_error = true
@@ -75,24 +79,31 @@ function Result.results(spec, result_output, _)
     if is_error then
       if line:match("%.%.%.") then
         is_error = false
-        if error.message then
-          error.message = error.message:gsub("\n", "")
-        end
         table.insert(errors, error)
         error = {}
-      elseif line:match("error: |%-") then
+      elseif line:match("error: ") then
         is_error_message = true
-      elseif line:match("code:") then
+        if line:match("error: |%-") then
+          goto continue
+        end
+      elseif line:match("code: ") then
         is_error_message = false
-      elseif is_error_message then
+      elseif line:match("^test at ") then
+        local _, line_number, _ = line:match("^test at ([^:]+):(%d+):(%d+)")
+        if line_number then
+          error.line = line_number
+        end
+      end
+
+      if is_error_message and is_error then
         local new_message = line:match("^%s+(.+)")
         if new_message then
+          new_message = strip_ansi(new_message)
           error.message = (error.message or "") .. "\n" .. new_message
         end
-      elseif line:match("TestContext") then
-        local line_number = line:match("TestContext.+:(%d+):%d+%)")
-        error.line = tonumber(line_number) - 1
       end
+
+      ::continue::
     end
   end
 
