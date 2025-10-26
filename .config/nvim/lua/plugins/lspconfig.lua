@@ -16,10 +16,14 @@ return {
     opts.servers.vtsls.settings.typescript.preferences = opts.servers.vtsls.settings.typescript.preferences or {}
     opts.servers.vtsls.settings.typescript.preferences.preferTypeOnlyAutoImports = true
 
-    opts.autoformat = false
-
-    opts.servers.ruby_lsp = opts.servers.ruby_lsp or {}
-    opts.servers.ruby_lsp = {
+    opts.servers.solargraph = opts.servers.solargraph or {}
+    opts.servers.solargraph = {
+      enabled = true,
+      mason = false,
+    }
+    opts.servers.rubocop = opts.servers.rubocop or {}
+    opts.servers.rubocop = {
+      -- enabled = formatter == "rubocop" and lsp ~= "solargraph",
       enabled = true,
       mason = false,
     }
