@@ -9,6 +9,7 @@ return {
       return {
         adapters = {
           require("adapters"), -- Подключаем локальный адаптер
+          ["rustaceanvim.neotest"] = {},
         },
       }
     end,
