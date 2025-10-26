@@ -7,6 +7,7 @@ local exclude_list = {
   ".DS_Store",
   ".localized",
   "yarn.lock",
+  "*.lock",
   "target",
   "tmp",
   "public/assets",
