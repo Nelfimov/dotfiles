@@ -17,7 +17,8 @@ if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
 
   source <(fzf --zsh)
 
-  set -o vi
+  bindkey -v
+  export keytimeout=1
 fi
 
 HISTDUP=erase
