@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+source ~/.secrets.sh
+
 export HISTSIZE=5000
 export HISTFILESIZE="$HISTSIZE"
 
