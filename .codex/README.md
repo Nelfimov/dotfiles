@@ -39,6 +39,8 @@
 
 ### If using API key
 
+Docs for authentication - <https://github.com/openai/codex/blob/main/docs/authentication.md>
+
 Run codex in your repository you would like to work:
 
 ```bash
