@@ -12,11 +12,59 @@
 6. Run codex in your repository you would like to work:
 
    ```bash
+    docker run -it --rm \
+      -v "$(pwd)":/workspace \
+      -w /workspace \
+      -v ~/.codex/auth.json:/root/.codex/auth.json \
+      -p 1455:1455 \
+      --name codex \
+      ghcr.io/Nelfimov/codex:latest \
+      "$@"
+   ```
+
+   or you can wrap it in alias - just add to your `.zshrc` or `.bashrc`:
+
+   ```bash
+   codex() {
      docker run -it --rm \
        -v "$(pwd)":/workspace \
        -w /workspace \
        -v ~/.codex/auth.json:/root/.codex/auth.json \
        -p 1455:1455 \
        --name codex \
-       codex "$@"
+       ghcr.io/Nelfimov/codex:latest \
+       "$@"
+   }
    ```
+
+### If using API key
+
+Run codex in your repository you would like to work:
+
+```bash
+ docker run -it --rm \
+    -e OPENAI_API_KEY=${OPENAI_API_KEY} \
+   -v "$(pwd)":/workspace \
+   -w /workspace \
+   -v ~/.codex/auth.json:/root/.codex/auth.json \
+   -p 1455:1455 \
+   --name codex \
+   ghcr.io/Nelfimov/codex:latest \
+   "$@"
+```
+
+or you can wrap it in alias - just add to your `.zshrc` or `.bashrc`:
+
+```bash
+codex() {
+  docker run -it --rm \
+    -e OPENAI_API_KEY=${OPENAI_API_KEY} \
+    -v "$(pwd)":/workspace \
+    -w /workspace \
+    -v ~/.codex/auth.json:/root/.codex/auth.json \
+    -p 1455:1455 \
+    --name codex \
+    ghcr.io/Nelfimov/codex:latest \
+    "$@"
+}
+```
