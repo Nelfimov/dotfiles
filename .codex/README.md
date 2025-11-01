@@ -18,7 +18,7 @@
       -v ~/.codex/auth.json:/root/.codex/auth.json \
       -p 1455:1455 \
       --name codex \
-      ghcr.io/Nelfimov/codex:latest \
+      ghcr.io/nelfimov/codex:latest \
       "$@"
    ```
 
@@ -32,7 +32,7 @@
        -v ~/.codex/auth.json:/root/.codex/auth.json \
        -p 1455:1455 \
        --name codex \
-       ghcr.io/Nelfimov/codex:latest \
+       ghcr.io/nelfimov/codex:latest \
        "$@"
    }
    ```
@@ -51,7 +51,7 @@ Run codex in your repository you would like to work:
    -v ~/.codex/auth.json:/root/.codex/auth.json \
    -p 1455:1455 \
    --name codex \
-   ghcr.io/Nelfimov/codex:latest \
+   ghcr.io/nelfimov/codex:latest \
    "$@"
 ```
 
@@ -66,7 +66,7 @@ codex() {
     -v ~/.codex/auth.json:/root/.codex/auth.json \
     -p 1455:1455 \
     --name codex \
-    ghcr.io/Nelfimov/codex:latest \
+    ghcr.io/nelfimov/codex:latest \
     "$@"
 }
 ```

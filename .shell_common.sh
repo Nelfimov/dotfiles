@@ -71,6 +71,6 @@ codex() {
     -v ~/.codex/auth.json:/root/.codex/auth.json \
     -p 1455:1455 \
     --name codex \
-    ghcr.io/Nelfimov/codex:latest \
+    ghcr.io/nelfimov/codex:latest \
     "$@"
 }
