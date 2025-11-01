@@ -52,3 +52,25 @@ dev() {
   session_name="$(basename "$PWD")"
   nix develop -c zellij --session "$session_name"
 }
+
+goose() {
+  docker run -it --rm \
+    -e GOOSE_PROVIDER=openai \
+    -e GOOSE_MODEL=gpt-5 \
+    -e OPENAI_API_KEY="$OPENAI_API_KEY" \
+    -v "$(pwd)":/workspace \
+    -w /workspace \
+    --name goose \
+    ghcr.io/block/goose:latest session
+}
+
+codex() {
+  docker run -it --rm \
+    -v "$(pwd)":/workspace \
+    -w /workspace \
+    -v ~/.codex/auth.json:/root/.codex/auth.json \
+    -p 1455:1455 \
+    --name codex \
+    ghcr.io/Nelfimov/codex:latest \
+    "$@"
+}

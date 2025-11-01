@@ -45,3 +45,4 @@ luac.out
 .config/gh/hosts.y*ml
 .config/k9s/clusters
 .secrets.sh
+.codex/auth.json
