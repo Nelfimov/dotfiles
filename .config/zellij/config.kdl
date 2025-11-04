@@ -12,7 +12,7 @@ keybinds clear-defaults=true {
         bind "Super Alt h" { GoToPreviousTab; }
         bind "Super Alt l" { GoToNextTab; }
         bind "Super c" { Copy; }
-        bind "Super f" { SwitchToMode "entersearch"; }
+        bind "Super f" { EditScrollback; SwitchToMode "normal"; }
         bind "Super Alt f" { SwitchToMode "entersearch"; }
         bind "Super Alt h" { MoveFocusOrTab "left"; }
         bind "Super Alt j" { MoveFocus "down"; }
