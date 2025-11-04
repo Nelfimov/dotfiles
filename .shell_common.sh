@@ -72,5 +72,5 @@ codex() {
     -p 1455:1455 \
     --name codex \
     ghcr.io/nelfimov/codex:latest \
-    "$@"
+    codex "$@"
 }
