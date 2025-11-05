@@ -93,6 +93,7 @@
               "ghostty"
               "adguard-vpn"
               "vial"
+              "zoom"
             ];
             onActivation = {
               cleanup = "zap";
