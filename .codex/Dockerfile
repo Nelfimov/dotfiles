@@ -28,6 +28,8 @@ RUN apt-get update && \
   ca-certificates && \
   rm -rf /var/lib/apt/lists/*
 
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable
+
 EXPOSE 1455
 
 CMD [ "codex" ]
