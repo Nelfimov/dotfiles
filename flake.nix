@@ -18,6 +18,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    janky-borders = {
+      url = "github:FelixKratz/homebrew-formulae";
+      flake = false;
+    };
   };
 
   outputs =
@@ -29,6 +33,7 @@
       nix-homebrew,
       homebrew-core,
       homebrew-cask,
+      janky-borders,
     }:
     let
       configuration =
@@ -77,6 +82,7 @@
               "nixfmt" # nix
               "helix"
               "solargraph"
+              "borders"
             ];
             casks = [
               "figma"
@@ -229,10 +235,16 @@
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
+              taps = {
+                "homebrew/homebrew-core" = homebrew-core;
+                "homebrew/homebrew-cask" = homebrew-cask;
+                "FelixKratz/homebrew-formulae" = janky-borders;
+              };
               enable = true;
               enableRosetta = true;
               user = "nelfimov";
               autoMigrate = true;
+              mutableTaps = false;
             };
           }
         ];
