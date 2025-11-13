@@ -25,6 +25,8 @@ vim.g.lazyvim_ruby_lsp = "solargraph"
 vim.g.lazyvim_ruby_formatter = "rubocop"
 vim.g.lazyvim_picker = "snacks"
 
+vim.g.lazyvim_php_lsp = "intelephense"
+
 vim.opt.spelllang = { "en", "ru" }
 vim.opt.swapfile = false
 vim.opt.wrap = true
