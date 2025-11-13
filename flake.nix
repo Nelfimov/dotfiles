@@ -78,16 +78,15 @@
             enable = true;
             brews = [
               "mas"
-              "tree-sitter-cli" # neovim LSP
-              "nixfmt" # nix
-              "helix"
               "solargraph"
               "borders"
+              "tree-sitter-cli" # neovim LSP
+              "nixfmt" # nix
             ];
             casks = [
+              "docker"
               "figma"
               "libreoffice"
-              "orbstack"
               "telegram"
               "amneziavpn"
               "transmission"
