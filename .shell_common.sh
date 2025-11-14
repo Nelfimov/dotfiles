@@ -53,6 +53,11 @@ dev() {
   nix develop -c zellij --session "$session_name"
 }
 
+z() {
+  session_name="$(basename "$PWD")"
+  zellij --session "$session_name"
+}
+
 goose() {
   docker run -it --rm \
     -e GOOSE_PROVIDER=openai \
