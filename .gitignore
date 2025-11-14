@@ -46,3 +46,4 @@ luac.out
 .config/k9s/clusters
 .secrets.sh
 .codex/auth.json
+.config/composer
