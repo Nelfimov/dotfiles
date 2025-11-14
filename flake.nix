@@ -229,6 +229,12 @@
       # $ darwin-rebuild build --flake .#mac
       darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
         modules = [
+          (
+            { config, ... }:
+            {
+              homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
+            }
+          )
           configuration
           mac-app-util.darwinModules.default
           nix-homebrew.darwinModules.nix-homebrew
