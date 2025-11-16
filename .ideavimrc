@@ -41,6 +41,8 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
 
+map <Leader><space> <action>(com.mituuz.fuzzier.Fuzzier)
+
 " Go to Left Window
 nmap <C-h> <C-w>h
 " Go to Lower Window
@@ -269,7 +271,7 @@ nmap <leader>un <Action>(ClearAllNotifications)
 " Telescope Keymaps
 
 " Find Files (Root Dir)
-nmap <leader><space> <Action>(GotoFile)
+" nmap <leader><space> <Action>(GotoFile)
 " Switch Buffer
 nmap <leader>, <Action>(Switcher)
 " Grep (Root Dir)
