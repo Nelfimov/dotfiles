@@ -67,7 +67,8 @@
             pack
             yarn
             tree
-            rust-analyzer # Rust LSP
+            rustup
+            rust-analyzer
           ];
 
           fonts.packages = with pkgs; [

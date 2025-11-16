@@ -80,4 +80,4 @@ codex() {
     codex --yolo "$@"
 }
 
-PATH="$HOME/.cargo/bin:$PATH"
+. "$HOME/.cargo/env"
