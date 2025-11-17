@@ -84,7 +84,7 @@
               "nixfmt" # nix
             ];
             casks = [
-              "docker"
+              "docker-desktop"
               "figma"
               "libreoffice"
               "telegram"
@@ -99,6 +99,7 @@
               "adguard-vpn"
               "vial"
               "zoom"
+              "intellij-idea"
             ];
             onActivation = {
               cleanup = "zap";
