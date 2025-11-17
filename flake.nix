@@ -80,7 +80,6 @@
             brews = [
               "mas"
               "solargraph"
-              "borders"
               "tree-sitter-cli" # neovim LSP
               "nixfmt" # nix
             ];
