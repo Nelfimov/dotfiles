@@ -41,6 +41,8 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
 
+" Code completion
+imap <C-n> <Action>(CodeCompletion)
 " Go to Left Window
 nmap <C-h> <C-w>h
 " Go to Lower Window
