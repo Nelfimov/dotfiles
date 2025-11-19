@@ -11,3 +11,4 @@ fi
 eval "$(fzf --bash)"
 
 eval "$(zoxide init bash --cmd cd)"
+. "$HOME/.cargo/env"

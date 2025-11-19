@@ -68,7 +68,6 @@
             yarn
             tree
             rustup
-            rust-analyzer
           ];
 
           fonts.packages = with pkgs; [
