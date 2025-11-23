@@ -41,6 +41,9 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
 
+inoremap <c-k> <up>
+inoremap <c-j> <down>
+
 " Code completion
 imap <C-n> <Action>(CodeCompletion)
 " Go to Left Window
@@ -220,8 +223,8 @@ nmap gK <Action>(ParameterInfo)
 " Signature Help in Insert Mode
 imap <C-k> <C-o><Action>(ParameterInfo)
 " Code Action
-nmap <leader>ca <Action>(RefactoringMenu)
-vmap <leader>ca <Action>(RefactoringMenu)
+nmap <leader>cA <Action>(RefactoringMenu)
+vmap <leader>cA <Action>(RefactoringMenu)
 " Run Codelens
 nmap <leader>cc :echo 'There is no equivalent mapping for Run Codelens.'<cr>
 " Refresh & Display Codelens
@@ -231,7 +234,7 @@ nmap <leader>cR <Action>(RenameFile)
 " Rename
 nmap <leader>cr <Action>(RenameElement)
 " Source Action
-nmap <leader>cA <Action>(ShowIntentionActions)
+nmap <leader>ca <Action>(ShowIntentionActions)
 " Next Reference
 nmap ]] <Action>(GotoNextError)
 " Prev Reference
@@ -263,6 +266,9 @@ nmap <leader>fe <Action>(ActivateProjectToolWindow)
 " Explorer NeoTree (cwd) (alternative)
 nmap <leader>fE <Action>(ActivateProjectToolWindow)
 " Git Explorer
+nmap <leader>ge <Action>(ActivateVersionControlToolWindow)
+nmap <leader>ghr <Action>(Vcs.RollbackChangedLines)
+
 nmap <leader>ge <Action>(ActivateVersionControlToolWindow)
 " Notifications (noice, snacks)
 
