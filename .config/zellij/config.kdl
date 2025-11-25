@@ -19,6 +19,7 @@ keybinds clear-defaults=true {
         bind "Super Alt k" { MoveFocus "up"; }
         bind "Super Alt l" { MoveFocusOrTab "right"; }
         bind "Ctrl x" { SwitchToMode "locked"; }
+        bind "Super Shift Enter" { ToggleFocusFullscreen; SwitchToMode "normal"; }
     }
     locked {
         bind "Ctrl x" { SwitchToMode "normal"; }
