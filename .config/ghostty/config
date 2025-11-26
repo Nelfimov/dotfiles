@@ -27,3 +27,4 @@ keybind = cmd+shift+w=close_tab
 keybind = cmd+d=unbind
 keybind = cmd+opt+left=unbind
 keybind = cmd+opt+right=unbind
+keybind = cmd+shift+enter=unbind
