@@ -12,6 +12,8 @@ local exclude_list = {
   "tmp",
   "public/assets",
   "log",
+  "venv",
+  ".venv",
 }
 
 return {
