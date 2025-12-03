@@ -1,4 +1,6 @@
 return {
   "mason-org/mason.nvim",
-  opts = {},
+  opts = {
+    ensure_installed = { "nginx-language-server" },
+  },
 }

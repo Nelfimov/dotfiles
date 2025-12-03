@@ -6,6 +6,7 @@ return {
       liquid = { "prettier" },
       ruby = { formatter },
       eruby = { "erb_format" },
+      nginx = { "nginx-config-formatter" },
     },
     formatters = {
       rustfmt = {

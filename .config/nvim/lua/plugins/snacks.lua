@@ -14,6 +14,7 @@ local exclude_list = {
   "log",
   "venv",
   ".venv",
+  ".idea",
 }
 
 return {
