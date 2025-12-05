@@ -1,5 +1,7 @@
 source ~/.vimrc
 
+set clipboard+=unnamed
+
 set scrolloff=10
 set sidescrolloff=5
 set incsearch
