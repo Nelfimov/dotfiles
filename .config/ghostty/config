@@ -19,7 +19,6 @@ clipboard-write = allow
 link-previews = true
 
 keybind = cmd+t=unbind
-keybind = cmd+n=new_window
 keybind = cmd+shift+n=new_window
 keybind = cmd+shift+t=new_tab
 keybind = cmd+shift+d=unbind
