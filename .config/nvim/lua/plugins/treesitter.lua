@@ -6,6 +6,8 @@ return {
       "jinja_inline",
       "ruby",
       "liquid",
+      "graphql",
+      "http",
     },
   },
 }
