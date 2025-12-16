@@ -41,3 +41,8 @@ zstyle ':completion:*:*:ssh:*' hosts $(awk '/^Host / {print $2}' ~/.ssh/config ~
 
 # Auto-Warpify
 [[ "$-" == *i* ]] && printf 'P$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "Darwin" }}œ' 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/nelfimov/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
