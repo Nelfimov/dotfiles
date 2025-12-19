@@ -47,3 +47,5 @@ luac.out
 .secrets.sh
 .codex/auth.json
 .config/composer
+.config/zed/prompts
+.config/zed/conversations

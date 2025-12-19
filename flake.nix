@@ -100,6 +100,7 @@
               "vial"
               "zoom"
               "intellij-idea"
+              "zed"
             ];
             onActivation = {
               cleanup = "zap";

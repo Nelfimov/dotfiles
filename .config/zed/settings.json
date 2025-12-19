@@ -1,42 +1,51 @@
 {
+  "icon_theme": "JetBrains New UI Icons (Dark)",
+  "base_keymap": "JetBrains",
+  "tabs": {
+    "file_icons": true,
+  },
   "auto_install_extensions": {
     "html": true,
     "docker": true,
-    "docker-compose": true
+    "dockerfile": true,
+    "docker-compose": true,
+    "toml": true,
+    "dracula": true,
+    "make": true,
+    "terraform": true,
+    "csv": true,
+    "nix": true,
+    "sql": true,
   },
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-20240620"
+      "model": "claude-3-5-sonnet-20240620",
     },
-    "version": "2"
   },
   "indent_guides": {
     "enabled": true,
-    "coloring": "indent_aware"
+    "coloring": "indent_aware",
   },
   "vim_mode": true,
   "vim": {
+    "use_smartcase_find": true,
     "use_system_clipboard": "always",
-    "use_multiline_find": true,
-    "toggle_relative_line_numbers": true
+    "toggle_relative_line_numbers": true,
   },
   "vertical_scroll_margin": 3,
-  "autosave": "on_focus_change",
+  "autosave": "off",
   "cursor_blink": false,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "scroll_beyond_last_line": "vertical_scroll_margin",
   "scrollbar": {
     "show": "system",
-    "git_diff": true
+    "git_diff": true,
   },
   "command_aliases": {
     "W": "w",
     "Wq": "wq",
-    "Q": "q"
-  },
-  "features": {
-    "copilot": false
+    "Q": "q",
   },
   "tab_size": 2,
   "theme": "Dracula",
@@ -44,26 +53,31 @@
     "enabled": true,
     "show_type_hints": false,
     "show_parameter_hints": true,
-    "show_other_hints": true
+    "show_other_hints": true,
   },
-  "base_keymap": "JetBrains",
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+      "max_severity": "warning",
+    },
+  },
   "telemetry": {
-    "metrics": false,
-    "diagnostics": true
+    "diagnostics": true,
+    "metrics": true,
   },
   "project_panel": {
     "git_status": true,
     "dock": "left",
-    "button": true
+    "button": true,
   },
-  "ui_font_size": 13,
-  "buffer_font_size": 13,
+  "ui_font_size": 15,
+  "buffer_font_size": 15,
   "preview_tabs": {
     "enabled": false,
-    "enable_preview_from_code_navigation": false,
-    "enable_preview_from_file_finder": false
+    "enable_keep_preview_on_code_navigation": false,
+    "enable_preview_from_file_finder": false,
   },
-  "format_on_save": "off",
+  "format_on_save": "on",
   "formatter": "auto",
   "file_scan_exclusions": [
     "**/.git",
@@ -74,7 +88,6 @@
     "**/Thumbs.db",
     "**/.classpath",
     "**/.settings",
-    // above is default from Zed
     "**/out",
     "**/idea",
     "**/.idea",
@@ -88,8 +101,22 @@
     "**/.storybook",
     "**/.tap",
     "**/.nyc_output",
-    "**/node_modules"
+    "**/node_modules",
+    "**/target",
   ],
+  "languages": {
+    // "TypeScript": {
+    //   "formatter": {
+    //     "external": {
+    //       "command": "zsh",
+    //       "arguments": [
+    //         "-c",
+    //         "yarn format {buffer_path} --silent &>/dev/null || prettier {buffer_path}",
+    //       ],
+    //     },
+    //   },
+    // },
+  },
   "lsp": {
     "typescript-language-server": {
       "initialization_options": {
@@ -101,9 +128,9 @@
           "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
           "includeInlayPropertyDeclarationTypeHints": true,
           "includeInlayFunctionLikeReturnTypeHints": true,
-          "includeInlayEnumMemberValueHints": true
-        }
-      }
-    }
-  }
+          "includeInlayEnumMemberValueHints": true,
+        },
+      },
+    },
+  },
 }
