@@ -5,7 +5,7 @@ adjust-cell-height = 14
 theme = Dracula
 
 confirm-close-surface = false
-bell-features = no-audio, no-title, system
+bell-features = no-audio, no-title, system, no-attention
 desktop-notifications = true
 shell-integration = zsh
 macos-titlebar-style = transparent
