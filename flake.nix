@@ -92,7 +92,6 @@
               "transmission"
               "chromium-gost"
               "chatgpt"
-              "warp"
               "vlc"
               "zoho-cliq"
               "ghostty"
@@ -100,7 +99,6 @@
               "vial"
               "zoom"
               "intellij-idea"
-              "zed"
             ];
             onActivation = {
               cleanup = "zap";
@@ -123,7 +121,6 @@
                 "/Applications/Telegram.app"
                 "/System/Applications/Mail.app"
                 "/Applications/Ghostty.app"
-                "/Applications/Warp.app"
                 "/System/Applications/Calendar.app"
                 "/System/Applications/Reminders.app"
                 "/System/Applications/Notes.app"
