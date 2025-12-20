@@ -79,7 +79,7 @@
             enable = true;
             brews = [
               "mas"
-              "solargraph"
+              "statix"
               "tree-sitter-cli" # neovim LSP
               "nixfmt" # nix
             ];
