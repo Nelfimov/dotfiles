@@ -22,6 +22,10 @@
       url = "github:FelixKratz/homebrew-formulae";
       flake = false;
     };
+    buildpack = {
+      url = "github:buildpacks/homebrew-tap";
+      flake = false;
+    };
   };
 
   outputs =
@@ -34,6 +38,7 @@
       homebrew-core,
       homebrew-cask,
       janky-borders,
+      buildpack,
     }:
     let
       configuration =
@@ -64,7 +69,6 @@
             pinentry_mac
             nodejs_24
             cargo
-            pack
             yarn
             tree
             rustup
@@ -78,6 +82,7 @@
           homebrew = {
             enable = true;
             brews = [
+              "pack"
               "mas"
               "statix"
               "tree-sitter-cli" # neovim LSP
@@ -243,6 +248,7 @@
                 "homebrew/homebrew-core" = homebrew-core;
                 "homebrew/homebrew-cask" = homebrew-cask;
                 "FelixKratz/homebrew-formulae" = janky-borders;
+                "buildpacks/homebrew-tap" = buildpack;
               };
               enable = true;
               enableRosetta = true;

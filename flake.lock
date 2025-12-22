@@ -17,6 +17,22 @@
         "type": "github"
       }
     },
+    "buildpack": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765461253,
+        "narHash": "sha256-PgElwiq0J6BMhGHAftcEe9UIL+iOYARP3YQrvKR/wVY=",
+        "owner": "buildpacks",
+        "repo": "homebrew-tap",
+        "rev": "85f7a83caf1c20fdc5e764847a0542edf0bca953",
+        "type": "github"
+      },
+      "original": {
+        "owner": "buildpacks",
+        "repo": "homebrew-tap",
+        "type": "github"
+      }
+    },
     "cl-nix-lite": {
       "locked": {
         "lastModified": 1728174978,
@@ -229,6 +245,7 @@
     },
     "root": {
       "inputs": {
+        "buildpack": "buildpack",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
         "janky-borders": "janky-borders",
