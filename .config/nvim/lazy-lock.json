@@ -13,6 +13,7 @@
   "gitsigns.nvim": { "branch": "main", "commit": "5813e4878748805f1518cee7abb50fd7205a3a48" },
   "grug-far.nvim": { "branch": "main", "commit": "bc589a1ba340a00ae40bf1436401eac5b1454687" },
   "helm-ls.nvim": { "branch": "main", "commit": "d6f3a8d4ad59b4f54cd734267dfb5411679ea608" },
+  "langmapper.nvim": { "branch": "main", "commit": "57a2fe4d706676aa0386825f27c27a4e3c14e0b0" },
   "lazy.nvim": { "branch": "main", "commit": "85c7ff3711b730b4030d03144f6db6375044ae82" },
   "lazydev.nvim": { "branch": "main", "commit": "5231c62aa83c2f8dc8e7ba957aa77098cda1257d" },
   "lualine.nvim": { "branch": "master", "commit": "47f91c416daef12db467145e16bed5bbfe00add8" },
