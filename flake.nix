@@ -26,6 +26,10 @@
       url = "github:buildpacks/homebrew-tap";
       flake = false;
     };
+    macism = {
+      url = "github:laishulu/homebrew-homebrew";
+      flake = false;
+    };
   };
 
   outputs =
@@ -39,6 +43,7 @@
       homebrew-cask,
       janky-borders,
       buildpack,
+      macism,
     }:
     let
       configuration =
@@ -83,6 +88,7 @@
             enable = true;
             brews = [
               "pack"
+              "macism"
               "mas"
               "statix"
               "tree-sitter-cli" # neovim LSP
@@ -249,6 +255,7 @@
                 "homebrew/homebrew-cask" = homebrew-cask;
                 "FelixKratz/homebrew-formulae" = janky-borders;
                 "buildpacks/homebrew-tap" = buildpack;
+                "laishulu/homebrew-homebrew" = macism;
               };
               enable = true;
               enableRosetta = true;
