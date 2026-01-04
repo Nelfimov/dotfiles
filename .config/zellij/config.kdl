@@ -1,16 +1,11 @@
 keybinds clear-defaults=true {
     normal {
         bind "Super w" { CloseFocus; }
-        bind "Alt w" { CloseFocus; }
         bind "Super l" { Clear; }
         bind "Super Shift d" { NewPane "Down"; }
         bind "Alt Shift d" { NewPane "Down"; }
         bind "Super d" { NewPane; }
-        bind "Alt d" { NewPane; }
         bind "Super t" { NewTab; }
-        bind "Alt t" { NewTab; }
-        bind "Super Alt h" { GoToPreviousTab; }
-        bind "Super Alt l" { GoToNextTab; }
         bind "Super c" { Copy; }
         bind "Super f" { EditScrollback; SwitchToMode "normal"; }
         bind "Super s" { SwitchToMode "scroll"; }
