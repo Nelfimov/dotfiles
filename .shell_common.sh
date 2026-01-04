@@ -11,6 +11,7 @@ export GPG_TTY="$(tty)"
 
 export K9S_CONFIG_DIR="$HOME/.config/k9s/"
 export KUBE_EDITOR=nvim
+export EDITOR=nvim
 
 # Jetbrains hack
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"
