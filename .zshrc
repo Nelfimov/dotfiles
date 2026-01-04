@@ -37,7 +37,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-eval "$(zoxide init zsh --cmd cd)"
+eval "$(zoxide init zsh --cmd z)"
 
 plugins=(git)
 
