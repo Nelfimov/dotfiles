@@ -110,6 +110,7 @@
               "vial"
               "zoom"
               "intellij-idea"
+              "warp"
             ];
             onActivation = {
               cleanup = "zap";
