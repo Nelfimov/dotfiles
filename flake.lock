@@ -85,6 +85,22 @@
         "type": "indirect"
       }
     },
+    "glide": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767312679,
+        "narHash": "sha256-NUvaAIENhPZPV7IlrcrVQ9yuxrCrGvpK+zYXcfAZWRo=",
+        "owner": "glide-wm",
+        "repo": "homebrew-tap",
+        "rev": "10ee6a08524ba5432f56719a364ecf66068e9d9f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "glide-wm",
+        "repo": "homebrew-tap",
+        "type": "github"
+      }
+    },
     "homebrew-cask": {
       "flake": false,
       "locked": {
@@ -262,6 +278,7 @@
     "root": {
       "inputs": {
         "buildpack": "buildpack",
+        "glide": "glide",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
         "janky-borders": "janky-borders",

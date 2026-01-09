@@ -30,6 +30,10 @@
       url = "github:laishulu/homebrew-homebrew";
       flake = false;
     };
+    glide = {
+      url = "github:glide-wm/homebrew-tap";
+      flake = false;
+    };
   };
 
   outputs =
@@ -44,6 +48,7 @@
       janky-borders,
       buildpack,
       macism,
+      glide,
     }:
     let
       configuration =
@@ -257,6 +262,7 @@
                 "FelixKratz/homebrew-formulae" = janky-borders;
                 "buildpacks/homebrew-tap" = buildpack;
                 "laishulu/homebrew-homebrew" = macism;
+                "glide-wm/homebrew-tap" = glide;
               };
               enable = true;
               enableRosetta = true;
