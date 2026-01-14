@@ -72,7 +72,6 @@
             fd
             fzf
             zoxide
-            k9s
             gh
             graphviz
             gnupg
@@ -96,6 +95,7 @@
               "macism"
               "mas"
               "statix"
+              "k9s"
               "tree-sitter-cli" # neovim LSP
               "nixfmt" # nix
             ];
