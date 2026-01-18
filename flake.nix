@@ -126,6 +126,7 @@
             masApps = {
               Bitwarden = 1352778147;
               Ublock-origin-lite = 6745342698;
+              VimLike = 1584519802;
             };
           };
 
