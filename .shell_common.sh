@@ -49,12 +49,12 @@ alias ghpm='gh pr merge -s --admin -d'
 
 dev() {
   session_name="$(basename "$PWD")"
-  nix develop -c zellij --session "$session_name"
+  nix develop -c zellij --session "$session_name" "$@"
 }
 
 z() {
   session_name="$(basename "$PWD")"
-  zellij --session "$session_name"
+  zellij --session "$session_name" "$@"
 }
 
 goose() {
@@ -65,18 +65,19 @@ goose() {
     -v "$(pwd)":/workspace \
     -w /workspace \
     --name goose \
-    ghcr.io/block/goose:latest session
+    ghcr.io/block/goose:latest session "$@"
 }
 
 codex() {
   docker run -it --rm \
     -v "$(pwd)":/workspace \
     -w /workspace \
-    -v ~/.codex/auth.json:/root/.codex/auth.json \
+    -v ~/.codex:/root/.codex \
     -p 1455:1455 \
+    -e ZELLIJ=0 \
     --name codex \
     ghcr.io/nelfimov/codex:latest \
-    codex --yolo "$@"
+    codex --no-alt-screen --yolo "$@"
 }
 
 . "$HOME/.cargo/env"
