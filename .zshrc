@@ -1,5 +1,9 @@
 source ~/.shell_common.sh
 
+if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
+  source "${GHOSTTY_RESOURCES_DIR}/shell-integration/zsh/ghostty-integration"
+fi
+
 if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
   ## Git highlighting
   function parse_git_branch() {

@@ -7,7 +7,7 @@ theme = Dracula
 confirm-close-surface = false
 bell-features = no-audio, no-title, system, no-attention
 desktop-notifications = true
-shell-integration = zsh
+shell-integration = none
 macos-titlebar-style = transparent
 macos-option-as-alt = true
 mouse-hide-while-typing = true
@@ -17,6 +17,7 @@ app-notifications = no-clipboard-copy
 clipboard-read = allow
 clipboard-write = allow
 link-previews = true
+shell-integration-features = cursor,sudo,ssh-terminfo,ssh-env
 
 keybind = cmd+t=unbind
 keybind = cmd+shift+n=new_window
