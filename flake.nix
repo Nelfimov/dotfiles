@@ -117,6 +117,7 @@
               "intellij-idea"
               "warp"
               "glide"
+              "kindavim"
             ];
             onActivation = {
               cleanup = "zap";
