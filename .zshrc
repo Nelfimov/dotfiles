@@ -19,9 +19,9 @@ if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
   COLOR_DIR=$'%F{197}'
   COLOR_GIT=$'%F{39}'
   setopt PROMPT_SUBST
-  NEWLINE=$'\n'
-  export PROMPT="%{$fg[yellow]%}%D{%f/%m/%y} %D{%L:%M:%S} $(nix_shell_prompt)${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}\$(parse_git_branch)${COLOR_DEF}${NEWLINE}$ "
   # /Git highlighting
+  NEWLINE=$'\n'
+  export PROMPT="%{$fg[yellow]%}%D{%f/%m} %D{%H:%M:%S} $(nix_shell_prompt)${COLOR_DIR}%~ ${COLOR_GIT}\$(parse_git_branch)${COLOR_DEF}${NEWLINE}$ "
 
   source <(fzf --zsh)
 
