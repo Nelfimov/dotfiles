@@ -2,6 +2,7 @@
 
 export HISTSIZE=5000
 export HISTFILESIZE="$HISTSIZE"
+export XDG_RUNTIME_DIR=/tmp
 
 if [ -n "$BASH_VERSION" ]; then
   export HISTCONTROL="ignoredups:erasedups"
