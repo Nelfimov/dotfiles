@@ -33,11 +33,6 @@ alias tfp='terraform plan'
 alias tfa='terraform apply'
 alias tff='terraform fmt'
 
-alias dc='docker compose'
-alias dcc='docker compose create'
-alias dcd='docker compose down'
-alias dcu='docker compose up'
-
 alias k='kubectl'
 alias kx='kubectl exec -it'
 alias kg='kubectl get'
