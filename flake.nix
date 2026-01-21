@@ -63,8 +63,6 @@
           };
 
           environment.systemPackages = with pkgs; [
-            neovim
-            zellij
             aerospace
             lazygit
             ripgrep
@@ -96,6 +94,8 @@
               "mas"
               "statix"
               "k9s"
+              "zellij"
+              "neovim"
               "tree-sitter-cli" # neovim LSP
               "nixfmt" # nix
             ];
