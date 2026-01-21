@@ -90,11 +90,9 @@ keybinds clear-defaults=true {
         bind "down" { MovePane "down"; }
         bind "up" { MovePane "up"; }
         bind "right" { MovePane "right"; }
-        bind "h" { MovePane "left"; }
         bind "Ctrl m" { SwitchToMode "normal"; }
-        bind "j" { MovePane "down"; }
-        bind "k" { MovePane "up"; }
-        bind "l" { MovePane "right"; }
+        bind "h" { MoveTab "left"; }
+        bind "l" { MoveTab "right"; }
         bind "n" { MovePane; }
         bind "p" { MovePaneBackwards; }
         bind "tab" { MovePane; }
