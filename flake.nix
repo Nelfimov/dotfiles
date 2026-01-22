@@ -96,6 +96,7 @@
               "k9s"
               "zellij"
               "neovim"
+              "go"
               "tree-sitter-cli" # neovim LSP
               "nixfmt" # nix
             ];
