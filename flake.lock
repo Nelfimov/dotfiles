@@ -109,30 +109,14 @@
         "type": "indirect"
       }
     },
-    "glide": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1768187493,
-        "narHash": "sha256-5XCe6svdi1uRqDOdSeaJ3Uvf2Ceuew0Z4n+iLcomkbw=",
-        "owner": "glide-wm",
-        "repo": "homebrew-tap",
-        "rev": "ee075d59d8eb648c53038d494330fb2a3e149429",
-        "type": "github"
-      },
-      "original": {
-        "owner": "glide-wm",
-        "repo": "homebrew-tap",
-        "type": "github"
-      }
-    },
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1769232770,
-        "narHash": "sha256-/EyMS+7ZeTjEzjmGAqjdmogoX0BbJMBFNiYIhhqf6Qk=",
+        "lastModified": 1769305467,
+        "narHash": "sha256-TCEMcDs8jpPb76BYBukPCAw+N6wJ+BdM1KDrJdskWZY=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "25b304ba8f5d9b2c7d5cf8a073fd302bf97729d5",
+        "rev": "823ab1ae14b3e7bd94e55fb24cd2e5e4ea7bb094",
         "type": "github"
       },
       "original": {
@@ -144,11 +128,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1769233744,
-        "narHash": "sha256-m25UbhVk6g27U5dpmujC8VtNrasp+3yOnNSjY4sa+uo=",
+        "lastModified": 1769311831,
+        "narHash": "sha256-zANMapEAYYsPajDn0kMT1blzhEyCnUsJhcE7or4XdbE=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "e24eaba9b123d1c7b6829b44fcd2b255e110f97e",
+        "rev": "e1f3383e52e193bcd3be6202189cc088c909521b",
         "type": "github"
       },
       "original": {
@@ -332,11 +316,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1769092226,
-        "narHash": "sha256-6h5sROT/3CTHvzPy9koKBmoCa2eJKh4fzQK8eYFEgl8=",
+        "lastModified": 1769268028,
+        "narHash": "sha256-mAdJpV0e5IGZjnE4f/8uf0E4hQR7ptRP00gnZKUOdMo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b579d443b37c9c5373044201ea77604e37e748c8",
+        "rev": "ab9fbbcf4858bd6d40ba2bbec37ceb4ab6e1f562",
         "type": "github"
       },
       "original": {
@@ -349,7 +333,6 @@
     "root": {
       "inputs": {
         "buildpack": "buildpack",
-        "glide": "glide",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
         "janky-borders": "janky-borders",
