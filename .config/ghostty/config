@@ -17,7 +17,7 @@ app-notifications = false
 clipboard-read = allow
 clipboard-write = allow
 link-previews = true
-shell-integration-features = cursor,sudo,ssh-terminfo,ssh-env,title
+shell-integration-features = cursor,sudo,title,no-ssh-terminfo,no-ssh-env
 
 keybind = cmd+t=unbind
 keybind = cmd+shift+n=new_window
