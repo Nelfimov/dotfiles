@@ -45,12 +45,12 @@ alias ghpm='gh pr merge -s --admin -d'
 
 dev() {
   session_name="$(basename "$PWD")"
-  nix develop -c zellij --session "$session_name" "$@"
+  nix develop -c zellij a --create "$session_name" "$@"
 }
 
 z() {
   session_name="$(basename "$PWD")"
-  zellij --session "$session_name" "$@"
+  zellij a --create "$session_name" "$@"
 }
 
 goose() {
