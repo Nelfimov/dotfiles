@@ -30,3 +30,6 @@ vim.g.lazyvim_php_lsp = "intelephense"
 vim.opt.spelllang = { "en", "ru" }
 vim.opt.swapfile = false
 vim.opt.wrap = true
+
+vim.opt.langmap =
+  "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
