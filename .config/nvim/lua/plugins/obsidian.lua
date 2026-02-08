@@ -9,9 +9,6 @@ return {
         strict = true,
       },
     },
-    follow_url_func = function(url)
-      vim.fn.jobstart({ "open", url })
-    end,
     picker = {
       name = "snacks.pick",
     },
