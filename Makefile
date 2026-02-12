@@ -9,6 +9,9 @@ update:
 	nix flake update
 	sudo darwin-rebuild switch --flake .#mac
 
+update-nix:
+	sudo determinate-nixd upgrade
+
 clear:
 	nix-collect-garbage -d
 

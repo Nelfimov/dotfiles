@@ -3,10 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     mac-app-util.url = "github:hraban/mac-app-util"; # Add indexing to Spotlight
+
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
 
     # Homebrew
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
@@ -36,6 +39,7 @@
     inputs@{
       self,
       nix-darwin,
+      determinate,
       nixpkgs,
       mac-app-util,
       nix-homebrew,
@@ -55,6 +59,28 @@
               allowUnfree = true;
             };
             hostPlatform = "aarch64-darwin";
+          };
+
+          determinateNix = {
+            enable = true;
+            customSettings = {
+              lazy-trees = true;
+
+              keep-outputs = true;
+              keep-derivations = true;
+
+              accept-flake-config = true;
+              extra-experimental-features = "nix-command flakes";
+              trusted-users = [
+                "root"
+                "nelfimov"
+              ];
+              trusted-substituters = "https://nixpkgs-ruby.cachix.org https://cache.nixos.org/";
+            };
+            determinateNixd = {
+              garbageCollector.strategy = "automatic";
+              builder.state = "enabled";
+            };
           };
 
           environment.systemPackages = with pkgs; [
@@ -252,6 +278,7 @@
             }
           )
           configuration
+          determinate.darwinModules.default
           mac-app-util.darwinModules.default
           nix-homebrew.darwinModules.nix-homebrew
           {
