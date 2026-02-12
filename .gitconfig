@@ -46,7 +46,7 @@
 
   pf = push --force-with-lease
 
-  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --output-indicator-new=' ' --output-indicator-old=' ' --patch-with-stat"
 
   aliases = config --get-regexp alias
   
@@ -66,6 +66,7 @@
 	format = ssh
 [diff]
   tool = vimdiff
+  context = 3
 [merge]
   tool = vimdiff
   conflictstyle = zdiff3
@@ -75,5 +76,14 @@
 
 [core]
 	editor = nvim
+  compression = 9
+  whitespace = error
+  preloadindex = true
+
 [submodule]
 	recurse = true
+
+[status]
+  branch = true
+  showstash = true
+  showuntrackedfiles = all
