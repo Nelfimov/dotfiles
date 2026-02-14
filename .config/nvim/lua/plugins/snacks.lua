@@ -21,6 +21,11 @@ local exclude_list = {
 return {
   "folke/snacks.nvim",
   opts = {
+    dashboard = {
+      preset = {
+        header = [[]],
+      },
+    },
     zen = {
       toggles = { dim = false },
       win = { backdrop = { transparent = false } },
