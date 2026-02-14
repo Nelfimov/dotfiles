@@ -75,7 +75,7 @@
                 "root"
                 "nelfimov"
               ];
-              trusted-substituters = "https://nixpkgs-ruby.cachix.org https://cache.nixos.org/";
+              trusted-substituters = "https://cache.nixos.org/";
             };
             determinateNixd = {
               garbageCollector.strategy = "automatic";
