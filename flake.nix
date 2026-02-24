@@ -120,6 +120,7 @@
               "go"
               "tree-sitter-cli" # neovim LSP
               "nixfmt" # nix
+              "watch"
             ];
             casks = [
               "docker-desktop"
