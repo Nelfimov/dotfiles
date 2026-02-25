@@ -23,7 +23,6 @@ ulimit -n 4096
 
 # Aliases
 alias ls='ls --color'
-alias g='git'
 
 alias obsidian='cd ~/Documents/Dev/Obsidian/work && nvim'
 alias dotfiles='cd ~/Documents/Dev/dotfiles && nvim'
