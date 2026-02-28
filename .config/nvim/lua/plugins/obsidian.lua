@@ -8,6 +8,11 @@ return {
         path = "~/Documents/Dev/Obsidian/work",
         strict = true,
       },
+      {
+        name = "travel",
+        path = "~/Documents/Dev/Obsidian/travel",
+        strict = true,
+      },
     },
     picker = {
       name = "snacks.pick",
