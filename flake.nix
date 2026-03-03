@@ -84,7 +84,6 @@
           };
 
           environment.systemPackages = with pkgs; [
-            aerospace
             lazygit
             ripgrep
             stow
@@ -130,7 +129,6 @@
               "amneziavpn"
               "transmission"
               "chromium-gost"
-              "chatgpt"
               "vlc"
               "zoho-cliq"
               "ghostty"
@@ -139,7 +137,6 @@
               "zoom"
               "intellij-idea"
               "glide"
-              "kindavim"
             ];
             onActivation = {
               cleanup = "zap";
