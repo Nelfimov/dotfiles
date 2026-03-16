@@ -34,7 +34,6 @@ return {
       win = { backdrop = { transparent = false } },
     },
     explorer = {},
-    ---@type snacks.picker.Config
     picker = {
       layouts = {},
       formatters = { file = { truncate = 80 } },
