@@ -260,6 +260,8 @@
             enableAutosuggestions = true;
             enableCompletion = true;
           };
+
+          programs.direnv.enable = true;
         };
     in
     {

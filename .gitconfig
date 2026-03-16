@@ -79,6 +79,7 @@
   compression = 9
   whitespace = error
   preloadindex = true
+  excludesfile = /Users/nelfimov/.gitignore.global
 
 [submodule]
 	recurse = true
