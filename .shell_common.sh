@@ -24,7 +24,7 @@ ulimit -n 4096
 # Aliases
 alias ls='ls --color'
 
-alias obsidian='cd ~/Documents/Dev/Obsidian/work && nvim'
+alias obsidian='cd ~/Documents/Dev/Obsidian && nvim'
 alias dotfiles='cd ~/Documents/Dev/dotfiles && nvim'
 
 alias tf='terraform'

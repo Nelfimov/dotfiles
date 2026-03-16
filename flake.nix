@@ -120,6 +120,7 @@
               "tree-sitter-cli" # neovim LSP
               "nixfmt" # nix
               "watch"
+              "imagemagick"
             ];
             casks = [
               "docker-desktop"
@@ -137,6 +138,7 @@
               "zoom"
               "intellij-idea"
               "glide"
+              "warp"
             ];
             onActivation = {
               cleanup = "zap";
@@ -159,6 +161,7 @@
                 "/System/Applications/FaceTime.app"
                 "/Applications/Telegram.app"
                 "/System/Applications/Mail.app"
+                "/Applications/Warp.app"
                 "/Applications/Ghostty.app"
                 "/System/Applications/Calendar.app"
                 "/System/Applications/Reminders.app"
