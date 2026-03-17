@@ -33,6 +33,10 @@
       url = "github:laishulu/homebrew-homebrew";
       flake = false;
     };
+    aerospace = {
+      url = "github:nikitabobko/homebrew-tap";
+      flake = false;
+    };
   };
 
   outputs =
@@ -48,6 +52,7 @@
       janky-borders,
       buildpack,
       macism,
+      aerospace,
     }:
     let
       configuration =
@@ -139,6 +144,7 @@
               "intellij-idea"
               "glide"
               "warp"
+              "aerospace"
             ];
             onActivation = {
               cleanup = "zap";
@@ -290,6 +296,7 @@
                 "FelixKratz/homebrew-formulae" = janky-borders;
                 "buildpacks/homebrew-tap" = buildpack;
                 "laishulu/homebrew-homebrew" = macism;
+                "nikitabobko/homebrew-tap" = aerospace;
               };
               enable = true;
               enableRosetta = true;
