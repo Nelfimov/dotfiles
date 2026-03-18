@@ -16,6 +16,7 @@ local exclude_list = {
   ".venv",
   ".idea",
   "vendor",
+  ".direnv",
 }
 
 return {
