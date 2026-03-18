@@ -126,6 +126,7 @@
               "nixfmt" # nix
               "watch"
               "imagemagick"
+              "ffmpeg"
             ];
             casks = [
               "docker-desktop"
