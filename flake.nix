@@ -126,6 +126,7 @@
               "watch"
               "imagemagick"
               "ffmpeg"
+              "mole"
             ];
             casks = [
               "docker-desktop"
