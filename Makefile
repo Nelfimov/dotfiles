@@ -14,6 +14,7 @@ update-nix:
 
 clear:
 	nix-collect-garbage -d
+	mo
 
 show:
 	nix-store --gc --print-dead
