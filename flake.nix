@@ -119,7 +119,6 @@
               "mas"
               "statix"
               "k9s"
-              "zellij"
               "neovim"
               "go"
               "tree-sitter-cli" # neovim LSP
@@ -138,7 +137,6 @@
               "chromium-gost"
               "vlc"
               "zoho-cliq"
-              "ghostty"
               "adguard-vpn"
               "vial"
               "zoom"
@@ -146,6 +144,7 @@
               "glide"
               "warp"
               "aerospace"
+              "codex"
             ];
             onActivation = {
               cleanup = "zap";
@@ -169,7 +168,6 @@
                 "/Applications/Telegram.app"
                 "/System/Applications/Mail.app"
                 "/Applications/Warp.app"
-                "/Applications/Ghostty.app"
                 "/System/Applications/Calendar.app"
                 "/System/Applications/Reminders.app"
                 "/System/Applications/Notes.app"

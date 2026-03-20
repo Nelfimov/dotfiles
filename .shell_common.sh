@@ -63,16 +63,4 @@ goose() {
     ghcr.io/block/goose:latest session "$@"
 }
 
-codex() {
-  docker run -it --rm \
-    -v "$(pwd)":/workspace \
-    -w /workspace \
-    -v ~/.codex:/root/.codex \
-    -p 1455:1455 \
-    -e ZELLIJ=0 \
-    --name codex \
-    ghcr.io/nelfimov/codex:latest \
-    codex --no-alt-screen --yolo "$@"
-}
-
 . "$HOME/.cargo/env"
