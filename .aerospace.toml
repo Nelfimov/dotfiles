@@ -78,6 +78,10 @@ run = ["move-node-to-workspace 2"]
 if.app-id = "com.apple.Music"
 run = ["move-node-to-workspace 4"]
 
+[[on-window-detected]]
+if.app-id = "org.m0k.transmission"
+run = "layout floating"
+
 [key-mapping]
 preset = 'qwerty'
 
