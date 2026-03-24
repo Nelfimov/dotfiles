@@ -7,13 +7,8 @@ return {
     },
     workspaces = {
       {
-        name = "work",
-        path = "~/Documents/Dev/Obsidian/work",
-        strict = true,
-      },
-      {
-        name = "travel",
-        path = "~/Documents/Dev/Obsidian/travel",
+        name = "index",
+        path = "~/Documents/Dev/Obsidian",
         strict = true,
       },
     },
