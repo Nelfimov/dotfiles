@@ -127,6 +127,7 @@
               "imagemagick"
               "ffmpeg"
               "mole"
+              "libpq" # postgres
             ];
             casks = [
               "docker-desktop"
