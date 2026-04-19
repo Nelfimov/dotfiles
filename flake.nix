@@ -104,6 +104,7 @@
             yarn
             tree
             rustup
+            clickhouse
           ];
 
           fonts.packages = with pkgs; [
