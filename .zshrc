@@ -51,3 +51,4 @@ compinit
 
 # Auto-Warpify
 printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh"}}\x9c'
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
