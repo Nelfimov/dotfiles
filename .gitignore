@@ -50,3 +50,5 @@ luac.out
 .config/composer
 .config/zed/prompts
 .config/zed/conversations
+
+*.app
