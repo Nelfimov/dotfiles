@@ -72,7 +72,7 @@ run = ["move-node-to-workspace 2"]
 
 [[on-window-detected]]
 if.app-id = "com.apple.Music"
-run = ["move-node-to-workspace 4"]
+run = ["move-node-to-workspace 5"]
 
 [[on-window-detected]]
 if.app-id = "org.m0k.transmission"
