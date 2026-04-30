@@ -33,7 +33,7 @@ should_dim_inactive_panes = true
 [terminal.input]
 honor_ps1 = false
 middle_click_paste_enabled = false
-at_context_menu_in_terminal_mode = false
+at_context_menu_in_terminal_mode = true
 show_hint_text = false
 input_box_type_setting = "universal"
 
@@ -91,6 +91,8 @@ prefer_markdown_viewer = false
 auto_open_code_review_pane_on_first_agent_change = false
 open_file_editor = "system_default"
 show_code_review_button = false
+show_project_explorer = false
+show_global_search = false
 
 [code.indexing]
 agent_mode_codebase_context = false
