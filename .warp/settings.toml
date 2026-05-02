@@ -28,6 +28,9 @@ enabled = false
 [appearance.panes]
 should_dim_inactive_panes = true
 
+[appearance.icon]
+app_icon = "mono"
+
 [terminal]
 
 [terminal.input]
