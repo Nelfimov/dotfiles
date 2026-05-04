@@ -31,6 +31,9 @@ should_dim_inactive_panes = true
 [appearance.icon]
 app_icon = "mono"
 
+[appearance.full_screen_apps]
+alt_screen_padding = { custom = { uniform_padding = 0.0 } }
+
 [terminal]
 
 [terminal.input]
