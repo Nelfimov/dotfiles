@@ -54,6 +54,8 @@ luac.out
 !.codex/config.toml
 !.codex/rules
 
+.pi/agents
+
 .config/composer
 .config/zed/prompts
 .config/zed/conversations
