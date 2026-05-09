@@ -1,0 +1,22 @@
+personality = "pragmatic"
+
+[projects."/Users/nelfimov/Documents/Dev/Infrastructure/rees46-infrastructure"]
+trust_level = "trusted"
+
+[projects."/Users/nelfimov/Documents/Dev/Rust/rees46-mcp"]
+trust_level = "trusted"
+
+[projects."/Users/nelfimov/Documents/Dev/JS/rees46-workers"]
+trust_level = "trusted"
+
+[projects."/Users/nelfimov/Documents/Dev/Ruby/rees46-dashboard-v2"]
+trust_level = "trusted"
+
+[projects."/Users/nelfimov/Documents/Dev/JS/rees46-js-sdk"]
+trust_level = "trusted"
+
+[tui]
+notification_condition = "always"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 1

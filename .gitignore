@@ -46,8 +46,14 @@ luac.out
 .config/gh/hosts.y*ml
 .config/k9s/clusters
 .secrets.sh
+
 **/*/auth.json
 **/*/sessions
+
+.codex/*
+!.codex/config.toml
+!.codex/rules
+
 .config/composer
 .config/zed/prompts
 .config/zed/conversations
