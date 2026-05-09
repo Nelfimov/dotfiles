@@ -18,3 +18,11 @@ clear:
 
 show:
 	nix-store --gc --print-dead
+
+init-link: stow reset
+
+stow:
+	stow . --adopt
+
+reset:
+	git reset --hard

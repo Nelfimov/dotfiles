@@ -3,5 +3,5 @@
 ## Install
 
 ```bash
-./setup.sh
+make init-link
 ```

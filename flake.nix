@@ -105,6 +105,7 @@
             tree
             rustup
             clickhouse
+            pi-coding-agent
           ];
 
           fonts.packages = with pkgs; [
@@ -135,6 +136,7 @@
               "figma"
               "libreoffice"
               "telegram"
+              "telegram-desktop" # TODO: rm once `telegram` is updated for MTProto
               "amneziavpn"
               "transmission"
               "chromium-gost"
