@@ -99,7 +99,7 @@
             graphviz
             gnupg
             pinentry_mac
-            nodejs_24
+            nodejs
             cargo
             yarn
             tree
