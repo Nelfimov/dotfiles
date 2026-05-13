@@ -1,3 +1,6 @@
 .DS_Store
+
 .envrc
 .direnv
+
+.pi/agents
