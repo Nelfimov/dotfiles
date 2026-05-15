@@ -4,8 +4,17 @@ return {
     require("fff.download").download_or_build_binary()
   end,
   opts = {
+    keymaps = {
+      close = "<Esc><Esc>",
+    },
+    layout = {
+      prompt_position = "top",
+    },
     git = {
-      status_text_color = false,
+      status_text_color = true,
+    },
+    logging = {
+      enabled = false,
     },
   },
   lazy = false, -- the plugin lazy-initialises itself
