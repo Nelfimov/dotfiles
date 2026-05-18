@@ -88,3 +88,5 @@
   branch = true
   showstash = true
   showuntrackedfiles = all
+[remote "origin"]
+	prune = true
