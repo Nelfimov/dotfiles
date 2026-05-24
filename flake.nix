@@ -150,6 +150,7 @@
               "warp"
               "aerospace"
               "codex"
+              "steam"
             ];
             onActivation = {
               cleanup = "zap";
