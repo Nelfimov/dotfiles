@@ -3,7 +3,9 @@ source ~/.shell_common.sh
 if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
   ## Git highlighting
   function parse_git_branch() {
-    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
+    local branch
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
+    echo "[$branch]"
   }
   function nix_shell_prompt() {
     [[ -n "$IN_NIX_SHELL" ]] && echo "%F{112}(nix)%f "
@@ -46,7 +48,7 @@ zstyle ':completion:*:*:ssh:*' hosts $(awk '/^Host / {print $2}' ~/.ssh/config ~
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/nelfimov/.docker/completions $fpath)
 autoload -Uz compinit
-compinit
+compinit -C
 # End of Docker CLI completions
 
 # Auto-Warpify
