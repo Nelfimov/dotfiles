@@ -152,6 +152,7 @@
               "aerospace"
               "codex"
               "steam"
+              "kitty"
             ];
             onActivation = {
               cleanup = "zap";
