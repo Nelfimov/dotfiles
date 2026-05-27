@@ -63,4 +63,16 @@ goose() {
     ghcr.io/block/goose:latest session "$@"
 }
 
+compress_video() {
+  ffmpeg -i "$1" \
+    -vf "fps=15,scale=1500:-1:flags=lanczos,palettegen" \
+    ~/Desktop/palette.png &&
+    ffmpeg -i "$1" \
+      -i ~/Desktop/palette.png \
+      -filter_complex "fps=15,scale=1500:-1:flags=lanczos[x];[x][1:v]paletteuse=dither=bayer" \
+      -loop 0 \
+      ~/Desktop/output.gif &&
+    rm -rf ~/Desktop/palette.png
+}
+
 . "$HOME/.cargo/env"
