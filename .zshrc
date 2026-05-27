@@ -22,7 +22,7 @@ if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
   source <(fzf --zsh)
 
   bindkey -v
-  export keytimeout=1
+  export KEYTIMEOUT=1
 fi
 
 HISTDUP=erase
