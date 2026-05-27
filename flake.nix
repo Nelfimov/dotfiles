@@ -130,6 +130,7 @@
               "ffmpeg"
               "mole"
               "libpq" # postgres
+              "mtr"
             ];
             casks = [
               "docker-desktop"
