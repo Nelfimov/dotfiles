@@ -146,7 +146,6 @@
               "adguard-vpn"
               "vial"
               "zoom"
-              "intellij-idea"
               "glide"
               "warp"
               "aerospace"
