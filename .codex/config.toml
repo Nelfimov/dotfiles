@@ -50,7 +50,7 @@ notifications = true
 notification_condition = "always"
 
 [tui.model_availability_nux]
-"gpt-5.5" = 3
+"gpt-5.5" = 4
 
 [plugins."github@openai-curated"]
 enabled = true
