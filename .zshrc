@@ -1,16 +1,15 @@
 source ~/.shell_common.sh
 
-if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
+if [[ "$TERM_PROGRAM" != *Warp* ]]; then
   ## Git highlighting
   function parse_git_branch() {
     local branch
     branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
     echo "[$branch]"
   }
-  function nix_shell_prompt() {
-    [[ -n "$IN_NIX_SHELL" ]] && echo "%F{112}(nix)%f "
+  function direnv_shell_prompt() {
+    [[ -n "${DIRENV_FILE:-}" ]] && echo "%F{112}(direnv)%f "
   }
-
 
   COLOR_DEF=$'%f'
   COLOR_USR=$'%F{243}'
@@ -19,7 +18,7 @@ if [[ "$TERM_PROGRAM" != *Warp* || -n "$ZELLIJ" ]]; then
   setopt PROMPT_SUBST
   # /Git highlighting
   NEWLINE=$'\n'
-  export PROMPT="%{$fg[yellow]%}%D{%f/%m} %D{%H:%M:%S} $(nix_shell_prompt)${COLOR_DIR}%~ ${COLOR_GIT}\$(parse_git_branch)${COLOR_DEF}${NEWLINE}$ "
+  export PROMPT="%{$fg[yellow]%}%D{%f/%m} %D{%H:%M:%S} \$(direnv_shell_prompt)${COLOR_DIR}%~ ${COLOR_GIT}\$(parse_git_branch)${COLOR_DEF}${NEWLINE}$ "
 
   source <(fzf --zsh)
 
@@ -51,7 +50,5 @@ autoload -Uz compinit
 compinit -C
 # End of Docker CLI completions
 
-# Auto-Warpify
-printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh"}}\x9c'
 # PostgreSQL exec
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
