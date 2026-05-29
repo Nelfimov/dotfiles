@@ -53,4 +53,5 @@ compinit -C
 
 # Auto-Warpify
 printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh"}}\x9c'
+# PostgreSQL exec
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

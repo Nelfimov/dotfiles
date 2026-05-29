@@ -14,11 +14,6 @@ export K9S_CONFIG_DIR="$HOME/.config/k9s/"
 export KUBE_EDITOR=nvim
 export EDITOR=nvim
 
-# Jetbrains hack
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"
-if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
-# /Jetbrains hack
-
 ulimit -n 4096
 
 # Aliases
@@ -50,17 +45,6 @@ dev() {
 z() {
   session_name="$(basename "$PWD")"
   zellij a --create "$session_name" "$@"
-}
-
-goose() {
-  docker run -it --rm \
-    -e GOOSE_PROVIDER=openai \
-    -e GOOSE_MODEL=gpt-5 \
-    -e OPENAI_API_KEY="$OPENAI_API_KEY" \
-    -v "$(pwd)":/workspace \
-    -w /workspace \
-    --name goose \
-    ghcr.io/block/goose:latest session "$@"
 }
 
 compress_video() {
