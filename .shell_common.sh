@@ -42,11 +42,6 @@ dev() {
   nix develop -c zellij a --create "$session_name" "$@"
 }
 
-z() {
-  session_name="$(basename "$PWD")"
-  zellij a --create "$session_name" "$@"
-}
-
 compress_video() {
   ffmpeg -i "$1" \
     -vf "fps=15,scale=1500:-1:flags=lanczos,palettegen" \
