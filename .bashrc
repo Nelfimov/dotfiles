@@ -30,3 +30,5 @@ if [ -t 0 ]; then
   bind 'set vi-cmd-mode-string "\1\e[2 q\2"'
   bind 'set vi-ins-mode-string "\1\e[6 q\2"'
 fi
+
+alias ls='ls --color --hyperlink=auto'
