@@ -146,7 +146,6 @@
               "adguard-vpn"
               "vial"
               "zoom"
-              "glide"
               "warp"
               "aerospace"
               "codex"
