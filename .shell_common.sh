@@ -2,22 +2,24 @@
 
 export HISTSIZE=5000
 export HISTFILESIZE="$HISTSIZE"
-export XDG_RUNTIME_DIR=/tmp
-
 if [ -n "$BASH_VERSION" ]; then
   export HISTCONTROL="ignoredups:erasedups"
 fi
 
-export GPG_TTY="$(tty)"
+if [ -t 0 ]; then
+  export GPG_TTY="$(tty)"
+fi
 
 export K9S_CONFIG_DIR="$HOME/.config/k9s/"
 export KUBE_EDITOR=nvim
 export EDITOR=nvim
 
-ulimit -n 4096
+ulimit -n 4096 2>/dev/null || true
 
 # Aliases
-alias ls='ls --color'
+if ls --color >/dev/null 2>&1; then
+  alias ls='ls --color --hyperlink=auto'
+fi
 
 alias obsidian='cd ~/Documents/Dev/Obsidian && nvim'
 alias dotfiles='cd ~/Documents/Dev/dotfiles && nvim'
@@ -54,4 +56,4 @@ compress_video() {
     rm -rf ~/Desktop/palette.png
 }
 
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
