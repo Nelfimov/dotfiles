@@ -25,4 +25,9 @@ if [[ $- == *i* ]]; then
     bind 'set vi-cmd-mode-string "\1\e[2 q\2"'
     bind 'set vi-ins-mode-string "\1\e[6 q\2"'
   fi
+
+  # Aliases
+  if ls --color >/dev/null 2>&1; then
+    alias ls='ls --color --hyperlink=auto'
+  fi
 fi
