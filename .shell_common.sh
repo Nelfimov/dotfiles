@@ -18,7 +18,7 @@ ulimit -n 4096 2>/dev/null || true
 
 # Aliases
 if ls --color >/dev/null 2>&1; then
-  alias ls='ls --color --hyperlink=auto'
+  alias ls='ls --color'
 fi
 
 alias obsidian='cd ~/Documents/Dev/Obsidian && nvim'
