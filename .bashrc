@@ -28,6 +28,9 @@ if [[ $- == *i* ]]; then
 
   # Aliases
   if ls --color >/dev/null 2>&1; then
-    alias ls='ls --color --hyperlink=auto'
+    alias ls='ls --color'
+    if ls --hyperlink=auto >/dev/null 2>&1; then
+      alias ls='ls --color --hyperlink=auto'
+    fi
   fi
 fi
