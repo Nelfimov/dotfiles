@@ -36,11 +36,11 @@ fi
 if [[ $- == *i* ]]; then
   HISTDUP=erase
   setopt appendhistory
-  setopt sharehistory
-  setopt hist_ignore_all_dups
-  setopt hist_save_no_dups
+  setopt inc_append_history
+  setopt extended_history
   setopt hist_ignore_dups
   setopt hist_find_no_dups
+  setopt hist_reduce_blanks
 
   zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
   if [[ -n "${LS_COLORS:-}" ]]; then
