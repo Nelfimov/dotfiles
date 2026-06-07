@@ -105,7 +105,7 @@
             tree
             rustup
             clickhouse
-            pi-coding-agent
+            # pi-coding-agent #FIXME: restore when fixed build
           ];
 
           fonts.packages = with pkgs; [
