@@ -30,6 +30,12 @@ if [[ $- == *i* && "$TERM_PROGRAM" != *Warp* ]]; then
   fi
 
   bindkey -v
+  bindkey -M viins '^?' backward-delete-char
+  bindkey -M viins '^H' backward-delete-char
+  bindkey -M vicmd '^?' backward-delete-char
+  bindkey -M vicmd '^H' backward-delete-char
+  bindkey -M viins "${terminfo[kdch1]}" delete-char
+  bindkey -M vicmd "${terminfo[kdch1]}" delete-char
   export KEYTIMEOUT=1
 fi
 
