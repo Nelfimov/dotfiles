@@ -10,6 +10,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 alias mkdir='mkdir -p'
+alias root='sudo bash --rcfile ~/.bashrc'
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -30,14 +31,35 @@ parse_git_branch() {
   git symbolic-ref --short HEAD 2>/dev/null
 }
 
+direnv_shell_prompt() {
+  [ -n "${DIRENV_FILE:-}" ] && printf '(direnv) '
+}
+
+kubectl_shell_prompt() {
+  command -v kubectl >/dev/null 2>&1 || return
+  kubectl config current-context 2>/dev/null || return
+}
+
 __prompt() {
   local exit_code=$?
   local branch
+  local direnv_prompt
+  local kube_context
+  local color_def='\[\e[0m\]'
+  local color_date='\[\e[33m\]'
+  local color_usr='\[\e[38;5;243m\]'
+  local color_direnv='\[\e[38;5;112m\]'
+  local color_dir='\[\e[38;5;197m\]'
+  local color_git='\[\e[38;5;39m\]'
+  local color_kube='\[\e[36m\]'
   branch="$(parse_git_branch)"
+  direnv_prompt="$(direnv_shell_prompt)"
+  kube_context="$(kubectl_shell_prompt)"
   local code=""
   [ "$exit_code" -ne 0 ] && code=" [$exit_code]"
   [ -n "$branch" ] && branch=" [$branch]"
-  PS1="\u@\h \w${branch}${code}\n\$ "
+  [ -n "$kube_context" ] && kube_context=" ${kube_context}"
+  PS1="${color_date}\D{%F} \t ${color_usr}\u@\h ${color_direnv}${direnv_prompt}${color_dir}\w ${color_git}${branch}${color_kube}${kube_context}${color_def}${code}\n\$ "
 }
 PROMPT_COMMAND="__prompt; ${PROMPT_COMMAND:-}"
 
