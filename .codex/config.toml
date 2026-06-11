@@ -48,6 +48,9 @@ trust_level = "trusted"
 [projects."/Users/nelfimov/Documents/Dev/Infrastructure/nelfimov-infrastructure"]
 trust_level = "trusted"
 
+[projects."/Users/nelfimov/Documents/Dev/JS/rees46-web"]
+trust_level = "trusted"
+
 [tui]
 notifications = true
 notification_condition = "always"

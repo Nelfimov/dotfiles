@@ -19,3 +19,6 @@ prefix_rule(pattern=["nc", "-vz"], decision="allow")
 prefix_rule(pattern=["helm", "show", "values"], decision="allow")
 
 prefix_rule(pattern=["kubectl", "version"], decision="allow")
+prefix_rule(pattern=["yarn", "install"], decision="allow")
+prefix_rule(pattern=["docker", "build"], decision="allow")
+prefix_rule(pattern=["docker", "run"], decision="allow")
