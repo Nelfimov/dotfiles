@@ -307,6 +307,13 @@
               user = "nelfimov";
               autoMigrate = true;
               mutableTaps = false;
+              trust = {
+                taps = [
+                  "buildpacks/tap"
+                  "laishulu/homebrew"
+                  "nikitabobko/tap"
+                ];
+              };
             };
           }
         ];
