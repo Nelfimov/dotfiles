@@ -8,6 +8,16 @@ return {
     local project_root = require("lspconfig.util").root_pattern(".git")(vim.uv.cwd())
     local tsdk_path = "/.yarn/sdks/typescript/lib"
 
+    local terraform_root = require("lspconfig.util").root_pattern(
+      ".terraform",
+      ".terraform.lock.hcl",
+      "*.tf",
+      "*.tfvars",
+      "terragrunt.hcl"
+    )
+    opts.servers.terraformls = opts.servers.terraformls or {}
+    opts.servers.terraformls.root_dir = terraform_root
+
     if path_exists(project_root, tsdk_path) then
       opts.servers.vtsls.settings.typescript.tsdk = project_root .. tsdk_path
       opts.servers.vtsls.init_options = { hostInfo = "neovim" }
