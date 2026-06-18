@@ -2,6 +2,10 @@ return {
   "obsidian-nvim/obsidian.nvim",
   ft = "markdown",
   opts = {
+    legacy_commands = false,
+    ui = {
+      enable = false,
+    },
     checkbox = {
       order = { " ", "x" },
     },
