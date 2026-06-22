@@ -40,6 +40,20 @@ kubectl_shell_prompt() {
   kubectl config current-context 2>/dev/null || return
 }
 
+__prompt_newline() {
+  [ -t 0 ] && [ -t 1 ] || return
+
+  local old_stty response col
+  old_stty="$(stty -g 2>/dev/null)" || return
+  stty raw -echo min 0 time 1 2>/dev/null || return
+  printf '\033[6n' >/dev/tty
+  IFS=';' read -r -d R response col </dev/tty
+  stty "$old_stty" 2>/dev/null || return
+
+  col="${col%%[!0-9]*}"
+  [ -n "$col" ] && [ "$col" -ne 1 ] && printf '\n'
+}
+
 __prompt() {
   local exit_code=$?
   local branch
@@ -52,6 +66,7 @@ __prompt() {
   local color_dir='\[\e[38;5;197m\]'
   local color_git='\[\e[38;5;39m\]'
   local color_kube='\[\e[36m\]'
+  __prompt_newline
   branch="$(parse_git_branch)"
   direnv_prompt="$(direnv_shell_prompt)"
   kube_context="$(kubectl_shell_prompt)"
