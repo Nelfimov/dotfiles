@@ -9,6 +9,11 @@ return {
     checkbox = {
       order = { " ", "x" },
     },
+    callbacks = {
+      enter_note = function()
+        vim.opt_local.spell = false
+      end,
+    },
     workspaces = {
       {
         name = "index",
