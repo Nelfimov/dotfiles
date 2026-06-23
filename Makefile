@@ -6,7 +6,7 @@ apply:
 	sudo darwin-rebuild switch --flake .#mac
 
 update:
-	nix flake update
+	sudo nix flake update
 	sudo darwin-rebuild switch --flake .#mac
 
 update-nix:
