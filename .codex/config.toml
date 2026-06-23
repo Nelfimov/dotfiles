@@ -54,6 +54,9 @@ trust_level = "trusted"
 [projects."/Users/nelfimov/Documents/Dev/JS/rees46-cms"]
 trust_level = "trusted"
 
+[projects."/Users/nelfimov/Documents/Dev/Rust/rees46-probability-to-purchase"]
+trust_level = "trusted"
+
 [tui]
 notifications = ["agent-turn-complete", "approval-requested"]
 notification_condition = "always"
