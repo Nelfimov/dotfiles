@@ -57,6 +57,9 @@ trust_level = "trusted"
 [projects."/Users/nelfimov/Documents/Dev/Rust/rees46-probability-to-purchase"]
 trust_level = "trusted"
 
+[projects."/Users/nelfimov/Documents/Dev/Infrastructure/rees46-skills"]
+trust_level = "trusted"
+
 [tui]
 notifications = ["agent-turn-complete", "approval-requested"]
 notification_condition = "always"
@@ -67,3 +70,6 @@ vim_mode_default = false
 
 [plugins."github@openai-curated"]
 enabled = true
+
+[features]
+apps = false
