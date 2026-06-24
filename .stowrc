@@ -10,3 +10,5 @@
 --ignore=flake.lock
 --ignore=Makefile
 --ignore=qmk
+--ignore=hosts
+--ignore=modules

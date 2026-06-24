@@ -41,281 +41,30 @@
 
   outputs =
     inputs@{
-      self,
       nix-darwin,
       determinate,
-      nixpkgs,
       mac-app-util,
       nix-homebrew,
-      homebrew-core,
-      homebrew-cask,
-      janky-borders,
-      buildpack,
-      macism,
-      aerospace,
+      ...
     }:
     let
-      configuration =
-        { pkgs, ... }:
-        {
-          nix.enable = false;
-          nixpkgs = {
-            config = {
-              allowUnfree = true;
-            };
-            hostPlatform = "aarch64-darwin";
-          };
-
-          determinateNix = {
-            enable = true;
-            customSettings = {
-              lazy-trees = true;
-
-              keep-outputs = true;
-              keep-derivations = true;
-
-              accept-flake-config = true;
-              extra-experimental-features = "nix-command flakes";
-              trusted-users = [
-                "root"
-                "nelfimov"
-              ];
-              trusted-substituters = "https://cache.nixos.org/";
-            };
-            determinateNixd = {
-              garbageCollector.strategy = "automatic";
-              builder.state = "enabled";
-            };
-          };
-
-          environment.systemPackages = with pkgs; [
-            lazygit
-            ripgrep
-            stow
-            fd
-            fzf
-            zoxide
-            gh
-            graphviz
-            gnupg
-            pinentry_mac
-            nodejs
-            cargo
-            yarn
-            tree
-            rustup
-            clickhouse
-            # pi-coding-agent #FIXME: restore when fixed build
-          ];
-
-          fonts.packages = with pkgs; [
-            nerd-fonts.jetbrains-mono
-            nerd-fonts.martian-mono
-          ];
-
-          homebrew = {
-            enable = true;
-            brews = [
-              "pack"
-              "macism"
-              "mas"
-              "statix"
-              "k9s"
-              "neovim"
-              "go"
-              "tree-sitter-cli" # neovim LSP
-              "nixfmt" # nix
-              "watch"
-              "imagemagick"
-              "ffmpeg"
-              "mole"
-              "libpq" # postgres
-              "mtr"
-            ];
-            casks = [
-              "docker-desktop"
-              "figma"
-              "libreoffice"
-              "telegram"
-              "telegram-desktop" # TODO: rm once `telegram` is updated for MTProto
-              "amneziavpn"
-              "transmission"
-              "chromium-gost"
-              "vlc"
-              "zoho-cliq"
-              "adguard-vpn"
-              "vial"
-              "zoom"
-              "aerospace"
-              "codex"
-              "steam"
-              "kitty"
-            ];
-            onActivation = {
-              cleanup = "zap";
-              autoUpdate = true;
-              upgrade = true;
-            };
-            masApps = {
-              Bitwarden = 1352778147;
-              Ublock-origin-lite = 6745342698;
-              VimLike = 1584519802;
-            };
-          };
-
-          system.defaults = {
-            dock = {
-              autohide = true;
-              persistent-apps = [
-                "/Applications/Safari.app"
-                "/System/Applications/Messages.app"
-                "/System/Applications/FaceTime.app"
-                "/Applications/Telegram.app"
-                "/System/Applications/Mail.app"
-                "/Applications/kitty.app"
-                "/System/Applications/Calendar.app"
-                "/System/Applications/Reminders.app"
-                "/System/Applications/Notes.app"
-                "/System/Applications/Music.app"
-              ];
-              persistent-others = [
-                "/Users/nelfimov/Downloads"
-              ];
-              minimize-to-application = true;
-              orientation = "bottom";
-              show-process-indicators = true;
-              show-recents = false;
-              wvous-tr-corner = 12;
-            };
-            finder = {
-              FXPreferredViewStyle = "clmv";
-              NewWindowTarget = "Documents";
-              ShowPathbar = true;
-              AppleShowAllExtensions = true;
-            };
-            hitoolbox.AppleFnUsageType = "Change Input Source";
-            loginwindow.GuestEnabled = false;
-            NSGlobalDomain = {
-              AppleICUForce24HourTime = true;
-              AppleInterfaceStyle = "Dark";
-              KeyRepeat = 2;
-              AppleKeyboardUIMode = 3;
-              ApplePressAndHoldEnabled = false;
-              AppleShowScrollBars = "Automatic";
-              InitialKeyRepeat = 15;
-              NSAutomaticCapitalizationEnabled = false;
-              NSAutomaticDashSubstitutionEnabled = false;
-              NSAutomaticInlinePredictionEnabled = false;
-              NSAutomaticPeriodSubstitutionEnabled = false;
-              NSAutomaticSpellingCorrectionEnabled = false;
-              "com.apple.mouse.tapBehavior" = 1;
-            };
-            SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
-            screencapture.disable-shadow = false;
-            CustomSystemPreferences = {
-              NSGlobalDomain = {
-                # Add a context menu item for showing the Web Inspector in web views
-                WebKitDeveloperExtras = true;
-              };
-              # Prevent Photos from opening automatically when devices are plugged in
-              "com.apple.ImageCapture".disableHotPlug = true;
-              "com.apple.AdLib" = {
-                allowApplePersonalizedAdvertising = false;
-              };
-              "com.apple.Safari" = {
-                # Press Tab to highlight each item on a web page
-                WebKitTabToLinksPreferenceKey = true;
-                ShowFullURLInSmartSearchField = false;
-                IncludeInternalDebugMenu = true;
-                IncludeDevelopMenu = true;
-                WebKitDeveloperExtrasEnabledPreferenceKey = true;
-                WebContinuousSpellCheckingEnabled = true;
-                WebAutomaticSpellingCorrectionEnabled = false;
-                AutoFillFromAddressBook = false;
-                AutoFillCreditCardData = false;
-                AutoFillMiscellaneousForms = false;
-                WarnAboutFraudulentWebsites = true;
-                WebKitJavaEnabled = false;
-                WebKitJavaScriptCanOpenWindowsAutomatically = false;
-                "com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks" = true;
-                "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" = true;
-                "com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled" = false;
-                "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled" = false;
-                "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabledForLocalFiles" = false;
-                "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically" = false;
-                "com.apple.Safari.IncludeInternalDebugMenu" = true;
-              };
-            };
-          };
-
-          system = {
-            keyboard = {
-              remapCapsLockToControl = false;
-              remapCapsLockToEscape = false;
-            };
-            configurationRevision = self.rev or self.dirtyRev or null;
-            stateVersion = 6;
-            primaryUser = "nelfimov";
-          };
-
-          nix = {
-            settings.experimental-features = "nix-command flakes";
-            extraOptions = ''
-              extra-platforms = x86_64-darwin aarch64-darwin
-            '';
-          };
-
-          security.pam.services.sudo_local.touchIdAuth = true;
-
-          programs.zsh = {
-            enable = true;
-            enableSyntaxHighlighting = true;
-            enableAutosuggestions = true;
-            enableCompletion = true;
-          };
-
-          programs.direnv.enable = true;
-        };
+      user = "nelfimov";
+      hostPlatform = "aarch64-darwin";
     in
     {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#mac
       darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
+        specialArgs = {
+          inherit inputs user hostPlatform;
+        };
+
         modules = [
-          (
-            { config, ... }:
-            {
-              homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
-            }
-          )
-          configuration
+          ./hosts/mac.nix
           determinate.darwinModules.default
           mac-app-util.darwinModules.default
           nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              taps = {
-                "homebrew/homebrew-core" = homebrew-core;
-                "homebrew/homebrew-cask" = homebrew-cask;
-                "FelixKratz/homebrew-formulae" = janky-borders;
-                "buildpacks/homebrew-tap" = buildpack;
-                "laishulu/homebrew-homebrew" = macism;
-                "nikitabobko/homebrew-tap" = aerospace;
-              };
-              enable = true;
-              enableRosetta = true;
-              user = "nelfimov";
-              autoMigrate = true;
-              mutableTaps = false;
-              trust = {
-                taps = [
-                  "buildpacks/tap"
-                  "laishulu/homebrew"
-                  "nikitabobko/tap"
-                ];
-              };
-            };
-          }
+          ./modules/darwin/nix-homebrew.nix
         ];
       };
     };
