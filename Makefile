@@ -3,6 +3,7 @@ first-time:
 	nix run nix-darwin/master#darwin-rebuild -- switch --flake .#mac
 
 apply:
+	nvim --headless "+Lazy! restore" +qa
 	sudo darwin-rebuild switch --flake .#mac
 
 update:
