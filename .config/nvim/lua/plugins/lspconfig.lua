@@ -8,15 +8,17 @@ return {
     local project_root = require("lspconfig.util").root_pattern(".git")(vim.uv.cwd())
     local tsdk_path = "/.yarn/sdks/typescript/lib"
 
-    local terraform_root = require("lspconfig.util").root_pattern(
-      ".terraform",
-      ".terraform.lock.hcl",
-      "*.tf",
-      "*.tfvars",
-      "terragrunt.hcl"
-    )
+    local terraform_root =
+      require("lspconfig.util").root_pattern(".terraform", ".terraform.lock.hcl", "*.tf", "*.tfvars", "terragrunt.hcl")
     opts.servers.terraformls = opts.servers.terraformls or {}
     opts.servers.terraformls.root_dir = terraform_root
+
+    opts.servers.nil_ls = opts.servers.nil_ls or {}
+    opts.servers.nil_ls.settings = opts.servers.nil_ls.settings or {}
+    opts.servers.nil_ls.settings["nil"] = opts.servers.nil_ls.settings["nil"] or {}
+    opts.servers.nil_ls.settings["nil"].nix = opts.servers.nil_ls.settings["nil"].nix or {}
+    opts.servers.nil_ls.settings["nil"].nix.flake = opts.servers.nil_ls.settings["nil"].nix.flake or {}
+    opts.servers.nil_ls.settings["nil"].nix.flake.autoArchive = true
 
     if path_exists(project_root, tsdk_path) then
       opts.servers.vtsls.settings.typescript.tsdk = project_root .. tsdk_path

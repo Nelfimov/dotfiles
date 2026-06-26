@@ -60,6 +60,9 @@ trust_level = "trusted"
 [projects."/Users/nelfimov/Documents/Dev/Infrastructure/rees46-skills"]
 trust_level = "trusted"
 
+[projects."/Users/nelfimov/Documents/Dev/Infrastructure/personaclick-skills"]
+trust_level = "trusted"
+
 [tui]
 notifications = ["agent-turn-complete", "approval-requested"]
 notification_condition = "always"
