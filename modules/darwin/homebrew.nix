@@ -36,6 +36,7 @@
       "codex"
       "steam"
       "kitty"
+      "chatgpt"
     ];
     onActivation = {
       cleanup = "zap";
