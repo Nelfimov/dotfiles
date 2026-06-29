@@ -16,8 +16,7 @@
     yarn
     tree
     rustup
-    clickhouse
-    # pi-coding-agent #FIXME: restore when fixed build
+    clickhouse-lts
   ];
 
   fonts.packages = with pkgs; [
