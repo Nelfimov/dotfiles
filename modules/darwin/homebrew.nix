@@ -37,6 +37,7 @@
       "steam"
       "kitty"
       "chatgpt"
+      "obsidian"
     ];
     onActivation = {
       cleanup = "zap";
