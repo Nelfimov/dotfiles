@@ -30,13 +30,14 @@ return {
 
     opts.servers.solargraph = opts.servers.solargraph or {}
     opts.servers.solargraph = {
-      enabled = true,
       mason = false,
     }
     opts.servers.rubocop = opts.servers.rubocop or {}
     opts.servers.rubocop = {
-      -- enabled = formatter == "rubocop" and lsp ~= "solargraph",
-      enabled = true,
+      mason = false,
+    }
+    opts.servers.ruby_lsp = opts.servers.ruby_lsp or {}
+    opts.servers.ruby_lsp = {
       mason = false,
     }
 
