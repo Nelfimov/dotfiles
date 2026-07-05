@@ -1,11 +1,3 @@
--- Disable autoformat for ruby files
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "ruby", "rb" },
-  callback = function()
-    vim.b.autoformat = false
-  end,
-})
-
 vim.api.nvim_create_autocmd("User", {
   pattern = "ObsidianNoteWritePost",
   callback = (function()
@@ -78,27 +70,6 @@ vim.api.nvim_create_autocmd("User", {
       end
 
       schedule_sync()
-    end
-  end)(),
-})
-
-vim.api.nvim_create_autocmd("User", {
-  pattern = "ObsidianNoteEnter",
-  callback = (function()
-    local vault = vim.fn.expand("~/Documents/Dev/Obsidian")
-    local uv = vim.uv or vim.loop
-    local timer
-    local running = false
-    local rerun = false
-
-    local function notify(msg, level)
-      vim.schedule(function()
-        vim.notify(msg, level or vim.log.levels.INFO, { title = "Obsidian Git" })
-      end)
-    end
-
-    return function(ev)
-      notify("HELLO AND WELCOME")
     end
   end)(),
 })

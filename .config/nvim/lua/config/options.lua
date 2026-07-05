@@ -21,8 +21,6 @@ vim.filetype.add({
   },
 })
 
-vim.g.lazyvim_ruby_lsp = "ruby_lsp"
-vim.g.lazyvim_ruby_formatter = "rubocop"
 vim.g.lazyvim_picker = "snacks"
 
 vim.g.lazyvim_php_lsp = "intelephense"
