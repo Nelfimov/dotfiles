@@ -38,6 +38,7 @@
       "kitty"
       "chatgpt"
       "obsidian"
+      "rubymine"
     ];
     onActivation = {
       cleanup = "zap";
