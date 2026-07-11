@@ -21,10 +21,6 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    janky-borders = {
-      url = "github:FelixKratz/homebrew-formulae";
-      flake = false;
-    };
     buildpack = {
       url = "github:buildpacks/homebrew-tap";
       flake = false;
