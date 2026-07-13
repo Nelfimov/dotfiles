@@ -63,3 +63,5 @@ luac.out
 *.app
 
 .config/intelephense
+
+.idea

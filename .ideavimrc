@@ -196,14 +196,31 @@ vmap <leader>de <Action>(EvaluateExpression)
 nmap <leader>du <Action>(ActivateDebugToolWindow)
 
 " Flash.nvim-like motions through IdeaVim EasyMotion.
-nmap s <Action>(AceAction)
-xmap s <Action>(AceAction)
-nmap S <Action>(AceLineAction)
-xmap S <Action>(AceLineAction)
-nmap ы <Action>(AceAction)
-xmap ы <Action>(AceAction)
-nmap Ы <Action>(AceLineAction)
-xmap Ы <Action>(AceLineAction)
+nmap s <Action>(flash.search)
+xmap s <Action>(flash.search)
+nmap ы <Action>(flash.search)
+xmap ы <Action>(flash.search)
+
+nmap S <Action>(flash.treesitter)
+xmap S <Action>(flash.treesitter)
+nmap Ы <Action>(flash.treesitter)
+xmap Ы <Action>(flash.treesitter)
+
+nmap f <Action>(flash.find)
+xmap f <Action>(flash.find)
+nmap F <Action>(flash.find_backward)
+xmap F <Action>(flash.find_backward)
+
+nmap t <Action>(flash.till)
+xmap t <Action>(flash.till)
+nmap T <Action>(flash.till_backward)
+xmap T <Action>(flash.till_backward)
+
+nmap ; <Action>(flash.repeat)
+xmap ; <Action>(flash.repeat)
+nmap , <Action>(flash.repeat_backward)
+xmap , <Action>(flash.repeat_backward)
+
 
 " LazyVim mappings without a useful RubyMine equivalent.
 nmap <leader>cc :echo 'No RubyMine equivalent for LSP Info / Codelens.'<CR>
