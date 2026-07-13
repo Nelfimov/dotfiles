@@ -73,3 +73,12 @@ fi
 if [ -d /opt/homebrew/opt/libpq/bin ] && [[ ":$PATH:" != *":/opt/homebrew/opt/libpq/bin:"* ]]; then
   export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 fi
+
+# RubyGems executables
+if command -v ruby >/dev/null 2>&1; then
+  ruby_gem_bin="$(ruby -e 'print Gem.bindir')"
+  if [[ ":$PATH:" != *":$ruby_gem_bin:"* ]]; then
+    export PATH="$ruby_gem_bin:$PATH"
+  fi
+  unset ruby_gem_bin
+fi
