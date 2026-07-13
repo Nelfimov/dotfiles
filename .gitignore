@@ -66,3 +66,4 @@ luac.out
 
 .idea
 .config/jgit
+.config/nix/nix.conf
