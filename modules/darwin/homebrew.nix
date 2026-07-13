@@ -5,7 +5,6 @@
       "pack"
       "macism"
       "mas"
-      "statix"
       "k9s"
       "neovim"
       "go"
