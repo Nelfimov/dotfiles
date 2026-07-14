@@ -10,18 +10,14 @@ set surround
 set easymotion
 set ideajoin
 set matchit
+set NERDTree
 set which-key
 set keep-english-in-normal
+set VimEverywhere
 
 " IdeaVim / JetBrains behavior.
 set clipboard+=unnamed
-
-" Project/file tree navigation. <Down>/<Up> works both in editor buffers and
-" JetBrains tree/list components, while plain j/k sometimes requires Ctrl.
-nmap j <Down>
-nmap k <Up>
-nmap о <Down>
-nmap л <Up>
+set clipboard+=ideaput
 
 " Insert-mode JetBrains completion.
 inoremap <C-n> <C-o>:action CodeCompletion<CR>
