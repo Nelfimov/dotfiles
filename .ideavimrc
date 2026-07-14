@@ -10,7 +10,10 @@ set surround
 set easymotion
 set ideajoin
 set matchit
+
 set NERDTree
+let g:NERDTreeMapNewFile = 'a'
+
 set which-key
 set keep-english-in-normal
 set VimEverywhere
