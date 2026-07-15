@@ -23,7 +23,7 @@ set clipboard+=unnamed
 set clipboard+=ideaput
 
 " Insert-mode JetBrains completion.
-inoremap <C-n> <C-o>:action CodeCompletion<CR>
+imap <C-n> <Action>(CodeCompletion)
 
 " Window sizing.
 nmap <C-Up> <Action>(IncrementWindowHeight)
