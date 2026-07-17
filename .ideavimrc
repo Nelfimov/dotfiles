@@ -10,11 +10,17 @@ set surround
 set easymotion
 set ideajoin
 set matchit
+set targets
+
+set highlightedyank
+let g:highlightedyank_highlight_duration = "200"
 
 set NERDTree
 let g:NERDTreeMapNewFile = 'a'
 
 set which-key
+set notimeout
+
 set keep-english-in-normal
 set VimEverywhere
 
@@ -123,6 +129,8 @@ nmap ]w <Action>(GotoNextError)
 nmap [w <Action>(GotoPreviousError)
 nmap ]q <Action>(GotoNextError)
 nmap [q <Action>(GotoPreviousError)
+nmap ]h <Action>(VcsShowNextChangeMarker)
+nmap [h <Action>(VcsShowPrevChangeMarker)
 nmap ]] <Action>(GotoNextError)
 nmap [[ <Action>(GotoPreviousError)
 nmap <A-n> <Action>(GotoNextError)
