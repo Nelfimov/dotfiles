@@ -28,6 +28,8 @@ set VimEverywhere
 set clipboard+=unnamed
 set clipboard+=ideaput
 
+map <C-s> <Action>(SaveDocument)
+
 " Insert-mode JetBrains completion.
 imap <C-n> <Action>(CodeCompletion)
 
