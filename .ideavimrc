@@ -160,6 +160,8 @@ nmap <leader>gl <Action>(Vcs.Show.Log)
 nmap <leader>gL <Action>(Vcs.Show.Log)
 nmap <leader>gs <Action>(Vcs.Show.Log)
 nmap <leader>ghr <Action>(Vcs.RollbackChangedLines)
+nmap <leader>gy <Action>(GitHub.Copy.Link)
+nmap <leader>gb <Action>(Github.Open.In.Browser)
 
 " Toggles and UI.
 nmap <leader>ud <Action>(ActivateProblemsViewToolWindow)
