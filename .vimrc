@@ -34,6 +34,10 @@ nnoremap <Esc> :nohlsearch<CR>
 nnoremap <leader>ur :nohlsearch<CR>
 nnoremap <leader>K :help <C-r><C-w><CR>
 
+" Keep selection active after indenting in visual mode
+vnoremap > >gv
+vnoremap < <gv
+
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
