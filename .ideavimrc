@@ -69,6 +69,7 @@ nmap <leader>wd <Action>(CloseContent)
 
 let g:WhichKeyDesc_window_maximize = "<leader>wm Toggle Zoom Mode"
 nmap <leader>wm <Action>(ToggleDistractionFreeMode)
+nmap <leader>uz <Action>(ToggleDistractionFreeMode)
 
 nmap <C-z> <Action>(ToggleDistractionFreeMode)
 
@@ -319,9 +320,6 @@ endif
 let g:WhichKeyDesc_git_blame = "<leader>gb Git Blame Line"
 nmap <leader>gb <Action>(Annotate)
 
-let g:WhichKeyDesc_git_browse = "<leader>gB Git Browse (open)"
-nmap <leader>gB <Action>(Vcs.Show.Log)
-
 let g:WhichKeyDesc_git_file_history = "<leader>gf Git File History"
 nmap <leader>gf <Action>(Vcs.ShowTabbedFileHistory)
 
@@ -347,23 +345,9 @@ let g:WhichKeyDesc_git_explorer = "<leader>gy Copy URL in GitHub"
 nmap <leader>gy <Action>(GitHub.Copy.Link)
 vmap <leader>gy <Action>(GitHub.Copy.Link)
 
-let g:WhichKeyDesc_git_explorer = "<leader>gb Open in GitHub"
-nmap <leader>gb <Action>(Github.Open.In.Browser)
-vmap <leader>gb <Action>(Github.Open.In.Browser)
-
-""" Old
-"nmap <leader>gg <Action>(ActivateCommitToolWindow)
-"nmap <leader>gG <Action>(ActivateCommitToolWindow)
-"nmap <leader>gb <Action>(Annotate)
-"nmap <leader>gB <Action>(Vcs.Show.Log)
-"nmap <leader>gc <Action>(Vcs.Show.Log)
-"nmap <leader>ge <Action>(ActivateVersionControlToolWindow)
-"nmap <leader>gf <Action>(Vcs.ShowTabbedFileHistory)
-"nmap <leader>gl <Action>(Vcs.Show.Log)
-"nmap <leader>gL <Action>(Vcs.Show.Log)
-"nmap <leader>gs <Action>(Vcs.Show.Log)
-
-"""
+let g:WhichKeyDesc_git_explorer = "<leader>gB Open in GitHub"
+nmap <leader>gB <Action>(Github.Open.In.Browser)
+vmap <leader>gB <Action>(Github.Open.In.Browser)
 
 " Toggles and UI.
 nmap <leader>ud <Action>(ActivateProblemsViewToolWindow)
