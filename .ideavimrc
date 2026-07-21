@@ -342,8 +342,8 @@ let g:WhichKeyDesc_git_explorer = "<leader>ghr Rollback under cursor"
 nmap <leader>ghr <Action>(Vcs.RollbackChangedLines)
 
 let g:WhichKeyDesc_git_explorer = "<leader>gy Copy URL in GitHub"
-nmap <leader>gy <Action>(GitHub.Copy.Link)
-vmap <leader>gy <Action>(GitHub.Copy.Link)
+nmap <leader>gY <Action>(GitHub.Copy.Link)
+vmap <leader>gY <Action>(GitHub.Copy.Link)
 
 let g:WhichKeyDesc_git_explorer = "<leader>gB Open in GitHub"
 nmap <leader>gB <Action>(Github.Open.In.Browser)
