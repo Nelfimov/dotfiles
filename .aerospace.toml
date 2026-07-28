@@ -65,6 +65,10 @@ if.app-id = "com.mitchellh.ghostty"
 run = ["move-node-to-workspace 2"]
 
 [[on-window-detected]]
+if.app-id = "com.jetbrains.rubymine"
+run = ["move-node-to-workspace 2"]
+
+[[on-window-detected]]
 if.app-id = "com.hnc.Discord"
 run = ["move-node-to-workspace 3"]
 
