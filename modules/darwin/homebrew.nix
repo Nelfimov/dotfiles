@@ -38,6 +38,7 @@
       "chatgpt"
       "obsidian"
       "rubymine"
+      "yandextelemost"
     ];
     onActivation = {
       cleanup = "zap";
