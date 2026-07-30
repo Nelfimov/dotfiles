@@ -13,6 +13,7 @@
 
     # Homebrew
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    nix-homebrew.inputs.brew-src.url = "github:Homebrew/brew/master"; # https://github.com/zhaofengli/nix-homebrew/pull/164
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
