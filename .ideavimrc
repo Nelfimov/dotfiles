@@ -4,6 +4,9 @@
 
 source ~/.vimrc
 
+let g:is_ide_rider = &ide == 'JetBrains Rider'
+let g:is_ide_ruby = &ide =~? 'RubyMine'
+
 " IdeaVim plugins.
 set commentary
 let g:WhichKeyDesc_comment = "gc +Toggle Comment"
@@ -232,6 +235,7 @@ nmap gI <Action>(GotoImplementation)
 
 let g:WhichKeyDesc_goto_type = "gy Goto T[y]pe Definition"
 nmap gy <Action>(GotoTypeDeclaration)
+if g:is_ide_ruby | nmap gy <Action>(Ruby.GotoTypeSignature) | endif
 
 let g:WhichKeyDesc_signature_help = "gK Signature Help"
 nmap gK <Action>(ParameterInfo)
