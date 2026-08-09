@@ -17,6 +17,7 @@
       "libpq" # postgres
       "mtr"
       "ruby"
+      "jj"
     ];
     casks = [
       "docker-desktop"

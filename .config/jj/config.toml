@@ -1,0 +1,10 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "Nikita Elfimov"
+email = "nelfimov@mail.ru"
+
+[signing]
+behavior = "own"
+backend = "ssh"
+key = "~/.ssh/github.pub"
