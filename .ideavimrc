@@ -346,12 +346,12 @@ let g:WhichKeyDesc_git_explorer = "<leader>ghr Rollback under cursor"
 nmap <leader>ghr <Action>(Vcs.RollbackChangedLines)
 
 let g:WhichKeyDesc_git_explorer = "<leader>gy Copy URL in GitHub"
-nmap <leader>gY <Action>(GitHub.Copy.Link)
-vmap <leader>gY <Action>(GitHub.Copy.Link)
+nmap <leader>gY <Action>(uk.co.ben_gibson.git.link.ui.actions.menu.CopyAction)
+vmap <leader>gY <Action>(uk.co.ben_gibson.git.link.ui.actions.menu.CopyAction)
 
 let g:WhichKeyDesc_git_explorer = "<leader>gB Open in GitHub"
-nmap <leader>gB <Action>(Github.Open.In.Browser)
-vmap <leader>gB <Action>(Github.Open.In.Browser)
+nmap <leader>gB <Action>(uk.co.ben_gibson.git.link.ui.actions.menu.BrowserAction)
+vmap <leader>gB <Action>(uk.co.ben_gibson.git.link.ui.actions.menu.BrowserAction)
 
 " Toggles and UI.
 nmap <leader>ud <Action>(ActivateProblemsViewToolWindow)
