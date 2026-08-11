@@ -67,6 +67,8 @@ nmap <leader>- <c-w>s
 let g:WhichKeyDesc_split_right = "<leader>| Split Window Right"
 nmap <leader><bar> <c-w>v
 
+let g:WhichKeyDesc_window = "<leader>w Window"
+
 let g:WhichKeyDesc_window_delete = "<leader>wd Delete Window"
 nmap <leader>wd <Action>(CloseContent)
 
@@ -83,6 +85,8 @@ imap <A-j> <Esc><Action>(MoveLineDown)i
 imap <A-k> <Esc><Action>(MoveLineUp)i
 
 " Editor tabs and buffers.
+let g:WhichKeyDesc_buffer = "<leader>b Buffer"
+
 let g:WhichKeyDesc_buffer_prev = "<S-h> Prev Buffer"
 nmap <S-h> <Action>(PreviousTab)
 
@@ -103,6 +107,8 @@ nmap <leader>be <Action>(ActivateProjectToolWindow)
 nmap <leader>, <Action>(Switcher)
 
 " Files, project, and search. These correspond to LazyVim picker groups.
+let g:WhichKeyDesc_file = "<leader>f File"
+
 nmap <leader><Space> <Action>(GotoFile)
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fF <Action>(GotoFile)
@@ -125,6 +131,8 @@ nmap <leader>fe <Action>(ActivateProjectToolWindow)
 nmap <leader>fE <Action>(SelectInProjectView)
 
 " Search group.
+let g:WhichKeyDesc_search = "<leader>s Search"
+
 let g:WhichKeyDesc_search_buffer = "<leader>sb Buffer Lines"
 nmap <leader>sb <Action>(Switcher)
 
@@ -200,12 +208,16 @@ let g:WhichKeyDesc_search_todo_fixme = "<leader>sT Todo/Fix/Fixme"
 nmap <leader>sT <Action>(ActivateTODOToolWindow)
 
 " Code actions, formatting, diagnostics, and navigation.
+let g:WhichKeyDesc_code = "<leader>c Code"
+
 let g:WhichKeyDesc_format = "<leader>cf Format"
 nmap <leader>cf <Action>(ReformatCode)
 vmap <leader>cf <Action>(ReformatCode)
 
 let g:WhichKeyDesc_diagnostics_line = "<leader>cd Line Diagnostics"
 nmap <leader>cd <Action>(ActivateProblemsViewToolWindow)
+
+let g:WhichKeyDesc_problems = "<leader>x Problems"
 
 nmap <leader>xl <Action>(ActivateProblemsViewToolWindow)
 nmap <leader>xq <Action>(ActivateProblemsViewToolWindow)
@@ -307,6 +319,9 @@ nmap gco o<Esc>gcc
 nmap gcO O<Esc>gcc
 
 " Git.
+
+let g:WhichKeyDesc_git = "<leader>g Git"
+
 let g:WhichKeyDesc_git_ui = "<leader>gg GitUi (Root Dir)"
 if exists('g:loaded_lazygit')
     nmap <leader>gg <Action>(Lazygit.Toggle)
@@ -354,6 +369,8 @@ nmap <leader>gB <Action>(uk.co.ben_gibson.git.link.ui.actions.menu.BrowserAction
 vmap <leader>gB <Action>(uk.co.ben_gibson.git.link.ui.actions.menu.BrowserAction)
 
 " Toggles and UI.
+let g:WhichKeyDesc_ui = "<leader>u UI"
+
 nmap <leader>ud <Action>(ActivateProblemsViewToolWindow)
 
 let g:WhichKeyDesc_ui_colorscheme = "<leader>uC Colorschemes"
@@ -376,8 +393,9 @@ nmap <leader>us :setlocal spell!<CR>
 let g:WhichKeyDesc_ui_wrap = "<leader>uw Toggle Wrap"
 nmap <leader>uw :setlocal wrap!<CR>
 
-nmap <leader>L <Action>(WhatsNewAction)
-nmap <leader>l <Action>(WelcomeScreen.Plugins)
+let g:WhichKeyDesc_qui = "<leader>q Quit"
+
+let g:WhichKeyDesc_ui_wrap = "<leader>qq Exit"
 nmap <leader>qq <Action>(Exit)
 
 " Terminal.
@@ -386,6 +404,8 @@ nmap <leader>fT <Action>(ActivateTerminalToolWindow)
 nmap <C-/> <Action>(ActivateTerminalToolWindow)
 
 " Tests and debug.
+let g:WhichKeyDesc_test = "<leader>t Test"
+
 let g:WhichKeyDesc_test_last = "<leader>tl Run Last (Neotest)"
 nmap <leader>tl <Action>(Run)
 if g:is_ide_rider | nmap <leader>tl <Action>(RiderUnitTestRunCurrentSessionAction) | endif
@@ -422,19 +442,46 @@ let g:WhichKeyDesc_test_debug = "<leader>td Debug Nearest"
 nmap <leader>td <Action>(ChooseDebugConfiguration)
 if g:is_ide_rider | nmap <leader>td <Action>(RiderUnitTestDebugContextAction) | endif
 
+let g:WhichKeyDesc_debug = "<leader>d Debug"
+
+let g:WhichKeyDesc_debug_run_config = "<leader>da Choose run configuration"
 nmap <leader>da <Action>(ChooseRunConfiguration)
+
+let g:WhichKeyDesc_debug_breakpoint = "<leader>db Toggle breakpoint"
 nmap <leader>db <Action>(ToggleLineBreakpoint)
+
+let g:WhichKeyDesc_debug_breakpoint_conditional = "<leader>dB Toggle conditional breakpoint"
 nmap <leader>dB <Action>(AddConditionalBreakpoint)
+
+let g:WhichKeyDesc_debug_resume = "<leader>dc Resume debug"
 nmap <leader>dc <Action>(Resume)
+
+let g:WhichKeyDesc_debug_resume_to_cursor = "<leader>dC Resume debug to cursor"
 nmap <leader>dC <Action>(ForceRunToCursor)
+
+let g:WhichKeyDesc_debug_step_into = "<leader>di Step into"
 nmap <leader>di <Action>(StepInto)
+
+let g:WhichKeyDesc_debug_run = "<leader>dl Debug"
 nmap <leader>dl <Action>(Debug)
+
+let g:WhichKeyDesc_debug_step_out = "<leader>do Step out"
 nmap <leader>do <Action>(StepOut)
+
+let g:WhichKeyDesc_debug_step_over = "<leader>dO Step over"
 nmap <leader>dO <Action>(StepOver)
+
+let g:WhichKeyDesc_debug_pause = "<leader>dp Pause"
 nmap <leader>dp <Action>(Pause)
+
+let g:WhichKeyDesc_debug_stop = "<leader>dt Stop"
 nmap <leader>dt <Action>(Stop)
+
+let g:WhichKeyDesc_debug_evaluate = "<leader>de Evaluate expression"
 nmap <leader>de <Action>(EvaluateExpression)
 vmap <leader>de <Action>(EvaluateExpression)
+
+let g:WhichKeyDesc_debug_activate_tool = "<leader>de Activate debug tool"
 nmap <leader>du <Action>(ActivateDebugToolWindow)
 
 " LazyVim mappings without a useful RubyMine equivalent.
