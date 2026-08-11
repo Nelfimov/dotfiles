@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd("User", {
 
       timer = uv.new_timer()
       timer:start(
-        3000,
+        30000,
         0,
         vim.schedule_wrap(function()
           timer:stop()
