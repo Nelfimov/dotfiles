@@ -8,3 +8,6 @@ email = "nelfimov@mail.ru"
 behavior = "own"
 backend = "ssh"
 key = "~/.ssh/github.pub"
+
+[ui]
+default-commmand = "log"
