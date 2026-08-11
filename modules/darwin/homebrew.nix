@@ -31,7 +31,6 @@
       "zoho-cliq"
       "adguard-vpn"
       "vial"
-      "zoom"
       "aerospace"
       "codex"
       "steam"
