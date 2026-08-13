@@ -1,5 +1,6 @@
 prefix_rule(pattern=["dig", "+short"], decision="allow")
 prefix_rule(pattern=["nc", "-vz"], decision="allow")
+prefix_rule(pattern=["rg"], decision="allow")
 
 prefix_rule(pattern=["tar", "-tzf", "result"], decision="allow")
 
