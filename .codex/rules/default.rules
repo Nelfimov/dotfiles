@@ -65,3 +65,5 @@ prefix_rule(pattern=["nix", "flake", "lock"], decision="allow")
 
 prefix_rule(pattern=["git", "status"], decision="allow")
 prefix_rule(pattern=["git", "diff"], decision="allow")
+prefix_rule(pattern=["bundle", "install"], decision="allow")
+prefix_rule(pattern=["direnv", "exec", ".", "bundle", "install"], decision="allow")
