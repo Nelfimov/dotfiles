@@ -53,6 +53,7 @@ luac.out
 .codex/*
 !.codex/config.toml
 !.codex/rules
+!.codex/AGENTS.md
 
 .pi/agents
 
