@@ -29,7 +29,6 @@
       "vlc"
       "zoho-cliq"
       "adguard-vpn"
-      "vial"
       "aerospace"
       "codex"
       "steam"
