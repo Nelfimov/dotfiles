@@ -54,3 +54,7 @@ compress_video() {
 }
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+if [ -S "/Users/nelfimov/.bitwarden-ssh-agent.sock" ]; then
+  export SSH_AUTH_SOCK=/Users/nelfimov/.bitwarden-ssh-agent.sock
+fi
