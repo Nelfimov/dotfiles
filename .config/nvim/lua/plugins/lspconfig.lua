@@ -53,7 +53,7 @@ return {
       },
       ruby_lsp = {
         mason = false,
-        cmd = { "bundle", "exec", "ruby-lsp" },
+        cmd = { "ruby-lsp" },
       },
       yamlls = {
         settings = {
