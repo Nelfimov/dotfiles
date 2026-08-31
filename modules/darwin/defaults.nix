@@ -23,6 +23,7 @@
       show-process-indicators = true;
       show-recents = false;
       wvous-tr-corner = 12;
+      expose-group-apps = true;
     };
     finder = {
       FXPreferredViewStyle = "clmv";
