@@ -21,73 +21,51 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 automatically-unhide-macos-hidden-apps = true
 
+persistent-workspaces = ["1", "2", "3", "4", "5"]
+
 [[on-window-detected]]
-if.app-id = "com.apple.finder"
+if = 'test %{app-bundle-id} = com.apple.finder'
 run = "layout floating"
 
 [[on-window-detected]]
-if.app-id = "com.apple.Facetime"
+if = 'test %{app-bundle-id} = com.apple.Facetime'
 run = "layout floating"
 
 [[on-window-detected]]
-if.app-name-regex-substring = "webstorm"
+if = 'test %{app-bundle-id} ~= jetbrains'
 run = ["move-node-to-workspace 2"]
 
 [[on-window-detected]]
-if.app-id = "com.apple.ActivityMonitor"
+if = 'test %{app-bundle-id} = com.apple.ActivityMonitor'
 run = "layout floating"
 
 [[on-window-detected]]
-if.app-name-regex-substring = "cleaner"
+if = 'test %{app-bundle-id} = org.m0k.transmission'
 run = "layout floating"
 
 [[on-window-detected]]
-if.app-id = "org.m0k.transmission"
-run = "layout floating"
-
-[[on-window-detected]]
-if.app-id = "com.electron.gitify"
-run = "layout floating"
-
-[[on-window-detected]]
-if.app-id = "ru.keepcoder.Telegram"
+if = 'test %{app-bundle-id} ~= Telegram'
 run = ["move-node-to-workspace 3"]
 
 [[on-window-detected]]
-if.app-id = "com.tdesktop.Telegram"
-run = ["move-node-to-workspace 3"]
-
-[[on-window-detected]]
-if.app-id = "com.amnezia.AmneziaVPN"
+if = 'test %{app-bundle-id} = com.amnezia.AmneziaVPN'
 run = "layout floating"
 
 [[on-window-detected]]
-if.app-id = "com.mitchellh.ghostty"
+if = 'test %{app-bundle-id} = com.mitchellh.ghostty'
 run = ["move-node-to-workspace 2"]
 
 [[on-window-detected]]
-if.app-id = "com.jetbrains.rubymine"
-run = ["move-node-to-workspace 2"]
-
-[[on-window-detected]]
-if.app-id = "com.hnc.Discord"
+if = 'test %{app-bundle-id} = com.hnc.Discord'
 run = ["move-node-to-workspace 3"]
 
 [[on-window-detected]]
-if.app-id = "com.zoho.cliq"
+if = 'test %{app-bundle-id} = com.zoho.cliq'
 run = ["move-node-to-workspace 3"]
 
 [[on-window-detected]]
-if.app-id = "com.jetbrains.intellij"
-run = ["move-node-to-workspace 2"]
-
-[[on-window-detected]]
-if.app-id = "com.apple.Music"
+if = 'test %{app-bundle-id} = com.apple.Music'
 run = ["move-node-to-workspace 4"]
-
-[[on-window-detected]]
-if.app-id = "org.m0k.transmission"
-run = "layout floating"
 
 [key-mapping]
 preset = 'qwerty'
