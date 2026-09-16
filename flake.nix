@@ -34,6 +34,9 @@
       url = "github:nikitabobko/homebrew-tap";
       flake = false;
     };
+
+    # TODO: rm once https://github.com/nix-community/nix-direnv/pull/790 is released (prob. after 3.2.0)
+    nixpkgsNixDirenv.url = "github:nixos/nixpkgs/e6f23dc08d3624daab7094b701aa3954923c6bbb"; # 3.1.0
   };
 
   outputs =

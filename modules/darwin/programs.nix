@@ -1,3 +1,4 @@
+{ inputs, hostPlatform, ... }:
 {
   security.pam.services.sudo_local.touchIdAuth = true;
   security.pam.services.sudo_local.watchIdAuth = true;
@@ -11,5 +12,7 @@
     };
 
     direnv.enable = true;
+
+    direnv.nix-direnv.package = inputs.nixpkgsNixDirenv.legacyPackages.${hostPlatform}.nix-direnv;
   };
 }
