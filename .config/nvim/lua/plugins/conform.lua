@@ -4,9 +4,6 @@ return {
     formatters_by_ft = {
       rust = { "rustfmt", lsp_format = "fallback", default_edition = "2024" },
       liquid = { "prettier" },
-      ruby = { formatter },
-      eruby = { "erb_format" },
-      nginx = { "nginx-config-formatter" },
     },
     formatters = {
       rustfmt = {

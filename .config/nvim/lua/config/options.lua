@@ -24,6 +24,8 @@ vim.filetype.add({
 vim.g.lazyvim_picker = "snacks"
 
 vim.g.lazyvim_php_lsp = "intelephense"
+vim.g.lazyvim_ruby_lsp = "ruby_lsp"
+vim.g.lazyvim_ruby_formatter = "rubocop"
 
 vim.opt.spelllang = { "en", "ru" }
 vim.opt.swapfile = false
