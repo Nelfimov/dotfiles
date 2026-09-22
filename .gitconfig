@@ -2,31 +2,23 @@
 	name = Nikita Elfimov
 	email = nelfimov@mail.ru
   signingkey = ~/.ssh/github.pub
+
 [commit]
   gpgsign = true
+
 [push]
 	autoSetupRemote = true
 	recurseSubmodules = on-demand
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+
 [alias]
   # Resign commits which have been merged via rebase. $1 is commit BEFORE (not including) which you want to resign
   resign = "!f() { git rebase --exec 'git commit --amend --no-edit -n -S' -i \"$1\"; }; f"
-
-  # git switch default && git pull && git branch -d PREVIOUS_BRANCH
-  bda = "!f() { \
-    current_branch=$(git symbolic-ref --short HEAD); \
-    default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's|^refs/remotes/origin/||'); \
-    git switch \"$default_branch\" && git pull; \
-    if [ \"$current_branch\" != \"$default_branch\" ]; then \
-      git branch -d \"$current_branch\"; \
-    fi; \
-  }; f"
-
-  b = "!f() { git remote prune origin >/dev/null 2>&1; git for-each-ref --sort=committerdate 'refs/heads/' 'refs/remotes/' --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))' --color=always | grep --color=always -vE 'origin/HEAD|origin/master'; }; f"
 
   s = status -s
 
@@ -34,26 +26,29 @@
 
   aliases = config --get-regexp alias
 
-  # Remove branches that have already been merged with main.
-	# a.k.a. ‘delete merged’
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-
 [color]
-	ui = auto
+  ui = auto
+  status = auto
+  branch = auto
 
 [help]
-	# Automatically correct and execute mistyped commands.
-	autocorrect = 1
+  autocorrect = 1
+
 [init]
 	defaultbranch = master
+
 [gpg]
 	format = ssh
+
 [diff]
   tool = vimdiff
   context = 3
+
 [merge]
   tool = vimdiff
   conflictstyle = zdiff3
+  ff = only
+
 [mergetool "vimdiff"]
   cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED \
           -c '$wincmd w' -c 'wincmd J'
@@ -64,6 +59,7 @@
   whitespace = error
   preloadindex = true
   excludesfile = /Users/nelfimov/.gitignore.global
+  autocrlf = input
 
 [submodule]
 	recurse = true
@@ -72,5 +68,9 @@
   branch = true
   showstash = true
   showuntrackedfiles = all
-[remote "origin"]
+
+[rerere]
+  enabled = true
+
+[fetch]
 	prune = true
