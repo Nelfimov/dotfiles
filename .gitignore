@@ -70,3 +70,5 @@ luac.out
 .config/nix/nix.conf
 
 .config/jj/repos/
+
+.config/glab-cli/config.*

@@ -1,0 +1,5 @@
+mc: mr create --assignee=en --fill --fill-commit-body --remove-source-branch --signoff
+
+mm: mr merge --auto-merge=false --squash --remove-source-branch
+
+mmr: mr merge --auto-merge=false --rebase --remove-source-branch
