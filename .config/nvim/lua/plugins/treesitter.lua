@@ -4,7 +4,6 @@ return {
     ensure_installed = {
       "jinja",
       "jinja_inline",
-      "ruby",
       "liquid",
       "graphql",
       "http",

@@ -54,6 +54,9 @@ return {
       ruby_lsp = {
         mason = false,
         cmd = { "ruby-lsp" },
+        init_options = {
+          experimentalFeaturesEnabled = true,
+        },
       },
       yamlls = {
         settings = {

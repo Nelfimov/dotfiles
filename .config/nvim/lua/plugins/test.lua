@@ -13,7 +13,7 @@ return {
       return {
         adapters = {
           require("adapters"), -- Подключаем локальный адаптер
-          ["rustaceanvim.neotest"] = {},
+          -- ["neotest-node-test-runner"] = {},
           require("neotest-ruby-minitest"),
           ["neotest-rspec"] = {
             rspec_cmd = function()
@@ -27,8 +27,5 @@ return {
         },
       }
     end,
-    -- opts = {
-    --   adapters = { ["neotest-node-test-runner"] = {} },
-    -- },
   },
 }
