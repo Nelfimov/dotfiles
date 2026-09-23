@@ -58,7 +58,7 @@
   compression = 9
   whitespace = error
   preloadindex = true
-  excludesfile = /Users/nelfimov/.gitignore.global
+  excludesFile = ~/.config/git/ignore
   autocrlf = input
 
 [submodule]
