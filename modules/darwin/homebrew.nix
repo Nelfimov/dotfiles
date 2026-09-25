@@ -37,6 +37,7 @@
       "obsidian"
       "rubymine"
       "yandextelemost"
+      "calibre"
     ];
     onActivation = {
       cleanup = "zap";
