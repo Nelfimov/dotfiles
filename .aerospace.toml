@@ -63,6 +63,10 @@ run = ["move-node-to-workspace 3"]
 if = 'test %{app-bundle-id} = com.apple.Music'
 run = ["move-node-to-workspace 4"]
 
+[[on-window-detected]]
+if = 'test %{app-name} ~= Telemost'
+run = ["layout accordion"]
+
 [key-mapping]
 preset = 'qwerty'
 
