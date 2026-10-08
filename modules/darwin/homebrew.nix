@@ -17,6 +17,7 @@
       "libpq" # postgres
       "ruby"
       "glab"
+      "rift"
     ];
     casks = [
       "docker-desktop"
