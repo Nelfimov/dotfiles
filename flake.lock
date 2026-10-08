@@ -561,22 +561,6 @@
         "type": "github"
       }
     },
-    "rift": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1791345745,
-        "narHash": "sha256-R0DC/VxggGWx4L8IJVbc22sRRVkczxc7TY51/ut8A7Y=",
-        "owner": "acsandmann",
-        "repo": "homebrew-tap",
-        "rev": "fc2ac58faf8e1aac7760b8b078aac83294eeae8b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "acsandmann",
-        "repo": "homebrew-tap",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "aerospace": "aerospace",
@@ -589,8 +573,7 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_7",
-        "nixpkgsNixDirenv": "nixpkgsNixDirenv",
-        "rift": "rift"
+        "nixpkgsNixDirenv": "nixpkgsNixDirenv"
       }
     },
     "systems": {

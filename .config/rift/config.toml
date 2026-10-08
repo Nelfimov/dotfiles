@@ -214,12 +214,12 @@ enabled = true
 # tends to take up too much room in the menubar and then is auto hidden by macos
 show_empty = true
 # choose between drawing every workspace or only the active workspace on each display
-mode = "all"
+mode = "active"
 # when showing workspaces as labels ("index" or "name"), choose which label to render
 active_label = "index"
 # when displaying workspaces, choose whether to draw the layout preview or a set of labels
 # options are "layout" or "label" (i3-style)
-display_style = "layout"
+display_style = "label"
 # .ron files in this folder appear under Layout Files in the menu bar
 layout_folder = "~/.config/rift/layouts"
 
@@ -398,15 +398,18 @@ workspace_names = ["first", "second"]
 app_rules = [
   { app_id = "com.apple.finder", floating = true },
   { app_id = "com.apple.Facetime", floating = true, focus = false },
-  { app_id = "jetbrains", workspace = 1 },
-  { app_name = "Telegram", workspace = 2, focus = false, position = { x = 1.0, y = 0.0 } },
+  { app_id = "com.jetbrains.rubymine", ax_subrole = "AXDialog", floating = true },
+  { app_id = "com.jetbrains.rubymine", title_regex = ".*Settings.*", floating = true },
+  { app_id = "com.jetbrains.rubymine", workspace = 1, floating = false },
+  { app_name = "Telegram", workspace = 2, focus = false },
   { app_id = "org.m0k.transmission", floating = true, focus = false },
   { app_id = "com.amnezia.AmneziaVPN", floating = true },
   { app_id = "com.mitchelh.ghostty", workspace = 1 },
   { app_id = "com.hnc.Discord", workspace = 2, focus = false },
-  { app_id = "com.zoho.cliq", workspace = 2, focus = false, position = { x = 0.0, y = 0.0 } },
+  { app_id = "com.zoho.cliq", workspace = 2, focus = false },
   { app_id = "com.apple.Music", workspace = 3 },
   { app_id = "com.apple.systempreferences", floating = true },
+  { app_id = "ru.yandex.desktop.telemost", floating = true },
 ]
 
 # Modifier combinations that can be reused in key bindings

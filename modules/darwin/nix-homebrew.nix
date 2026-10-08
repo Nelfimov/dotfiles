@@ -14,7 +14,6 @@
       "buildpacks/homebrew-tap" = inputs.buildpack;
       "laishulu/homebrew-homebrew" = inputs.macism;
       "nikitabobko/homebrew-tap" = inputs.aerospace;
-      "acsandmann/homebrew-tap" = inputs.rift;
     };
     enable = true;
     enableRosetta = true;
@@ -26,7 +25,6 @@
         "buildpacks/tap"
         "laishulu/homebrew"
         "nikitabobko/tap"
-        "acsandmann/tap"
       ];
     };
   };
