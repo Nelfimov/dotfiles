@@ -19,6 +19,19 @@ local exclude_list = {
   ".direnv",
 }
 
+local function checkout_commit(picker, item)
+  picker:close()
+
+  if not item or not item.commit then
+    return
+  end
+
+  Snacks.picker.util.cmd({ "git", "checkout", "--detach", item.commit }, function()
+    Snacks.notify("Checkout " .. item.commit, { title = "Git" })
+    vim.cmd.checktime()
+  end, { cwd = item.cwd })
+end
+
 return {
   "folke/snacks.nvim",
   opts = {
@@ -68,6 +81,24 @@ return {
             layout = {
               width = 0.2,
               min_width = 100,
+            },
+          },
+        },
+        git_log_file = {
+          confirm = "git_checkout",
+          actions = {
+            checkout_commit = checkout_commit,
+          },
+          win = {
+            input = {
+              keys = {
+                ["<S-CR>"] = { "checkout_commit", mode = { "n", "i" } },
+              },
+            },
+            list = {
+              keys = {
+                ["<S-CR>"] = { "checkout_commit", mode = { "n", "x" } },
+              },
             },
           },
         },
