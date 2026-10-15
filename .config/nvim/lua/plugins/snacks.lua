@@ -21,11 +21,6 @@ local exclude_list = {
 
 return {
   "folke/snacks.nvim",
-  keys = {
-    { "<leader>/", false },
-    { "<leader>fF", false },
-    { "<leader><leader>", false },
-  },
   opts = {
     image = {
       enabled = true,
@@ -58,15 +53,6 @@ return {
           hidden = false,
           ignored = true,
           exclude = { ".git", ".DS_Store", ".localized" },
-          win = {
-            list = {
-              keys = {
-                ["<leader>/"] = false,
-                ["<leader>fF"] = false,
-                ["<leader><leader>"] = false,
-              },
-            },
-          },
           layout = {
             preview = { main = true, enabled = false },
             layout = {
