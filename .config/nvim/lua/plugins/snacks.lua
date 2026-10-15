@@ -30,6 +30,16 @@ return {
         header = [[]],
       },
     },
+    gitbrowse = {
+      url_patterns = {
+        ["gitlab%.rees46%.ru"] = {
+          branch = "/-/tree/{branch}",
+          file = "/-/blob/{branch}/{file}#L{line_start}-{line_end}",
+          permalink = "/-/blob/{commit}/{file}#L{line_start}-{line_end}",
+          commit = "/-/commit/{commit}",
+        },
+      },
+    },
     zen = {
       toggles = { dim = false },
       win = { backdrop = { transparent = false } },
