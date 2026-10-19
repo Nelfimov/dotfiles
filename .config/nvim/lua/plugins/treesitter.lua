@@ -7,6 +7,7 @@ return {
       "liquid",
       "graphql",
       "http",
+      "rbs",
     },
   },
 }

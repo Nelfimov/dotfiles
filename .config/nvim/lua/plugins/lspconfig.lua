@@ -53,11 +53,17 @@ return {
       },
       ruby_lsp = {
         mason = false,
+        filetypes = { "ruby", "eruby", "rbs" },
         cmd = { "ruby-lsp" },
         init_options = {
           experimentalFeaturesEnabled = true,
         },
       },
+      -- steep = {
+      --   mason = false,
+      --   filetypes = { "ruby", "eruby", "rbs" },
+      --   cmd = { "bundle", "exec", "steep", "langserver", "--jobs=2" },
+      -- },
       yamlls = {
         settings = {
           yaml = {

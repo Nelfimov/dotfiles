@@ -4,6 +4,7 @@ return {
     formatters_by_ft = {
       rust = { "rustfmt", lsp_format = "fallback", default_edition = "2024" },
       liquid = { "prettier" },
+      rbs = { lsp_format = "prefer" },
     },
     formatters = {
       rustfmt = {
