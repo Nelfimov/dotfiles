@@ -1,5 +1,9 @@
 [ -f "$HOME/.shell_common.sh" ] && source "$HOME/.shell_common.sh"
 
+# Keep Lazygit configuration in the dotfiles repository on macOS without
+# changing the configuration directory used by other applications.
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml"
+
 if [[ $- == *i* && "$TERM_PROGRAM" != *Warp* ]]; then
   ## Git highlighting
   function parse_git_branch() {
