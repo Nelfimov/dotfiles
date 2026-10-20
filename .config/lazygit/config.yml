@@ -1,3 +1,7 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+
 keybinding:
   universal:
     quit: [q, й, <ctrl+c>]
+services:
+  'gitlab.rees46.ru': 'gitlab:gitlab.rees46.ru'
