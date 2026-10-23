@@ -11,7 +11,13 @@
       enableCompletion = true;
     };
 
-    direnv.enable = true;
+    direnv = {
+      enable = true;
+      settings = {
+        log_format = "-";
+        log_filter = "^$";
+      };
+    };
 
     direnv.nix-direnv.package = inputs.nixpkgsNixDirenv.legacyPackages.${hostPlatform}.nix-direnv;
   };
