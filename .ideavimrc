@@ -29,19 +29,13 @@ set targets
 set highlightedyank
 let g:highlightedyank_highlight_duration = "200"
 
-set NERDTree
-let g:NERDTreeMapActivateNode = "l"
-let g:NERDTreeMapNewFile = "a"
-let g:NERDTreeMapNewDir = "A"
-let g:NERDTreeMapOpenSplit = "S"
-let g:NERDTreeMapPreviewSplit = "gS"
-let g:NERDTreeMapOpenVSplit = "s"
-let g:NERDTreeMapPreviewVSplit = "gs"
-let g:NERDTreeMapCloseDir = "h"
-let g:NERDTreeMapCloseChildren = "z"
+set ideamarks
+
+set idearefactormode=keep
 
 set which-key
-set notimeout
+" set timeout
+set timeoutlen=500
 
 set keep-english-in-normal
 set VimEverywhere
@@ -121,10 +115,7 @@ nmap <leader>fc <Action>(FindWordAtCaret)
 nmap <leader>fz <Action>(FindInPath)
 nmap <leader>/ <Action>(FindInPath)
 
-let g:WhichKeyDesc_explorer = "<leader>e Explorer NeoTree (Root Dir)"
-nmap <leader>e <Action>(ActivateProjectToolWindow)
-
-let g:WhichKeyDesc_explorer_cwd = "<leader>E Explorer NeoTree (cwd)"
+let g:WhichKeyDesc_explorer_cwd = "<leader>e Explorer NeoTree (cwd)"
 nmap <leader>e <Action>(SelectInProjectView)
 
 nmap <leader>fe <Action>(ActivateProjectToolWindow)
@@ -489,7 +480,6 @@ nmap <leader>cc :echo 'No RubyMine equivalent for LSP Info / Codelens.'<CR>
 nmap <leader>cC :echo 'No RubyMine equivalent for Refresh Codelens.'<CR>
 nmap <leader>uB :echo 'Auto-format is controlled by RubyMine settings.'<CR>
 nmap <leader>uc :echo 'No RubyMine equivalent for conceallevel.'<CR>
-nmap <leader>uh :echo 'Use RubyMine inlay hints settings.'<CR>
 nmap <leader>uT :echo 'No RubyMine equivalent for Treesitter highlight.'<CR>
 nmap <leader>sa :echo 'No RubyMine equivalent for autocmd list.'<CR>
 nmap <leader>dg :echo 'No RubyMine equivalent for DAP go-to-line without execute.'<CR>
