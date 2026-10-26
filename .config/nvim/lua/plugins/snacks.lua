@@ -17,6 +17,7 @@ local exclude_list = {
   ".idea",
   "vendor",
   ".direnv",
+  ".gem_rbs_collection",
 }
 
 local function checkout_commit(picker, item)
