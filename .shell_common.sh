@@ -41,6 +41,14 @@ dev() {
   nix develop -c zellij a --create "$session_name" "$@"
 }
 
+gost() {
+  "/Applications/Chromium-Gost.app/Contents/MacOS/Chromium-Gost" \
+    --remote-debugging-address=127.0.0.1 \
+    --remote-debugging-port=9222 \
+    --user-data-dir="$HOME/Library/Application Support/Gost Chromium/mcp-profile" \
+    "$@" >/tmp/gost-chromium.log 2>&1 &
+}
+
 compress_video() {
   ffmpeg -i "$1" \
     -vf "fps=15,scale=1500:-1:flags=lanczos,palettegen" \
