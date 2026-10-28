@@ -178,3 +178,31 @@ NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbf
 
 [notice.model_migrations]
 "gpt-5.6-luna" = "gpt-6-luna"
+
+[mcp_servers.chrome]
+command = "npx"
+args = ["-y", "chrome-devtools-mcp@latest", "--browserUrl=http://127.0.0.1:9222"]
+
+[mcp_servers.chrome.tools.take_snapshot]
+approval_mode = "approve"
+
+[mcp_servers.chrome.tools.take_screenshot]
+approval_mode = "approve"
+
+[mcp_servers.chrome.tools.evaluate_script]
+approval_mode = "approve"
+
+[mcp_servers.chrome.tools.navigate_page]
+approval_mode = "approve"
+
+[mcp_servers.chrome.tools.press_key]
+approval_mode = "approve"
+
+[mcp_servers.jointjs]
+url = "https://mcp.jointjs.com/mcp"
+
+[mcp_servers.jointjs.tools.search_docs]
+approval_mode = "approve"
+
+[mcp_servers.jointjs.tools.get_doc]
+approval_mode = "approve"
