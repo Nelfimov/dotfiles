@@ -17,6 +17,7 @@
       "libpq" # postgres
       "ruby"
       "glab"
+      "mtr" # DOM.ru diagnostics
     ];
     casks = [
       "docker-desktop"
