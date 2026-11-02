@@ -18,7 +18,6 @@
       "ruby"
       "glab"
       "mtr" # DOM.ru diagnostics
-      "tailscale"
     ];
     casks = [
       "docker-desktop"

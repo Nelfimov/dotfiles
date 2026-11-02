@@ -21,4 +21,6 @@
 
     direnv.nix-direnv.package = inputs.nixpkgsNixDirenv.legacyPackages.${hostPlatform}.nix-direnv;
   };
+
+  services.tailscale.enable = true;
 }
