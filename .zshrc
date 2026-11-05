@@ -14,6 +14,9 @@ if [[ $- == *i* && "$TERM_PROGRAM" != *Warp* ]]; then
   function direnv_shell_prompt() {
     [[ -n "${DIRENV_FILE:-}" ]] && echo "%F{112}(direnv)%f "
   }
+  function ssh_shell_prompt() {
+    [[ -n "${SSH_CONNECTION:-}${SSH_TTY:-}" ]] && echo "%F{red}(ssh)%f "
+  }
   function kubectl_shell_prompt() {
     command -v kubectl >/dev/null 2>&1 || return
     kubectl config current-context 2>/dev/null || return
@@ -27,7 +30,7 @@ if [[ $- == *i* && "$TERM_PROGRAM" != *Warp* ]]; then
   setopt PROMPT_SUBST
   # /Git highlighting
   NEWLINE=$'\n'
-  export PROMPT="%{$fg[yellow]%}%D{%f/%m} %D{%H:%M:%S} \$(direnv_shell_prompt)${COLOR_DIR}%~ ${COLOR_GIT}\$(parse_git_branch) ${COLOR_KUBE}\$(kubectl_shell_prompt)${COLOR_DEF}${NEWLINE}$ "
+  export PROMPT="%{$fg[yellow]%}%D{%f/%m} %D{%H:%M:%S} \$(ssh_shell_prompt)\$(direnv_shell_prompt)${COLOR_DIR}%~ ${COLOR_GIT}\$(parse_git_branch) ${COLOR_KUBE}\$(kubectl_shell_prompt)${COLOR_DEF}${NEWLINE}$ "
 
   if command -v fzf >/dev/null 2>&1; then
     source <(fzf --zsh)
