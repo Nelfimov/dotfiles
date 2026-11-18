@@ -11,7 +11,6 @@
       "tree-sitter-cli" # neovim LSP
       "nixfmt" # nix
       "watch"
-      "imagemagick"
       "ffmpeg"
       "mole"
       "libpq" # postgres
@@ -33,8 +32,6 @@
       "aerospace"
       "codex"
       "steam"
-      "kitty"
-      "chatgpt"
       "obsidian"
       "rubymine"
       "yandextelemost"

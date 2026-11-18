@@ -9,7 +9,6 @@
         "/System/Applications/FaceTime.app"
         "/Applications/Telegram.app"
         "/System/Applications/Mail.app"
-        "/Applications/kitty.app"
         "/System/Applications/Calendar.app"
         "/System/Applications/Reminders.app"
         "/System/Applications/Notes.app"
