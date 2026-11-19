@@ -12,3 +12,4 @@
 --ignore=qmk
 --ignore=hosts
 --ignore=modules
+--ignore=.idea
