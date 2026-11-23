@@ -4,48 +4,6 @@
 # changing the configuration directory used by other applications.
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml"
 
-if [[ $- == *i* && "$TERM_PROGRAM" != *Warp* ]]; then
-  ## Git highlighting
-  function parse_git_branch() {
-    local branch
-    branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
-    echo "[$branch]"
-  }
-  function direnv_shell_prompt() {
-    [[ -n "${DIRENV_FILE:-}" ]] && echo "%F{112}(direnv)%f "
-  }
-  function ssh_shell_prompt() {
-    [[ -n "${SSH_CONNECTION:-}${SSH_TTY:-}" ]] && echo "%F{red}(ssh)%f "
-  }
-  function kubectl_shell_prompt() {
-    command -v kubectl >/dev/null 2>&1 || return
-    kubectl config current-context 2>/dev/null || return
-  }
-
-  COLOR_DEF=$'%f'
-  COLOR_USR=$'%F{243}'
-  COLOR_DIR=$'%F{197}'
-  COLOR_GIT=$'%F{39}'
-  COLOR_KUBE=$'%F{cyan}'
-  setopt PROMPT_SUBST
-  # /Git highlighting
-  NEWLINE=$'\n'
-  export PROMPT="%{$fg[yellow]%}%D{%f/%m} %D{%H:%M:%S} \$(ssh_shell_prompt)\$(direnv_shell_prompt)${COLOR_DIR}%~ ${COLOR_GIT}\$(parse_git_branch) ${COLOR_KUBE}\$(kubectl_shell_prompt)${COLOR_DEF}${NEWLINE}$ "
-
-  if command -v fzf >/dev/null 2>&1; then
-    source <(fzf --zsh)
-  fi
-
-  bindkey -v
-  bindkey -M viins '^?' backward-delete-char
-  bindkey -M viins '^H' backward-delete-char
-  bindkey -M vicmd '^?' backward-delete-char
-  bindkey -M vicmd '^H' backward-delete-char
-  bindkey -M viins "${terminfo[kdch1]}" delete-char
-  bindkey -M vicmd "${terminfo[kdch1]}" delete-char
-  export KEYTIMEOUT=1
-fi
-
 if [[ $- == *i* ]]; then
   HISTDUP=erase
   setopt appendhistory
@@ -74,6 +32,43 @@ if [[ $- == *i* ]]; then
   autoload -Uz compinit
   compinit -C
   # End of Docker CLI completions
+
+  ## Git highlighting
+  function parse_git_branch() {
+    local branch
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
+    echo "[$branch]"
+  }
+  function direnv_shell_prompt() {
+    [[ -n "${DIRENV_FILE:-}" ]] && echo "%F{112}(direnv)%f "
+  }
+  function kubectl_shell_prompt() {
+    command -v kubectl >/dev/null 2>&1 || return
+    kubectl config current-context 2>/dev/null || return
+  }
+
+  COLOR_DEF=$'%f'
+  COLOR_USR=$'%F{243}'
+  COLOR_DIR=$'%F{197}'
+  COLOR_GIT=$'%F{39}'
+  COLOR_KUBE=$'%F{cyan}'
+  setopt PROMPT_SUBST
+  # /Git highlighting
+  NEWLINE=$'\n'
+  export PROMPT="%{$fg[yellow]%}%D{%f/%m} %D{%H:%M:%S} \$(direnv_shell_prompt)${COLOR_DIR}%~ ${COLOR_GIT}\$(parse_git_branch) ${COLOR_KUBE}\$(kubectl_shell_prompt)${COLOR_DEF}${NEWLINE}$ "
+
+  if command -v fzf >/dev/null 2>&1; then
+    source <(fzf --zsh)
+  fi
+
+  bindkey -v
+  bindkey -M viins '^?' backward-delete-char
+  bindkey -M viins '^H' backward-delete-char
+  bindkey -M vicmd '^?' backward-delete-char
+  bindkey -M vicmd '^H' backward-delete-char
+  bindkey -M viins "${terminfo[kdch1]}" delete-char
+  bindkey -M vicmd "${terminfo[kdch1]}" delete-char
+  export KEYTIMEOUT=1
 fi
 
 # PostgreSQL exec

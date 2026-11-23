@@ -36,29 +36,12 @@ alias kg='kubectl get'
 alias kge='kubectl get events --sort-by=".lastTimestamp"'
 alias kl='kubectl logs'
 
-dev() {
-  session_name="$(basename "$PWD")"
-  nix develop -c zellij a --create "$session_name" "$@"
-}
-
 gost() {
   "/Applications/Chromium-Gost.app/Contents/MacOS/Chromium-Gost" \
     --remote-debugging-address=127.0.0.1 \
     --remote-debugging-port=9222 \
     --user-data-dir="$HOME/Library/Application Support/Gost Chromium/mcp-profile" \
     "$@" >/tmp/gost-chromium.log 2>&1 &
-}
-
-compress_video() {
-  ffmpeg -i "$1" \
-    -vf "fps=15,scale=1500:-1:flags=lanczos,palettegen" \
-    ~/Desktop/palette.png &&
-    ffmpeg -i "$1" \
-      -i ~/Desktop/palette.png \
-      -filter_complex "fps=15,scale=1500:-1:flags=lanczos[x];[x][1:v]paletteuse=dither=bayer" \
-      -loop 0 \
-      ~/Desktop/output.gif &&
-    rm -rf ~/Desktop/palette.png
 }
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
