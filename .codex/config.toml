@@ -1,6 +1,9 @@
 personality = "pragmatic"
 
-notify = ["/Users/nelfimov/Documents/Dev/dotfiles/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+notify = [
+  "/Users/nelfimov/Documents/Dev/dotfiles/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
+  "turn-ended",
+]
 model = "gpt-6-luna"
 model_reasoning_effort = "medium"
 
@@ -157,44 +160,35 @@ show-context-window-usage = true
 enabled-reasoning-efforts = ["low", "medium", "high", "xhigh"]
 
 [mcp_servers.node_repl]
-args = []
 command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
-startup_timeout_sec = 120
+startup_timeout_sec = 120.0
 
 [mcp_servers.node_repl.env]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.901.51231"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
+CODEX_HOME = "/Users/nelfimov/.codex"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
 NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/nelfimov/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
-CODEX_HOME = "/Users/nelfimov/.codex"
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-BROWSER_USE_TINYSKY_ENABLED = "1"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
-BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.901.51231"
 NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/nelfimov/.codex/plugins/cache/openai-bundled/browser/26.901.51231/scripts/browser-service.mjs"}'
-CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
 [mcp_servers.cua_repl]
 command = "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT"
 enabled = false
 
-[shell_environment_policy.set]
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,e13fd947e846d3d306e9249dd3c73d14931b6494803dbafb16cef85e6add9506"
-
-[notice.model_migrations]
-"gpt-5.6-luna" = "gpt-6-luna"
-
 [mcp_servers.chrome]
 command = "npx"
-args = ["-y", "chrome-devtools-mcp@latest", "--browserUrl=http://127.0.0.1:9222"]
-
-[mcp_servers.chrome.tools.take_snapshot]
-approval_mode = "approve"
-
-[mcp_servers.chrome.tools.take_screenshot]
-approval_mode = "approve"
+args = [
+  "-y",
+  "chrome-devtools-mcp@latest",
+  "--browserUrl=http://127.0.0.1:9222",
+]
 
 [mcp_servers.chrome.tools.evaluate_script]
 approval_mode = "approve"
@@ -205,11 +199,27 @@ approval_mode = "approve"
 [mcp_servers.chrome.tools.press_key]
 approval_mode = "approve"
 
+[mcp_servers.chrome.tools.take_screenshot]
+approval_mode = "approve"
+
+[mcp_servers.chrome.tools.take_snapshot]
+approval_mode = "approve"
+
 [mcp_servers.jointjs]
 url = "https://mcp.jointjs.com/mcp"
+
+[mcp_servers.jointjs.tools.get_doc]
+approval_mode = "approve"
 
 [mcp_servers.jointjs.tools.search_docs]
 approval_mode = "approve"
 
-[mcp_servers.jointjs.tools.get_doc]
-approval_mode = "approve"
+[mcp_servers.safari-mcp]
+command = "/usr/bin/safaridriver"
+args = ["--mcp"]
+
+[shell_environment_policy.set]
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,e13fd947e846d3d306e9249dd3c73d14931b6494803dbafb16cef85e6add9506"
+
+[notice.model_migrations]
+"gpt-5.6-luna" = "gpt-6-luna"
