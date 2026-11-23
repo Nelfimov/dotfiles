@@ -17,6 +17,7 @@
       "ruby"
       "glab"
       "mtr" # DOM.ru diagnostics
+      "bitwarden-cli"
     ];
     casks = [
       "docker-desktop"
