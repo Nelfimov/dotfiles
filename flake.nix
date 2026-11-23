@@ -7,13 +7,15 @@
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    mac-app-util.url = "github:hraban/mac-app-util"; # Add indexing to Spotlight
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
 
     # Homebrew
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
-    nix-homebrew.inputs.brew-src.url = "github:Homebrew/brew/main"; # https://github.com/zhaofengli/nix-homebrew/pull/164
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
