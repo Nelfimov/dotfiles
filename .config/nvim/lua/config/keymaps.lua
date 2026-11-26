@@ -25,3 +25,11 @@ map({ "n", "x" }, "<leader>gY", function()
     notify = false,
   })
 end, { desc = "Git Browse (copy permalink)" })
+
+map({ "n", "x" }, "<leader>gb", function()
+  vim.cmd("Git blame")
+end, { desc = "Git blame" })
+
+map("n", "<leader>йй", function()
+  vim.cmd("qa")
+end, { desc = "Quit all" })
