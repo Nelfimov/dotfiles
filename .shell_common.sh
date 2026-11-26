@@ -34,7 +34,7 @@ alias k='kubectl'
 alias kx='kubectl exec -it'
 alias kg='kubectl get'
 alias kge='kubectl get events --sort-by=".lastTimestamp"'
-alias kl='kubectl logs'
+alias kl='kubectl logs --timestamps=true'
 
 gost() {
   "/Applications/Chromium-Gost.app/Contents/MacOS/Chromium-Gost" \
