@@ -18,6 +18,7 @@
       "glab"
       "mtr" # DOM.ru diagnostics
       "bitwarden-cli"
+      "curl" # with QUIC
     ];
     casks = [
       "docker-desktop"

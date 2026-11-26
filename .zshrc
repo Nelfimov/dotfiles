@@ -84,3 +84,9 @@ if command -v ruby >/dev/null 2>&1; then
   fi
   unset ruby_gem_bin
 fi
+
+# Use brew curl with QUIC support
+if [ -d /opt/homebrew/opt/curl/bin ]; then
+  export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+fi
+
