@@ -11,7 +11,6 @@
       "tree-sitter-cli" # neovim LSP
       "nixfmt" # nix
       "watch"
-      "ffmpeg"
       "mole"
       "libpq" # postgres
       "ruby"
