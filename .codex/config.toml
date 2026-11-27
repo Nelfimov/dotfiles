@@ -181,6 +181,7 @@ args = [
   "-y",
   "chrome-devtools-mcp@latest",
   "--browserUrl=http://127.0.0.1:9222",
+  "--categoryExperimentalWebmcp",
 ]
 
 [mcp_servers.chrome.tools.evaluate_script]
@@ -196,6 +197,15 @@ approval_mode = "approve"
 approval_mode = "approve"
 
 [mcp_servers.chrome.tools.take_snapshot]
+approval_mode = "approve"
+
+[mcp_servers.chrome.tools.new_page]
+approval_mode = "approve"
+
+[mcp_servers.chrome.tools.execute_webmcp_tool]
+approval_mode = "approve"
+
+[mcp_servers.chrome.tools.get_network_request]
 approval_mode = "approve"
 
 [mcp_servers.jointjs]
